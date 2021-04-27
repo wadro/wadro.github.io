@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>daily checklist on WADRO</title>
-    <link>/categories/daily-checklist/</link>
+    <link>https://wadro.github.io/categories/daily-checklist/</link>
     <description>Recent content in daily checklist on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 01:41:27 +0900</lastBuildDate><atom:link href="/categories/daily-checklist/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 01:41:27 +0900</lastBuildDate><atom:link href="https://wadro.github.io/categories/daily-checklist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021 Apr 28</title>
-      <link>/memo/2021-apr-28/</link>
+      <link>https://wadro.github.io/memo/2021-apr-28/</link>
       <pubDate>Wed, 28 Apr 2021 01:41:27 +0900</pubDate>
       
-      <guid>/memo/2021-apr-28/</guid>
+      <guid>https://wadro.github.io/memo/2021-apr-28/</guid>
       <description>Daily Checklists   NOTE
   ⬜️ unchecked [✔] done [✗] not yet    ⬜️ go blockchain(youtube-tensor programming) 수강 [✔] 블로그 초안 완성  </description>
     </item>

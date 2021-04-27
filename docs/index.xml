@@ -2,17 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WADRO</title>
-    <link>/</link>
+    <link>https://wadro.github.io/</link>
     <description>Recent content on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 07:00:19 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heading</title>
+      <link>https://wadro.github.io/posts/heading/</link>
+      <pubDate>Wed, 28 Apr 2021 07:00:19 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/posts/heading/</guid>
+      <description>heading1 heading2 </description>
+    </item>
+    
     <item>
       <title>Hugo Tutorials</title>
-      <link>/posts/hugo-tutorials/</link>
+      <link>https://wadro.github.io/posts/hugo-tutorials/</link>
       <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
-      <guid>/posts/hugo-tutorials/</guid>
+      <guid>https://wadro.github.io/posts/hugo-tutorials/</guid>
       <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
   hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
   cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
@@ -24,10 +33,10 @@
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://wadro.github.io/about/</link>
       <pubDate>Wed, 28 Apr 2021 05:52:11 +0900</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://wadro.github.io/about/</guid>
       <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
 It makes use of a variety of open source projects including:
  https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
@@ -35,10 +44,10 @@ It makes use of a variety of open source projects including:
     
     <item>
       <title>2021 Apr 28</title>
-      <link>/memo/2021-apr-28/</link>
+      <link>https://wadro.github.io/memo/2021-apr-28/</link>
       <pubDate>Wed, 28 Apr 2021 01:41:27 +0900</pubDate>
       
-      <guid>/memo/2021-apr-28/</guid>
+      <guid>https://wadro.github.io/memo/2021-apr-28/</guid>
       <description>Daily Checklists   NOTE
   ⬜️ unchecked [✔] done [✗] not yet    ⬜️ go blockchain(youtube-tensor programming) 수강 [✔] 블로그 초안 완성  </description>
     </item>
