@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wadro.github.io/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
     <priority>0</priority>
   </url><url>
+    <loc>https://wadro.github.io/memo/2021-apr-28/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
+  </url><url>
     <loc>https://wadro.github.io/categories/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/categories/daily-checklist/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/golang/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/tags/</loc>
+    <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url>
 </urlset>

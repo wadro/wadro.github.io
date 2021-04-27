@@ -17,23 +17,5 @@
   ⬜️ unchecked [✔] done [✗] not yet    ⬜️ go blockchain(youtube-tensor programming) 수강 ⬜️  </description>
     </item>
     
-    <item>
-      <title>Checkbox2</title>
-      <link>https://wadro.github.io/memo/checkbox2/</link>
-      <pubDate>Wed, 28 Apr 2021 00:18:22 +0900</pubDate>
-      
-      <guid>https://wadro.github.io/memo/checkbox2/</guid>
-      <description> Mercury Venus Earth (Orbit/Moon) Mars Jupiter ⬜️ Uranus [✔] Neptune [✗] Earth Comet Haley   Selling point one   Selling point two   Selling point three test1   test2  </description>
-    </item>
-    
-    <item>
-      <title>Checkbox</title>
-      <link>https://wadro.github.io/memo/checkbox/</link>
-      <pubDate>Wed, 28 Apr 2021 00:13:31 +0900</pubDate>
-      
-      <guid>https://wadro.github.io/memo/checkbox/</guid>
-      <description>/* ul { list-style-type: none; margin-left: 40px; } */ /* liinput{ width: 30px; } */ input[type=checkbox] { /* Double-sized Checkboxes */ -ms-transform: scale(1.7); /* IE */ -moz-transform: scale(1.7); /* FF */ -webkit-transform: scale(1.7); /* Safari and Chrome */ -o-transform: scale(1.7); /* Opera */ transform: scale(1.7); margin: 2px 5px 2px 2px; padding: 5px; outline: 1px solid #a5a5a5; -webkit-box-shadow: 0px 0px 0px 1px transparent; -moz-box-shadow: 0px 0px 0px 1px transparent; box-shadow: 0px 0px 0px 0px transparent; -moz-appearance:none; -webkit-appearance:none; -o-appearance:none; } strongem, emstrong, bi, ib { font-style:normal; font-weight:normal; text-decoration:underline; }     checked unchecked crossed     ✓ _ ✗   ✓        [✓] Mercury</description>
-    </item>
-    
   </channel>
 </rss>
