@@ -6,14 +6,20 @@
     <description>Recent content in Posts on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 27 Apr 2021 21:56:48 +0900</lastBuildDate><atom:link href="https://wadro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="https://wadro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://wadro.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 27 Apr 2021 21:56:48 +0900</pubDate>
+      <title>Hugo Tutorials</title>
+      <link>https://wadro.github.io/posts/hugo-tutorials/</link>
+      <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
-      <guid>https://wadro.github.io/posts/my-first-post/</guid>
-      <description>test </description>
+      <guid>https://wadro.github.io/posts/hugo-tutorials/</guid>
+      <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
+  hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
+  cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
+  git init
+이 부분은 각자 쓰고 싶은 테마를 찾아볼것.여기서 -&amp;gt; git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+  hugo new posts/(쓰고싶은이름).md
+  터미널(powershell)에 hugo 엔터 누르면 markdown 으로 작성된 파일이 알아서 html,css,js 파일로 변환됨.</description>
     </item>
     
   </channel>

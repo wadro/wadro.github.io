@@ -6,7 +6,33 @@
     <description>Recent content on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 01:41:27 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Tutorials</title>
+      <link>https://wadro.github.io/posts/hugo-tutorials/</link>
+      <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/posts/hugo-tutorials/</guid>
+      <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
+  hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
+  cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
+  git init
+이 부분은 각자 쓰고 싶은 테마를 찾아볼것.여기서 -&amp;gt; git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+  hugo new posts/(쓰고싶은이름).md
+  터미널(powershell)에 hugo 엔터 누르면 markdown 으로 작성된 파일이 알아서 html,css,js 파일로 변환됨.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://wadro.github.io/about/</link>
+      <pubDate>Wed, 28 Apr 2021 05:52:11 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/about/</guid>
+      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
+It makes use of a variety of open source projects including:
+ https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+    </item>
+    
     <item>
       <title>2021 Apr 28</title>
       <link>https://wadro.github.io/memo/2021-apr-28/</link>
