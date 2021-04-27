@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wadro.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2021-04-28T05:56:50+09:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://wadro.github.io/posts/hugo-tutorials/</loc>
+    <loc>/posts/hugo-tutorials/</loc>
     <lastmod>2021-04-28T05:56:50+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2021-04-28T05:56:50+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2021-04-28T05:52:11+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/memo/2021-apr-28/</loc>
+    <loc>/memo/2021-apr-28/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/categories/daily-checklist/</loc>
+    <loc>/categories/daily-checklist/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/tags/golang/</loc>
+    <loc>/tags/golang/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/memo/</loc>
+    <loc>/memo/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-04-28T01:41:27+09:00</lastmod>
   </url>
 </urlset>

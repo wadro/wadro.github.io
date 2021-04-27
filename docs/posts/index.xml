@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on WADRO</title>
-    <link>https://wadro.github.io/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="https://wadro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Tutorials</title>
-      <link>https://wadro.github.io/posts/hugo-tutorials/</link>
+      <link>/posts/hugo-tutorials/</link>
       <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
-      <guid>https://wadro.github.io/posts/hugo-tutorials/</guid>
+      <guid>/posts/hugo-tutorials/</guid>
       <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
   hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
   cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog

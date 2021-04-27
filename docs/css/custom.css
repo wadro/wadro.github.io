@@ -1,3 +1,6 @@
 ul {
   list-style-type: none;
 }
+ol,ul{
+  word-wrap: break-word;
+}
