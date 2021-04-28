@@ -13,7 +13,7 @@ var resultsAvailable = false; // Did we get any search results?
 document.addEventListener('keydown', function(event) {
 
   // Control+f  to show || hide Search
-  if (event.metaKey && event.key === "/") {
+  if (event.key === "f") {
       // Load json search index if first time invoking search
       // Means we don't load json unless searches are going to happen; keep user payload small unless needed
       if(firstRun) {
