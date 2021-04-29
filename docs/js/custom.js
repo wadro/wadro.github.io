@@ -116,8 +116,8 @@ function loadSearch() {
     var options = { // fuse.js options; check fuse.js website for details
       shouldSort: true,
       location: 0,
-      distance: 100,
-      threshold: 0.2,
+      distance: 1000,
+      threshold: 1,
       minMatchCharLength: 2,
       keys: [
         'title',
@@ -167,12 +167,19 @@ function executeSearch(term) {
         searchitems 
         + '<li><a href="' 
         + filtered[list].item.permalink 
-        + '" tabindex="0">' + '<span class="title">' 
+        + '" tabindex="0">' 
+        + '<span class="title">' 
         + filtered[list].item.title 
-        + '</span><br /> <span class="sc" style="font-size:0.6rem">category:'
+        + '</span><br />'
+        + '<span class="sc" style="font-size:0.6rem">category:'
         + filtered[list].item.categories 
-        +'</span><br><span style="font-size:0.6rem">tag:' + filtered[list].item.tags 
-        + '</span><br><em style="font-size:0.6rem">' 
+        + '</span><br>'
+        + '<span style="font-size:0.6rem">tag:' + filtered[list].item.tags 
+        + '</span><br>'
+        // + '<span class="contents">' 
+        // + filtered[list].item.contents
+        // + '</span><br />'
+        + '<em style="font-size:0.6rem">'
         + filtered[list].item.date + '</em></a></li>';
     }
     // console.log(results);
