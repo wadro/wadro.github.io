@@ -16,9 +16,7 @@ var resultsAvailable = false; // Did we get any search results?
 // The main keyboard event listener running the show
 //
 document.addEventListener('keydown', function(event) {
-
   // Control+f  to show || hide Search
-  if (event.key === "f") {
       // Load json search index if first time invoking search
       // Means we don't load json unless searches are going to happen; keep user payload small unless needed
       if(firstRun) {
@@ -27,22 +25,23 @@ document.addEventListener('keydown', function(event) {
       }
 
       // Toggle visibility of search box
-      if (!searchVisible) {
-        // document.getElementById("clientSearch").style.visibility = "visible"; // show search box
-        document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+      // if (!searchVisible) {
+      //   // document.getElementById("clientSearch").style.visibility = "visible"; // show search box
+      //   document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
         searchVisible = true; // search visible
-      }
-      else {
-        // document.getElementById("clientSearch").style.visibility = "hidden"; // hide search box
-        document.activeElement.blur(); // remove focus from search box 
-        searchVisible = false; // search not visible
-      }
-  }
+      // }
+      // else {
+      //   // document.getElementById("clientSearch").style.visibility = "hidden"; // hide search box
+      //   document.activeElement.blur(); // remove focus from search box 
+      //   searchVisible = false; // search not visible
+      // }
+  
 
   // Allow ESC (27) to close search box
   if (event.key == "Escape") {
     if (searchVisible) {
-      document.getElementById("clientSearch").style.visibility = "hidden";
+      // document.getElementById("clientSearch").style.visibility = "hidden";
+      document.getElementById("searchResults").innerHTML = "";
       document.activeElement.blur();
       searchVisible = false;
     }
@@ -51,7 +50,6 @@ document.addEventListener('keydown', function(event) {
   // DOWN (40) arrow
   if (event.key == "ArrowDown") {
     if (searchVisible && resultsAvailable) {
-      console.log("down");
       event.preventDefault(); // stop window from scrolling
       if ( document.activeElement == maininput) { first.focus(); } // if the currently focused element is the main input --> focus the first <li>
       else if ( document.activeElement == last ) { last.focus(); } // if we're at the bottom, stay there
@@ -78,6 +76,16 @@ document.addEventListener('keydown', function(event) {
 document.getElementById("searchInput").onkeyup = function(e) { 
   executeSearch(this.value);
 }
+document.addEventListener('click',(e)=>{
+  if(searchVisible){
+    document.activeElement.blur();
+    document.getElementById("searchResults").innerHTML = "";
+    searchVisible = false;
+  }
+});
+
+
+
 
 
 // ==========================================
@@ -155,7 +163,17 @@ function executeSearch(term) {
       //   uniq.add(results[list].item)
       // }
 
-      searchitems = searchitems + '<li><a href="' + filtered[list].item.permalink + '" tabindex="0">' + '<span class="title">' + filtered[list].item.title + '</span><br /> <span class="sc">'+ filtered[list].item.categories +'</span> — ' + filtered[list].item.tags + ' — <em>' + filtered[list].item.date + '</em></a></li>';
+      searchitems = 
+        searchitems 
+        + '<li><a href="' 
+        + filtered[list].item.permalink 
+        + '" tabindex="0">' + '<span class="title">' 
+        + filtered[list].item.title 
+        + '</span><br /> <span class="sc" style="font-size:0.6rem">category:'
+        + filtered[list].item.categories 
+        +'</span><br><span style="font-size:0.6rem">tag:' + filtered[list].item.tags 
+        + '</span><br><em style="font-size:0.6rem">' 
+        + filtered[list].item.date + '</em></a></li>';
     }
     // console.log(results);
    
