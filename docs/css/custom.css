@@ -7,9 +7,9 @@ ol,ul{
 
 /* clientSearchCssStart */
 #clientSearch { 
-  visibility: hidden;
+  visibility: visible;
   position: absolute;
-  right: 0px;
+  right: 100px;
   top: 0px;
   display: inline-block;
   width: 300px;
