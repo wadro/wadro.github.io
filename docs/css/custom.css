@@ -67,11 +67,11 @@ ol,ul{
 @media only screen and (max-width: 720px) {
   #clientSearch{
     position: unset;
-    width: 90vw;
+    width: 80vw;
     margin:auto;
   }
   #searchResults{
-    width: 90vw;
+    width: 80vw;
   }
 
 }
