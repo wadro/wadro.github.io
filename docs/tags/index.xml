@@ -6,7 +6,16 @@
     <description>Recent content in Tags on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="https://wadro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 01:55:20 +0900</lastBuildDate><atom:link href="https://wadro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>April</title>
+      <link>https://wadro.github.io/tags/april/</link>
+      <pubDate>Fri, 30 Apr 2021 01:55:20 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/tags/april/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hugo</title>
       <link>https://wadro.github.io/tags/hugo/</link>
@@ -22,15 +31,6 @@
       <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
       <guid>https://wadro.github.io/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>April</title>
-      <link>https://wadro.github.io/tags/april/</link>
-      <pubDate>Wed, 28 Apr 2021 01:41:27 +0900</pubDate>
-      
-      <guid>https://wadro.github.io/tags/april/</guid>
       <description></description>
     </item>
     

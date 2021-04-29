@@ -6,7 +6,17 @@
     <description>Recent content in Memoes on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 28 Apr 2021 01:41:27 +0900</lastBuildDate><atom:link href="https://wadro.github.io/memo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 01:55:20 +0900</lastBuildDate><atom:link href="https://wadro.github.io/memo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 Apr 30</title>
+      <link>https://wadro.github.io/memo/2021-apr-30/</link>
+      <pubDate>Fri, 30 Apr 2021 01:55:20 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/2021-apr-30/</guid>
+      <description>Daily Checklists   NOTE
+  ⬜️ unchecked [✔] done [✗] not yet    ⬜️ 녹음 파일 정리 ⬜️ go blockchain(youtube-tensor programming) 수강 ➜ 뽀모도로 진행 리스트 작성 참고 ⬜️ 대학원 원서 수정 작업 시작(라인 메모 등 확인해서 정리)  진행 상황 및 달성률 테스트: https://progress-bar.dev/https://progress-bar.dev/?title=2066% </description>
+    </item>
+    
     <item>
       <title>2021 Apr 28</title>
       <link>https://wadro.github.io/memo/2021-apr-28/</link>
@@ -14,7 +24,7 @@
       
       <guid>https://wadro.github.io/memo/2021-apr-28/</guid>
       <description>Daily Checklists   NOTE
-  ⬜️ unchecked [✔] done [✗] not yet    ⬜️ go blockchain(youtube-tensor programming) 수강 [✔] 블로그 초안 완성  </description>
+  ⬜️ unchecked [✔] done [✗] not yet    [✗] go blockchain(youtube-tensor programming) 수강 ➜ 곧 시작할 예정&amp;hellip; [✔] 블로그 초안 완성  </description>
     </item>
     
   </channel>
