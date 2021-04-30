@@ -15,7 +15,7 @@
       <guid>https://wadro.github.io/memo/2021-apr-30/</guid>
       <description>Daily Checklists   NOTE
   ⬜️ unchecked [✔] done [✗] not yet    ⬜️ 녹음 파일 정리 ⬜️ go blockchain(youtube-tensor programming) 수강 ➜ 뽀모도로 진행 리스트 작성 참고 ⬜️ 대학원 원서 수정 작업 시작(라인 메모 등 확인해서 정리)  ⠀
-   🏷️Who 🏷️anc1</description>
+   </description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ My Subheading A collection of textile samples lay spread out on the table - Sams
       <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
       <guid>https://wadro.github.io/post/hugo-tutorials/</guid>
-      <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
+      <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)    choco install hugo -confirm (powershell 관리자로 실행 후)
   hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
   cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
   git init
@@ -50,9 +50,8 @@ My Subheading A collection of textile samples lay spread out on the table - Sams
       <pubDate>Wed, 28 Apr 2021 05:52:11 +0900</pubDate>
       
       <guid>https://wadro.github.io/about/</guid>
-      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
- https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+      <description>Hi! I&amp;rsquo;m studying Information Commucation, Electronics &amp;amp; Computer Science.
+Details:  ◽ Blockchain ◽ Operating System ◽ Network ◽ Economics and Accounting ◽ IPRs(Intellectual Property Rights)  </description>
     </item>
     
     <item>
