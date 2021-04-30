@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 28 Apr 2021 05:56:50 +0900</lastBuildDate><atom:link href="https://wadro.github.io/categories/%EB%B8%94%EB%A1%9C%EA%B7%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Tutorials</title>
-      <link>https://wadro.github.io/posts/hugo-tutorials/</link>
+      <link>https://wadro.github.io/post/hugo-tutorials/</link>
       <pubDate>Wed, 28 Apr 2021 05:56:50 +0900</pubDate>
       
-      <guid>https://wadro.github.io/posts/hugo-tutorials/</guid>
+      <guid>https://wadro.github.io/post/hugo-tutorials/</guid>
       <description>hugo 블로그 만들기 (windows &amp;amp; cupper theme 기준)   choco install hugo -confirm (powershell 관리자로 실행 후)
   hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
   cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
