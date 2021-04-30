@@ -36,6 +36,7 @@ ol,ul{
   margin-left: 0em;
   background-color: #333; 
   border-bottom: 1px dotted #000;
+  color: ivory;
 }
 #searchResults li .title { 
   font-size: 1.1em; 
