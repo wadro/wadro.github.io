@@ -4,6 +4,16 @@ ul {
 ol,ul{
   word-wrap: break-word;
 }
+strong>em,
+em>strong,
+b>i,
+i>b {
+    font-style:normal !important;
+    font-weight:normal !important;
+    text-decoration:underline !important;
+    background-color: lightslategray !important;
+    color:linen !important;
+}
 
 /* clientSearchCssStart */
 #clientSearch { 
