@@ -4,6 +4,20 @@ ul {
 ol,ul{
   word-wrap: break-word;
 }
+
+.calm-focus{
+  background-color: #b3b3ffca;
+}
+.soon-focus{
+  background-color: #ffb0b0b9;
+}
+.calm-blur{
+  background-color: #b6fdb6d3;
+}
+.soon-blur{
+  background-color: #ffffbdbb;
+}
+
 /* .my-money-button, .money-button, .money-button iframe{
   margin: 0;
   width: 200px;
