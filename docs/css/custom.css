@@ -4,7 +4,12 @@ ul {
 ol,ul{
   word-wrap: break-word;
 }
-
+/* .my-money-button, .money-button, .money-button iframe{
+  margin: 0;
+  width: 200px;
+  position: absolute;
+  z-index: -10;
+} */
 strong>em,
 em>strong,
 b>i,
@@ -57,7 +62,7 @@ i>b {
   color: ivory;
 }
 #searchResults li .title { 
-  font-size: 1.1em; 
+  font-size: 0.9em; 
   /* margin-bottom: 10px;  */
   display: inline-block;
 }
@@ -68,6 +73,9 @@ i>b {
   margin: 0;
   position: absolute;
   z-index: 1000;
+  /* height: 200px; */
+  max-height: 360px !important;
+  overflow: scroll;
 }
 #searchResults a { 
   text-decoration: none !important; 
@@ -91,6 +99,7 @@ i>b {
   }
   #searchResults{
     width: 80vw;
+    /* max-height: 100px !important; */
   }
 
 }
