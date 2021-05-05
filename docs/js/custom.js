@@ -66,7 +66,6 @@ document.addEventListener('keydown', function(event) {
       else { document.activeElement.parentElement.previousSibling.firstElementChild.focus(); } // Otherwise, select the search result above the current active one
     }
   }
-
 });
 
 
@@ -76,13 +75,15 @@ document.addEventListener('keydown', function(event) {
 document.getElementById("searchInput").onkeyup = function(e) { 
   executeSearch(this.value);
 }
-document.addEventListener('click',(e)=>{
-  if(searchVisible){
-    document.activeElement.blur();
-    document.getElementById("searchResults").innerHTML = "";
-    searchVisible = false;
-  }
-});
+
+// document.getElementsByClassName("main-and-footer")[0].addEventListener('click',(e)=>{
+//   if(searchVisible){
+//     console.log("cancel");
+//     document.activeElement.blur();
+//     document.getElementById("searchResults").innerHTML = "";
+//     searchVisible = false;
+//   }
+// });
 
 
 
