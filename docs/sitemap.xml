@@ -2,25 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wadro.github.io/categories/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/tags/reveal.js/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/slide/slide-links/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/categories/slides/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
+    <loc>https://wadro.github.io/slide/likelion/likelion-week1/</loc>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/slide/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/tags/</loc>
-    <lastmod>2021-05-14T18:42:37+09:00</lastmod>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/checklist/may/2021-may-04/</loc>
+    <lastmod>2021-05-04T12:52:45+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/categories/</loc>
     <lastmod>2021-05-04T12:52:45+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/tags/daily-checklist/</loc>
@@ -30,6 +21,9 @@
     <lastmod>2021-05-04T12:52:45+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/</loc>
+    <lastmod>2021-05-04T12:52:45+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/</loc>
     <lastmod>2021-05-04T12:52:45+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/categories/%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>

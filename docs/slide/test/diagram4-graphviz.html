@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Diagram4 - Graphviz!(viz.js)</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+
+  
+    <style>
+      .slide{
+        background-color: #424242;
+      }
+    </style>
+        
+
+		<div class="reveal">
+			<div class="slides">
+        <script type="text/template">
+          - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Item 3 <!-- .element: class="fragment" data-fragment-index="3" -->
+        </script>
+
+        <script type="text/template">
+          <!-- .slide: data-background="#696969" -->
+          Markdown content
+        </script>
+
+				<section>
+          <h2>Diagram 1</h2>
+          <h3>Sequence(순서?)</h3>
+          <div id="diagram1"></div>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </section>
+
+				<section>
+          <section>Slide 2
+
+          </section>
+
+          <section>
+    
+          </section>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          <!-- .slide: data-background="#ffff00" -->
+
+            ## Slide 1
+            A paragraph with some text and a [link](http://hakim.se).
+            ---
+            ## Slide 2
+            ---
+            ## Slide 3
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+     
+            Markdown content
+          </script>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js [1-2|3|4]
+            let a = 1;
+            let b = 2;
+            let c = x => 1 + 2 + x;
+            c(3);
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+          </script>
+        </section>
+        
+			</div>
+		</div>
+
+    
+<script src="viz.js"></script>
+<script src="full.render.js"></script>
+<script>
+  var viz = new Viz();
+  
+  viz.renderSVGElement(`
+    # http://www.graphviz.org/content/cluster
+    digraph { 
+      bgcolor="#424242";
+      size="4,1!";
+      # size="5,5";
+      rankdir="LR";
+      ratio="fill";
+      # margin=0;
+      # style=record, shape=box,
+      node[style=filled, color=white, shape=box, height=0.5, width=0.5];
+
+      a -> b [color="white"]
+      b -> c [dir=both color="black:white"]
+
+           
+      "node1" [
+      label = "<f0> 0xf7fc4380| <f1> | <f2> |-1"
+      shape = "record"
+      color= "white"
+      ];
+
+      "node2" [
+      label = "<f0> 0xf7fc4380| <f1> | <f2> |-1"
+      shape = "record"
+      ];
+
+      "test" [
+        style="filled,dashed"
+        shape=box
+        color=white
+        fillcolor=lightgray
+        label="Hello World"
+      ];
+
+      "node1":port1 -> "node2":port1 [
+      id = 2
+      color="white"
+      ];
+
+      <table border="0" cellborder="1" cellpadding="5">
+        <tr>
+            <td colspan="2" align="left">d</td>
+        </tr>
+        <tr>
+            <td align="left" width="50">ct</td>
+            <td align="left">1</td>
+        </tr>
+        <tr>
+            <td align="left">wt</td>
+            <td align="left">0</td>
+        </tr>
+    </table>
+
+      "250시간 연구시간 확보" -> "삼성 SSAFY (1년)" [ color="white"]
+      "250시간 연구시간 확보" -> "42SEOUL(1년)" [color="white"]
+      "삼성 SSAFY (1년)" -> "대학원(2년)" [color="white"]
+      "42SEOUL(1년)" -> "42SEOUL(1년) \n 대학원(2년)" [color="white"]
+
+    }
+  `)
+  .then(function(element) {
+    document.getElementById("diagram1").appendChild(element);
+  })
+  .catch(error => {
+    // Create a new Viz instance (@see Caveats page for more info)
+    viz = new Viz();
+
+    // Possibly display the error
+    console.error(error);
+  });
+</script>
+
+
+<!-- # http://www.graphviz.org/content/cluster
+
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+ -->
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        disableLayout: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
