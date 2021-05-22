@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.83.1" />
-  <link rel="canonical" href="/post/">
+  <link rel="canonical" href="/post/hugo/hugo-tutorials/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>Posts | WADRO</title>
+  <title>Hugo Tutorials | WADRO</title>
 </head>
 
   <body>
@@ -194,7 +194,7 @@
       
       
       
-      <a href="/post/" aria-current="page">
+      <a href="/post/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -300,52 +300,95 @@
       <div class="main-and-footer line-numbers match-braces">
         <div>
           
-<main id="main">
-  <h1>Posts</h1>
+  <main id="main">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Hugo Tutorials
+    </h1>
+
+    <div class="date">
+      
+      
+      <strong>Publish date: </strong>Apr 28, 2021
+      
+        
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="/tags/hugo/">hugo</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="/tags/tips/">tips</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <h2 id="title">hugo 블로그 만들기 (windows &amp; cupper theme 기준) </h2>
+<ol>
+<li>
+<p>choco install hugo -confirm (powershell 관리자로 실행 후)</p>
+</li>
+<li>
+<p>hugo new site (블로그 파일 모아 놓을 폴더 이름)
+e.g. hugo new site blog</p>
+</li>
+<li>
+<p>cd (블로그 파일 모아 놓을 폴더 이름)
+e.g. cd blog</p>
+</li>
+<li>
+<p>git init<br>
+이 부분은 각자 쓰고 싶은 테마를 찾아볼것.<a href="https://themes.gohugo.io/">여기서</a> -&gt; git submodule add <a href="https://github.com/theNewDynamic/gohugo-theme-ananke.git">https://github.com/theNewDynamic/gohugo-theme-ananke.git</a> themes/ananke</p>
+</li>
+<li>
+<p>hugo new posts/(쓰고싶은이름).md</p>
+</li>
+<li>
+<p>터미널(powershell)에 hugo 엔터 누르면 markdown 으로 작성된 파일이 알아서 html,css,js 파일로 변환됨.</p>
+</li>
+<li>
+<p>hugo server 로 테스트 가능.</p>
+</li>
+<li>
+<p>이후 각자 편한 방식으로 업로드
+e.g. 아이디.github.io repository 로 업로드하면 홈페이지 완성!</p>
+</li>
+<li>
+<p>config.toml 은 중요하기때문에 따로 포스팅 하도록 하겠음.</p>
+</li>
+</ol>
+
+  </main>
   
-  <input
-    id="search"
-    type="text"
-    placeholder="Search by title..."
-    aria-label="Search by title"
-  />
+  <div id="disqus-container">
   
-  <ul class="patterns-list" id="list">
-    
-    <li>
-      <h2>
-        <a href="/post/heading/">
-          <svg
-            class="bookmark"
-            aria-hidden="true"
-            viewBox="0 0 40 50"
-            focusable="false"
-          >
-            <use xlink:href="#bookmark"></use>
-          </svg>
-          Heading
-        </a>
-      </h2>
-    </li>
-    
-    <li>
-      <h2>
-        <a href="/post/hugo/hugo-tutorials/">
-          <svg
-            class="bookmark"
-            aria-hidden="true"
-            viewBox="0 0 40 50"
-            focusable="false"
-          >
-            <use xlink:href="#bookmark"></use>
-          </svg>
-          Hugo Tutorials
-        </a>
-      </h2>
-    </li>
-    
-  </ul>
-</main>
+</div>
+
 
           
         </div>
