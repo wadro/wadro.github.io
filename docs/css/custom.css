@@ -4,6 +4,13 @@ ul {
 ol,ul{
   word-wrap: break-word;
 }
+#toparrow{
+  position: fixed;
+  bottom: 30px;
+  background-color: transparent;
+  text-decoration: none;
+  border-bottom: none;
+}
 
 h6.codeblock {
   font-size: 0.9rem;
@@ -19,22 +26,26 @@ div.code-toolbar > pre {
   margin-top: 3px !important;
 } */
 
+#TableOfContents {
+  margin-top: 1.5rem;
+}
 
 figure pre {
   margin-top: 3px !important;
 }
 
-strong code {
+strong > code {
   text-decoration: overline;
 }
 
-p code, li code {
-  background-color: aliceblue;
-/* 
-  aliceblue 
-  lightgoldenrodyellow
-  lightgrey
-*/
+p > code, li > code {
+  /* background-color: aliceblue; */
+  background-color: #dee9f3;
+  /* 
+    aliceblue 
+    lightgoldenrodyellow
+    lightgrey
+  */
 }
 .cornell {
   color: tan !important; 
@@ -50,7 +61,9 @@ p code, li code {
 }
 
 .calm-focus{
-  background-color: #b3b3ffca;
+  /* background-color: #b3b3ffca; */
+  /* background-color: #82b7ffa3; */
+  background-color: #89c7ff69;
 }
 .soon-focus{
   background-color: #ffb0b0b9;

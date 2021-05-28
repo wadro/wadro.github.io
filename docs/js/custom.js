@@ -76,14 +76,14 @@ document.getElementById("searchInput").onkeyup = function(e) {
   executeSearch(this.value);
 }
 
-// document.getElementsByClassName("main-and-footer")[0].addEventListener('click',(e)=>{
-//   if(searchVisible){
-//     console.log("cancel");
-//     document.activeElement.blur();
-//     document.getElementById("searchResults").innerHTML = "";
-//     searchVisible = false;
-//   }
-// });
+document.getElementsByClassName("main-and-footer")[0].addEventListener('click',(e)=>{
+  if(searchVisible) {
+    console.log("cancel");
+    document.activeElement.blur();
+    document.getElementById("searchResults").innerHTML = "";
+    searchVisible = false;
+  }
+});
 
 
 
