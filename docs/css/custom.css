@@ -20,7 +20,7 @@ h6.codeblock + div.code-toolbar {
 }
 div.code-toolbar > pre {
   margin-top: 3px !important;
-  white-space:pre-wrap;
+  /* white-space:pre-wrap; */
 }
 /* .code-toolbar{
   margin-top: 3px !important;
