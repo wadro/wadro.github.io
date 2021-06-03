@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wadro.github.io/categories/</loc>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/ideathon/</loc>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/categories/likelion/</loc>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
+  </url><url>
     <loc>https://wadro.github.io/slide/likelion/likelion-week1/</loc>
     <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/slide/</loc>
+    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/</loc>
     <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/</loc>
@@ -22,12 +34,6 @@
   </url><url>
     <loc>https://wadro.github.io/post/</loc>
     <lastmod>2021-04-28T07:00:19+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/tags/</loc>
-    <lastmod>2021-04-28T07:00:19+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/categories/</loc>
-    <lastmod>2021-04-28T05:56:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/post/hugo/hugo-tutorials/</loc>
     <lastmod>2021-04-28T05:56:50+09:00</lastmod>
