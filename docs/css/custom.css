@@ -1,9 +1,61 @@
+body {
+  background-color: #FFF;
+  /*  
+  #FFE8F5
+  #FBF8BE
+  #FBEAEB
+  #FAEBEF
+  #FCF6F5
+  #FCF6F5
+  #FBEAEB
+  #D7C49E
+  #FCF6F5
+  #FCF6F5
+  */
+}
+p a {
+  color: royalblue;
+  font-weight: bold;
+  /*  
+  #2E3C7E
+  #990011
+  #333D79
+  #7b9acc    
+  
+  #8AAAE5
+  #2E3C7E 
+  #7b9acc
+  #2BAE66
+  #013DC4
+  #2BAE66
+  #7b9acc
+  */
+}
+p a:hover {
+  background-color: royalblue;
+  color:white
+}
+blockquote{
+  background-color: lightgoldenrodyellow;
+}
+em code {
+  background-color: crimson;
+  text-decoration: none;
+  font-style: normal;
+  color: white;
+  font-size: large;
+  padding: 0 0.2rem;
+}
+
+
 ul {
   list-style-type: none;
 }
 ol,ul{
   word-wrap: break-word;
 }
+
+
 #toparrow{
   position: fixed;
   bottom: 30px;
@@ -82,9 +134,7 @@ p > code, li > code {
   position: absolute;
   z-index: -10;
 } */
-strong>em,
 em>strong,
-b>i,
 i>b {
     font-style:normal !important;
     /* font-weight:normal !important; */
