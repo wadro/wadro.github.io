@@ -47,6 +47,9 @@ em code {
   padding: 0 0.2rem;
 }
 
+li .ticks {
+  margin-top: 0.75rem !important;
+}
 
 ul {
   list-style-type: none;
