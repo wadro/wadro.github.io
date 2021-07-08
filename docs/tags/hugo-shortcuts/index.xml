@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo shortcuts on WADRO</title>
+    <link>https://wadro.github.io/tags/hugo-shortcuts/</link>
+    <description>Recent content in hugo shortcuts on WADRO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 28 Apr 2021 07:00:19 +0900</lastBuildDate><atom:link href="https://wadro.github.io/tags/hugo-shortcuts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heading</title>
+      <link>https://wadro.github.io/post/heading/</link>
+      <pubDate>Wed, 28 Apr 2021 07:00:19 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/post/heading/</guid>
+      <description>Introduction One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+My Heading He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+My Subheading A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</description>
+    </item>
+    
+  </channel>
+</rss>
