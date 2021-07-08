@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>Ideathon 1</title>
-
+    
 		<link rel="stylesheet" href="/dist/reset.css">
 		<link rel="stylesheet" href="/dist/reveal.css">
 		<link rel="stylesheet" href="/dist/theme/white.css" id="theme">
@@ -258,7 +258,30 @@
         disableLayout: false,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      
+      , pubnubRemoteControl: {
+        // PUBNUB_PUBLISH_KEY '{PUBLISH KEY}' pub-c-9d2122ad-f61e-48cb-9b3c-fe9e2da4ddcb process.env.PUBNUB_PUBLISH_KEY
+        publishKey: "pub-c-ec3d3ced-d925-4631-a2c1-d48132da1100",        // PubNub publish key
+        // PUBNUB_SUBSCRIBE_KEY sub-c-cba44f32-d8ac-11eb-ba68-fa1f40c8a889
+        subscribeKey: "sub-c-05ec4000-d8b2-11eb-ba68-fa1f40c8a889",    // PubNub subscribe key,
+        inputChannel: 'Channel-692hlui0t',			// the channel used to receive remote commands
+		    outputChannel: 'Channel-692hlui0t',		// the channel used to update presentation status
+      }
+      // Channel-jz7gy1htd
+      // Channel-jz7gy1hts
+      , dependencies: [
+      { src: 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.0.min.js', async: true },
+      { src: '/plugin/pubnub-remote-control/pubnub-remote-control.js', async: true },
+      //   /** other modules **/
+      //   { src: 'http://localhost:1313/socket.io/socket.io.js', async: true },
+      //   { src: 'http://localhost:1313/html2canvas.min.js', async: true },
+      //   { src: 'http://localhost:1313/listener.js', async: true },
+      ]
+
 			});
 		</script>
+    <!-- <script src="socket.io/socket.io.js"></script> -->
+    <!-- <script src="node_modules/reveal-notes-server/client.js"></script> -->
+    
 	</body>
 </html>
