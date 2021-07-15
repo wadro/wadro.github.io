@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.86.0-DEV" />
-  <link rel="canonical" href="/categories/hugo/">
+  <link rel="canonical" href="/memo/graduate/references/consensus-protocols-that-meet-different-business-demands.-part-i/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>hugo | WADRO</title>
+  <title>Consensus Protocols That Meet Different Business Demands  Part I | WADRO</title>
 </head>
 
   <body>
@@ -301,36 +301,154 @@
       <div class="main-and-footer line-numbers match-braces">
         <div id="topofpage">
           
-<main id="main">
-  <h1>hugo</h1>
-  
-  <input
-    id="search"
-    type="text"
-    placeholder="Search by title..."
-    aria-label="Search by title"
-  />
-  
-  <ul class="patterns-list" id="list">
+  <main id="main">
     
-    <li>
-      <h2>
-        <a href="/post/heading/">
-          <svg
-            class="bookmark"
-            aria-hidden="true"
-            viewBox="0 0 40 50"
-            focusable="false"
-          >
-            <use xlink:href="#bookmark"></use>
-          </svg>
-          Heading
-        </a>
-      </h2>
+    <h1>Consensus Protocols That Meet Different Business Demands  Part I</h1>
+
+    Thu Jul 15, 2021
+    <br>
+    <small><em>Last modified: Thu Jul 15, 2021</em></small>
+    
+    <br>
+
+    <div class="toc">
+      <ul style="margin:0;">
+      <strong>Categories:</strong> <small>(directories)</small>
+        
+      </ul>
+
+      <br />
+
+      <ul style="margin:0;">
+      <strong>Tags: </strong> <small>(sub-directories)</small>
+        
+      </ul>
+      
+      <br />
+      
+      <ul style="margin:0;">
+      <strong>Series:</strong> <small>(travel the world of knowledge!)</small>
+      
+      </ul>
+
+    </div>
+
+    <aside>
+      <nav class="toc" aria-labelledby="toc-heading">
+        <h2 id="toc-heading">Table of contents</h2>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#overview">overview</a></li>
+    <li><a href="#why-consensus-algorithm">Why Consensus Algorithm</a>
+      <ol>
+        <li><a href="#quick-review">Quick Review</a></li>
+      </ol>
     </li>
+    <li><a href="#proof-of-work-protocol">Proof-of-Work protocol</a>
+      <ol>
+        <li><a href="#proof-of-work-pow">Proof-of-Work (PoW)</a></li>
+      </ol>
+    </li>
+    <li><a href="#proof-of-stake-protocols">Proof-of-Stake protocols</a>
+      <ol>
+        <li><a href="#proof-of-stake-pos">Proof-of-Stake (PoS)</a></li>
+        <li><a href="#delegated-proof-of-stake-dpos">Delegated Proof-of-Stake (DPoS)</a></li>
+      </ol>
+    </li>
+    <li><a href="#byzantine-fault-tolerance-bft-protocols">Byzantine Fault Tolerance (BFT) protocols</a>
+      <ol>
+        <li><a href="#delegated-byzantine-fault-tolerance-dbft">Delegated Byzantine Fault Tolerance (DBFT)</a></li>
+        <li><a href="#practical-byzantine-fault-tolerance-pbft">Practical Byzantine Fault Tolerance (PBFT)</a></li>
+        <li><a href="#federated-byzantine-agreement-fba">Federated Byzantine Agreement (FBA)</a></li>
+        <li><a href="#quick-review-1">Quick Review</a></li>
+      </ol>
+    </li>
+    <li><a href="#directed-acyclic-graph-protocol">Directed Acyclic Graph protocol</a>
+      <ol>
+        <li><a href="#directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</a></li>
+        <li><a href="#hashgraph">HashGraph</a></li>
+      </ol>
+    </li>
+    <li><a href="#other-consensus-protocols-for-specific-tasks">Other Consensus Protocols for Specific Tasks</a>
+      <ol>
+        <li><a href="#proof-of-activity-poa">Proof-of-Activity (PoA)</a></li>
+        <li><a href="#proof-of-location-pol">Proof-of-Location (PoL)</a></li>
+        <li><a href="#proof-of-importance-poi">Proof-of-Importance (PoI)</a></li>
+        <li><a href="#proof-of-elapsed-time-poet">Proof-of-Elapsed-Time (PoET)</a></li>
+      </ol>
+    </li>
+    <li><a href="#beyond-the-mainstream-protocols">Beyond the Mainstream Protocols</a></li>
+  </ol>
+</nav>
+      </nav>
+      
+    </aside>
     
-  </ul>
-</main>
+    <h1 id="논문-레퍼런스-정리">논문 레퍼런스 정리</h1>
+<p>(아래 링크를 한국어로 번역하였습니다.)</p>
+<p><a href="read://https_blockchain.intellectsoft.net/?url=https%3A%2F%2Fblockchain.intellectsoft.net%2Fblog%2Fconsensus-protocols-that-meet-different-business-demands%2F">read://https_blockchain.intellectsoft.net/?url=https%3A%2F%2Fblockchain.intellectsoft.net%2Fblog%2Fconsensus-protocols-that-meet-different-business-demands%2F</a></p>
+<p><a href="https://blockchain.intellectsoft.net/blog/consensus-protocols-that-meet-different-business-demands/">https://blockchain.intellectsoft.net/blog/consensus-protocols-that-meet-different-business-demands/</a></p>
+<h2 id="overview">overview</h2>
+<p>In our our previous post we described <a href="https://blockchain.intellectsoft.net/blog/public-vs-private-blockchain/">different types of blockchain</a>. However, they only characterize the environment in which blockchain can operate. The heart of distributed ledger technology (DLT) is the consensus protocol.</p>
+<p>이전 게시물에서 <a href="https://blockchain.intellectsoft.net/blog/public-vs-private-blockchain/">다양한 유형의 블록체인</a>에 대해 설명했습니다. 그러나 그것들은 블록체인이 작동할 수 있는 환경만을 특징짓습니다. 분산 원장 기술(DLT)의 핵심은 합의 프로토콜입니다.</p>
+<p>Interestingly, mathematicians and engineers have been developing distributed networks and consensensus protocols for decades but only with the emergence of Bitcoin has this technology  made a leap forward. It doesn’t give any sign of stopping either, and it’s this leap forward that has allowed the variants of new rules for machine consensus to evolve. We invite you to take a glance at the most important of them.</p>
+<p>흥미롭게도 수학자와 엔지니어는 수십 년 동안 분산 네트워크와 합의 프로토콜을 개발해 왔지만 비트코인이 등장하면서 이 기술이 도약했습니다. 멈출 기미도 보이지 않으며, 이러한 도약 덕분에 기계 합의에 대한 새로운 규칙의 변형이 진화할 수 있었습니다. 그 중 가장 중요한 것을 한 눈에 볼 수 있도록 초대합니다.</p>
+<h2 id="why-consensus-algorithm">Why Consensus Algorithm</h2>
+<p>What is &ldquo;consensus&rdquo; anyway? <strong>To give a broad definition, consensus is an agreement that satisfies each of the parties involved.</strong> It’s a key to democracy and decentralization in general and DLTs in particular. Look at Bitcoin: despite having a mysterious founder in Satoshi Nakamoto, he has no power over the community whatsoever. Bitcoin as a blockchain is fully transparent and open-source, and every node is equal on the network.</p>
+<p>어쨌든 &ldquo;합의&quot;란 무엇입니까? <strong>넓은 의미로, 합의란 만족하는 관여된 각 당사자 들을 만족시키는 동의이다.</strong> 그것은 특히 민주주의와 일반적인 지방 분권(탈중앙화) 및 DLTs 의 핵심입니다. 비트코인을 보세요: 사토시 나카모토라는 신비한 창립자가 있음에도 불구하고 그는 커뮤니티에 대한 권한이 전혀 없습니다. 블록체인으로서의 비트코인은 완전히 투명하고 오픈 소스이며 모든 노드는 네트워크에서 평등합니다.</p>
+<p>In the narrow meaning that we apply to cryptography, <strong>consensus is a voting procedure</strong>. Its goal is to ensure that all members of the network agree on its current state even after the addition of a new block or a package of transactions. In other words, a consensus protocol guarantees that the chain is true and that there are incentives to keep participants fair. It’s a major framework for preventing a single entity from controlling the entire system and makes sure everybody follows the rules.</p>
+<p>합의를 암호에 적용시켰을때 좁은 의미로서의 <strong>합의란, 투표 절차</strong>입니다. 그 목표는 새로운 블록이나 트랜잭션 패키지를 추가한 후에도 네트워크의 모든 구성원이 현재 상태에 동의하도록 하는 것입니다. 다르게 말하면, 합의 프로토콜은 체인이 사실이고 참가자를 공정하게 유지하기 위한 인센티브가 있음을 보장합니다. 단일 개체가 전체 시스템을 제어하지 못하도록 방지하고 모든 사람이 규칙을 따르도록 하는 주요한 특징입니다.</p>
+<h3 id="quick-review">Quick Review</h3>
+<p><strong>Protocol</strong> = a set of rules</p>
+<p><strong>Protocols help to:</strong></p>
+<ul>
+<li>• ensure the viability of transactions in the network</li>
+<li>• eliminate double spending</li>
+<li>• alidate that participants are honest</li>
+</ul>
+<p><strong>A protocol is the sum of:</strong></p>
+<ul>
+<li>the deterministic logical conditions of the framework</li>
+<li>cryptographic encryption as a basis of security</li>
+<li>social encouragement to maintain the given protocol</li>
+</ul>
+<p>So what are some of these protocols?</p>
+<p><strong>프로토콜</strong> = 일련의 규칙</p>
+<p><strong>프로토콜은 다음을 지원합니다.</strong></p>
+<ul>
+<li>• 네트워크에서 트랜잭션의 실행 가능성 보장</li>
+<li>• 이중 지출을 없애다</li>
+<li>• 참가자들이 정직하다는 것을 강조</li>
+</ul>
+<p><strong>프로토콜은 다음의 합계입니다.</strong></p>
+<ul>
+<li>• 프레임워크의 결정론적 논리적 조건</li>
+<li>• 보안 기반으로 암호화 암호화</li>
+<li>• 주어진 프로토콜을 유지하기 위한 사회적 격려</li>
+</ul>
+<p>그렇다면 이러한 프로토콜에는 어떤 것들이 있습니까?</p>
+<h2 id="proof-of-work-protocol">Proof-of-Work protocol</h2>
+<h3 id="proof-of-work-pow">Proof-of-Work (PoW)</h3>
+<h2 id="proof-of-stake-protocols">Proof-of-Stake protocols</h2>
+<h3 id="proof-of-stake-pos">Proof-of-Stake (PoS)</h3>
+<h3 id="delegated-proof-of-stake-dpos">Delegated Proof-of-Stake (DPoS)</h3>
+<h2 id="byzantine-fault-tolerance-bft-protocols">Byzantine Fault Tolerance (BFT) protocols</h2>
+<h3 id="delegated-byzantine-fault-tolerance-dbft">Delegated Byzantine Fault Tolerance (DBFT)</h3>
+<h3 id="practical-byzantine-fault-tolerance-pbft">Practical Byzantine Fault Tolerance (PBFT)</h3>
+<h3 id="federated-byzantine-agreement-fba">Federated Byzantine Agreement (FBA)</h3>
+<h3 id="quick-review-1">Quick Review</h3>
+<h2 id="directed-acyclic-graph-protocol">Directed Acyclic Graph protocol</h2>
+<h3 id="directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</h3>
+<h3 id="hashgraph">HashGraph</h3>
+<h2 id="other-consensus-protocols-for-specific-tasks">Other Consensus Protocols for Specific Tasks</h2>
+<h3 id="proof-of-activity-poa">Proof-of-Activity (PoA)</h3>
+<h3 id="proof-of-location-pol">Proof-of-Location (PoL)</h3>
+<h3 id="proof-of-importance-poi">Proof-of-Importance (PoI)</h3>
+<h3 id="proof-of-elapsed-time-poet">Proof-of-Elapsed-Time (PoET)</h3>
+<h2 id="beyond-the-mainstream-protocols">Beyond the Mainstream Protocols</h2>
+
+    
+  </main>
 
 
           

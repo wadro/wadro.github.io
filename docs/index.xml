@@ -8,6 +8,20 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 28 Apr 2021 14:37:16 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Consensus Protocols That Meet Different Business Demands  Part I</title>
+      <link>https://wadro.github.io/memo/graduate/references/consensus-protocols-that-meet-different-business-demands.-part-i/</link>
+      <pubDate>Thu, 15 Jul 2021 13:30:26 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/graduate/references/consensus-protocols-that-meet-different-business-demands.-part-i/</guid>
+      <description>논문 레퍼런스 정리 (아래 링크를 한국어로 번역하였습니다.)
+read://https_blockchain.intellectsoft.net/?url=https%3A%2F%2Fblockchain.intellectsoft.net%2Fblog%2Fconsensus-protocols-that-meet-different-business-demands%2F
+https://blockchain.intellectsoft.net/blog/consensus-protocols-that-meet-different-business-demands/
+overview In our our previous post we described different types of blockchain. However, they only characterize the environment in which blockchain can operate. The heart of distributed ledger technology (DLT) is the consensus protocol.
+이전 게시물에서 다양한 유형의 블록체인에 대해 설명했습니다. 그러나 그것들은 블록체인이 작동할 수 있는 환경만을 특징짓습니다. 분산 원장 기술(DLT)의 핵심은 합의 프로토콜입니다.
+Interestingly, mathematicians and engineers have been developing distributed networks and consensensus protocols for decades but only with the emergence of Bitcoin has this technology made a leap forward.</description>
+    </item>
+    
+    <item>
       <title>likelion week1</title>
       <link>https://wadro.github.io/slide/likelion/likelion-week1/</link>
       <pubDate>Sun, 16 May 2021 17:11:49 +0900</pubDate>
