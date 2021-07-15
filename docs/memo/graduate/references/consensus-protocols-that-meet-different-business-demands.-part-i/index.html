@@ -397,7 +397,7 @@
 <p>What is &ldquo;consensus&rdquo; anyway? <strong>To give a broad definition, consensus is an agreement that satisfies each of the parties involved.</strong> It’s a key to democracy and decentralization in general and DLTs in particular. Look at Bitcoin: despite having a mysterious founder in Satoshi Nakamoto, he has no power over the community whatsoever. Bitcoin as a blockchain is fully transparent and open-source, and every node is equal on the network.</p>
 <p>어쨌든 &ldquo;합의&quot;란 무엇입니까? <strong>넓은 의미로, 합의란 만족하는 관여된 각 당사자 들을 만족시키는 동의이다.</strong> 그것은 특히 민주주의와 일반적인 지방 분권(탈중앙화) 및 DLTs 의 핵심입니다. 비트코인을 보세요: 사토시 나카모토라는 신비한 창립자가 있음에도 불구하고 그는 커뮤니티에 대한 권한이 전혀 없습니다. 블록체인으로서의 비트코인은 완전히 투명하고 오픈 소스이며 모든 노드는 네트워크에서 평등합니다.</p>
 <p>In the narrow meaning that we apply to cryptography, <strong>consensus is a voting procedure</strong>. Its goal is to ensure that all members of the network agree on its current state even after the addition of a new block or a package of transactions. In other words, a consensus protocol guarantees that the chain is true and that there are incentives to keep participants fair. It’s a major framework for preventing a single entity from controlling the entire system and makes sure everybody follows the rules.</p>
-<p>합의를 암호에 적용시켰을때 좁은 의미로서의 <strong>합의란, 투표 절차</strong>입니다. 그 목표는 새로운 블록이나 트랜잭션 패키지를 추가한 후에도 네트워크의 모든 구성원이 현재 상태에 동의하도록 하는 것입니다. 다르게 말하면, 합의 프로토콜은 체인이 사실이고 참가자를 공정하게 유지하기 위한 인센티브가 있음을 보장합니다. 단일 개체가 전체 시스템을 제어하지 못하도록 방지하고 모든 사람이 규칙을 따르도록 하는 주요한 특징입니다.</p>
+<p>합의를 암호에 적용시켰을때 좁은 의미로서의 <strong>합의란, 투표 절차</strong>입니다. 그 목표는 새로운 블록이나 트랜잭션 패키지를 추가한 후에도 네트워크의 모든 구성원이 현재 상태에 동의하도록 하는 것입니다. 다르게 말하면, 합의 프로토콜은 체인이 사실이고 참가자를 공정하게 유지하기 위한 인센티브가 있음을 보장합니다. 이것이 단일 개체가 전체 시스템을 제어하지 못하도록 방지하고 모든 사람이 규칙을 따르도록 하는 주요한 특징입니다.</p>
 <h3 id="quick-review">Quick Review</h3>
 <p><strong>Protocol</strong> = a set of rules</p>
 <p><strong>Protocols help to:</strong></p>
@@ -423,29 +423,514 @@
 <p><strong>프로토콜은 다음의 합계입니다.</strong></p>
 <ul>
 <li>• 프레임워크의 결정론적 논리적 조건</li>
-<li>• 보안 기반으로 암호화 암호화</li>
+<li>• 보안 기반으로 암호화</li>
 <li>• 주어진 프로토콜을 유지하기 위한 사회적 격려</li>
 </ul>
 <p>그렇다면 이러한 프로토콜에는 어떤 것들이 있습니까?</p>
 <h2 id="proof-of-work-protocol">Proof-of-Work protocol</h2>
 <h3 id="proof-of-work-pow">Proof-of-Work (PoW)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Work (PoW)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>A difficult solution to find but easy to verify.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public/private blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>Bitcoin, Ethereum, Litecoin</td>
+</tr>
+</tbody>
+</table>
+<p>The Bitcoin blockchain is perhaps the most replicated blockchain. The multiple nodes running it, order the transactions according to the PoW consensus algorithm. To add new blocks, each node has to prove that it has performed a certain amount of work. To be precise, they solve a hard hashing puzzle using a high computational input.</p>
+<p>비트코인 블록체인은 아마도 가장 많이 복제된 블록체인일 것입니다. 이를 실행하는 여러 노드는 PoW 합의 알고리즘에 따라 트랜잭션을 주문합니다. 새 블록을 추가하려면 각 노드가 일정량의 작업을 수행했음을 증명해야 합니다. 정확하게 말하면, 그들은 높은 계산 입력을 사용하여 어려운 해싱 퍼즐을 풉니다.</p>
+<p>As a result, participation in PoW carries a cost but can be implemented in an environment without trust. Since it suits permissionless blockchains, anybody can join the network. Although the scalability of peer networks is high, the transaction speed remains low. Another concern is the decrease of the reward over time and low fees in future; generally, miners join to get rich, not to voluntarily support the network.</p>
+<p>결과적으로 PoW 참여에는 비용이 따르지만 신뢰가 없는 환경에서 구현할 수 있습니다. 무허가 블록체인에 적합하기 때문에 누구나 네트워크에 참여할 수 있습니다. 피어 네트워크의 확장성은 높지만 트랜잭션 속도는 여전히 낮습니다. 또 다른 문제는 시간이 지남에 따라 보상이 감소하고 향후 수수료가 낮아진다는 것입니다. 일반적으로 광부들은 네트워크를 자발적으로 지원하기 위해 가입하는 것이 아니라 부자가 되기 위해 가입합니다.</p>
 <h2 id="proof-of-stake-protocols">Proof-of-Stake protocols</h2>
 <h3 id="proof-of-stake-pos">Proof-of-Stake (PoS)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Stake (PoS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>The network trusts the validator who stakes their own coins; the bigger the stake the higher the chances of validating transactions.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public/private blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>NXT, Tezos, soon Ethereum</td>
+</tr>
+</tbody>
+</table>
+<p>Turing-complete, Ethereum’s main network, is running on PoW. However, the project plans to switch to a more efficient protocol known as Proof-of-Stake in 2018. The unique feature of PoS is the absence of difficult and unnecessary computation. Instead of competing with others, network members deposit their crypto-assets, like ether in Ethereum, and wait to be randomly picked to process a validation of the network.</p>
+<p>이더리움의 메인 네트워크인 Turing-complete가 PoW에서 실행되고 있습니다. 그러나 프로젝트는 2018년에 Proof-of-Stake로 알려진 보다 효율적인 프로토콜로 전환할 계획입니다. PoS의 고유한 특징은 어렵고 불필요한 계산이 없다는 것입니다. 다른 사람들과 경쟁하는 대신 네트워크 구성원은 이더리움과 같은 암호화 자산을 이더리움에 예치하고 네트워크 유효성 검사를 처리하기 위해 무작위로 선택되기를 기다립니다.</p>
+<p>If they’ve followed the rules, the staker creates or “mints” additional coins for validating a block of transactions. An algorithm selects one of the minters based on the stake they own. So if a node has a 5% stake, it will validate 5% of the transactions. The idea is that the higher the stake of the validator in the underlying cryptocurrency, the less interest they have in corrupting the validation process.</p>
+<p>그들이 규칙을 따랐다면 스테이커는 거래 블록을 검증하기 위해 추가 코인을 생성하거나 &ldquo;발행&quot;합니다. 알고리즘은 그들이 소유한 지분을 기반으로 발행자 중 하나를 선택합니다. 따라서 노드에 5%의 지분이 있으면 트랜잭션의 5%를 검증합니다. 기본 암호 화폐에서 유효성 검사기의 지분이 높을수록 유효성 검사 프로세스를 손상시키는 데 관심이 적어집니다.</p>
+<p>Just like with PoW algorithm, transaction finality in PoS is probabilistic. Though transactions are relatively fast compared to those of Bitcoin, it still requires tokens to work. Furthermore, skeptics indicate that validators with high stakes will be selected more often and thus obtain even more tokens: the rich get richer.</p>
+<p>PoW 알고리즘과 마찬가지로 PoS의 트랜잭션 완결성은 확률적입니다. 거래는 비트코인에 비해 상대적으로 빠르지만 작동하려면 여전히 토큰이 필요합니다. 또한 회의론자들은 높은 지분을 가진 검증인이 더 자주 선택되어 더 많은 토큰을 얻게 될 것이라고 말합니다. 부자는 더 부자가 됩니다.</p>
+<p>However, the PoS algorithm doesn’t incentivize those who don’t expend any cryptocurrency. Consequently, they are likely to vote on multiple blocks to support “forks” — copies of the blockchain with a new set of rules — while seeking to maximize the reward. This is called  “nothing at stake” problem. On the other hand, the primary incentive to support the algorithm while running own node is securing funds rather than assuming that exchanges will do this for you.</p>
+<p>그러나 PoS 알고리즘은 암호화폐를 사용하지 않는 사람들에게 인센티브를 제공하지 않습니다. 결과적으로, 그들은 보상을 최대화하는 동시에 &ldquo;포크&rdquo;(새로운 규칙 세트가 있는 블록체인의 사본)를 지원하기 위해 여러 블록에 투표할 가능성이 높습니다. 이것을 &ldquo;위험하지 않은 문제(?)&ldquo;라고 합니다. 반면에 자체 노드를 실행하는 동안 알고리즘을 지원하는 주요 인센티브는 거래소가 이를 수행할 것이라고 가정하기 보다는 자금을 확보하는 것입니다.</p>
 <h3 id="delegated-proof-of-stake-dpos">Delegated Proof-of-Stake (DPoS)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Delegated Proof-of-Stake (DPoS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>The participants delegate production of new blocks to a small and fixed number of elected participants. Highly competitive but highly profitable.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public/private blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>EOS, BitShares</td>
+</tr>
+</tbody>
+</table>
+<p>In the meantime, developers offered an alternative economic incentive called the Delegated Proof-of-Stake or DPoS. It allows you to generate blocks at high speed and handle a large number of transactions per second compared to other consensus algorithms. The basic principle of DPoS is to divide the voting and validation procedure among a few delegated participants.</p>
+<p>그 동안 개발자들은 위임 지분 증명 또는 DPoS라는 대안적인 경제적 인센티브를 제공했습니다. 다른 합의 알고리즘에 비해 빠른 속도로 블록을 생성하고 초당 많은 수의 트랜잭션을 처리할 수 있습니다. DPoS의 기본 원칙은 투표 및 검증 절차를 위임된 소수의 참가자에게 나누는 것입니다.</p>
+<p>During voting, coin holders choose the validators of transactions that will form blocks. The weight of each vote is determined by the sum of the assets of the voter. Coin holders can re-vote candidates at any time. This determines the high resilience of the network: if most of the performers fail, the community will immediately vote for their replacement.</p>
+<p>투표하는 동안 코인 보유자는 블록을 형성할 거래의 유효성 검사기를 선택합니다. 각 투표의 가중치는 유권자 자산의 합계로 결정됩니다. 코인 보유자는 언제든지 후보자에게 재투표할 수 있습니다. 이것은 네트워크의 높은 탄력성을 결정합니다. 대부분의 수행자가 실패하면 커뮤니티는 즉시 교체에 투표합니다.</p>
+<p>The generation of new blocks happens every 1 or 2 seconds. This protocol is not only faster, but more fair since the “delegated” validator shares newly minted coins with its voters later. However, confirmation is still needed from all validators. Therefore, a user may have to wait around twenty more blocks to ensure the validity of the transaction.</p>
+<p>새 블록의 생성은 1초 또는 2초마다 발생합니다. 이 프로토콜은 &ldquo;위임된&rdquo; 검증자가 나중에 유권자와 새로 발행된 코인을 공유하기 때문에 더 빠를 뿐만 아니라 더 공정합니다. 그러나 여전히 모든 검증인의 확인이 필요합니다. 따라서 사용자는 트랜잭션의 유효성을 확인하기 위해 약 20개의 블록을 더 기다려야 할 수 있습니다.</p>
+<p>Daniel Larimer developed DPoS in 2014. He first used it in his BitShares project, and later in Steemit and EOS. Larimer hypothesized that validators in DPoS will have a strong incentive to remain fair and offer the fastest and best service possible. After all, it would be silly to hack a network that pays you well. And if you stop doing a good job, there are other members that are ready and willing to take the place of the validator.</p>
+<p>Daniel Larimer는 2014년에 DPoS를 개발했습니다. 그는 BitShares 프로젝트에서 처음으로 DPoS를 사용했고 나중에는 Steemit과 EOS에서 사용했습니다. Larimer는 DPoS의 검증인이 공정성을 유지하고 가능한 가장 빠르고 최고의 서비스를 제공할 강력한 인센티브를 가질 것이라고 가정했습니다. 결국 돈을 잘 버는 네트워크를 해킹하는 것은 어리석은 일입니다. 그리고 당신이 좋은 일을 그만둔다면, 검증인을 대신할 준비가 되어 있고 기꺼이 하는 다른 구성원이 있습니다.</p>
 <h2 id="byzantine-fault-tolerance-bft-protocols">Byzantine Fault Tolerance (BFT) protocols</h2>
+<p>So far we’ve been talking about public blockchains that operate in a trustless environment and aim at decentralization. What about private enterprise blockchains? What if participants can trust each other? It’s true that the fewer validators a blockchain has, the faster it is. In fact, the speed increases tenfold, from hundreds to thousands of transactions per second, which is a great fit for corporate blockchain solutions.</p>
+<p>지금까지 우리는 무신뢰 환경에서 작동하고 탈중앙화를 목표로 하는 퍼블릭 블록체인에 대해 이야기했습니다. 민간 기업 블록체인은 어떻습니까? 참가자들이 서로를 신뢰할 수 있다면 어떨까요? 블록체인에 검증인이 적을수록 더 빠른 것이 사실입니다. 실제로 속도는 초당 수백에서 수천 개의 트랜잭션으로 10배 증가하므로 기업 블록체인 솔루션에 매우 적합합니다.</p>
+<p>Byzantine Fault Tolerance (BFT) protocol is a different class of protocols that does not require tokens during the voting as in a PoS algorithm. Furthermore, it allows signing of a block even when 1/3 of the actors fail or act maliciously. BFT resolves the problem of numerous faults in the system and the waiting time of up to 30 seconds for confirming a block.</p>
+<p>BFT(Byzantine Fault Tolerance) 프로토콜은 PoS 알고리즘에서와 같이 투표 중에 토큰이 필요하지 않은 다른 종류의 프로토콜입니다. 또한 액터의 1/3이 실패하거나 악의적으로 행동하더라도 블록에 서명할 수 있습니다. BFT는 시스템의 수많은 장애와 블록 확인을 위한 최대 30초의 대기 시간 문제를 해결합니다.</p>
+<p>In fact, the algorithm refers to an old <a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance#Byzantine_Generals'_Problem">Byzantine Generals</a>’ problem, based on a real historical event. Using the analogy, the protocol does not care if a “general” got sick or sabotaged the counterparts — the system will still function even when the node goes offline.</p>
+<p>사실, 알고리즘은 실제 역사적 사건을 기반으로 한 오래된 <a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance#Byzantine_Generals'_Problem">비잔틴 장군의 문제</a>를 나타냅니다. 유추를 사용하면 프로토콜은 &ldquo;장군&quot;이 아프거나 상대방을 방해하는 경우 신경 쓰지 않습니다. 노드가 오프라인 상태가 된 경우에도 시스템은 계속 작동합니다.</p>
 <h3 id="delegated-byzantine-fault-tolerance-dbft">Delegated Byzantine Fault Tolerance (DBFT)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Delegated Byzantine Fault Tolerance (DBFT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Preselected nodes maintain consensus even if some of them fail or are malicious.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Very high</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public/private blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>NEO, TON</td>
+</tr>
+</tbody>
+</table>
+<p>So the BFT consensus protocol seems like salvation from the imperfections of PoW and PoS, but given thousands of validators, it would still struggle to resolve the speed issue. This is why developers offered a delegated model of BFT — the DBFT.</p>
+<p>Predefined validators in this consensus protocol allow it to far outstrip other protocols. Take Ethereum with 15-20 transactions per second and NEO with almost 10,000 t/s. It is indeed convenient to have a few known actors who validate transactions before releasing to other nodes. In case a validator betrays the network, participants can delegate a different node.</p>
+<p>Note: since NEO runs on PoS DBFT protocol, the network members not only delegate validators but also receive a native token GAS as part of their validator stake.</p>
+<p>따라서 BFT 합의 프로토콜은 PoW 및 PoS의 불완전함에서 구원받는 것처럼 보이지만 수천 명의 검증인을 고려할 때 속도 문제를 해결하는 데 여전히 어려움을 겪을 것입니다. 이것이 개발자들이 BFT의 위임 모델인 DBFT를 제안한 이유입니다.</p>
+<p>이 합의 프로토콜의 사전 정의된 검증자는 다른 프로토콜을 훨씬 능가합니다. 초당 15-20개의 트랜잭션으로 이더리움을, 거의 10,000t/s로 NEO를 사용하십시오. 다른 노드에 릴리스하기 전에 트랜잭션을 검증하는 알려진 행위자가 몇 명 있는 것이 참으로 편리합니다. 검증인이 네트워크를 배신하는 경우 참가자는 다른 노드를 위임할 수 있습니다.</p>
+<p>참고: NEO는 PoS DBFT 프로토콜에서 실행되기 때문에 네트워크 구성원은 검증인을 위임할 뿐만 아니라 검증인 지분의 일부로 기본 토큰 GAS를 받습니다.</p>
 <h3 id="practical-byzantine-fault-tolerance-pbft">Practical Byzantine Fault Tolerance (PBFT)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Practical Byzantine Fault Tolerance (PBFT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Standard blockchain for enterprise.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Private permissioned blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>Hyperledger, Chain</td>
+</tr>
+</tbody>
+</table>
+<p>If one wants a scalable and fast blockchain, this is a way to go. PBFT protocol is very similar to DBFT, especially in regard to its more centralized nature. The only difference is that the former has a simpler implementation and is often a private blockchain with appointed signing nodes from the very beginning. Which is kind of practical, isn’t it?</p>
+<p>When a validator receives a message, it performs a computation, and then asks all other nodes  in turn if the transaction is valid. After confirming validation, the first validator broadcasts the decision to the network of other validators. In this way, consensus is achieved based on the confirmation being submitted by all validators.</p>
+<p>PBFT is effective in low latency systems but sensitive to the number of validators and throughput. It fits well for private setups which don’t require a large amount of capacity, but demand many transactions. PBFT guarantees the accuracy of transaction records within the network.</p>
+<p>You may also have encountered SIEVE protocol which is a type of PBFT. It handles non-deterministic chaincode execution. There is also Cross Fault Tolerance (XFT) protocol as well as Paxos and Raft protocols which are Crash Fault Tolerant (CFT). We might cover these deep technical characteristics in future articles but if it’s important to you, you could always <a href="https://blockchain.intellectsoft.net/blog/consensus-protocols-that-meet-different-business-demands/mailto:blockchain@intellectsoft.net">ask us</a>.</p>
+<p>확장 가능하고 빠른 블록체인을 원한다면 이것이 바로 갈 길입니다. PBFT 프로토콜은 특히 중앙 집중식 특성과 관련하여 DBFT와 매우 유사합니다. 유일한 차이점은 전자는 구현이 더 간단하고 처음부터 서명 노드가 지정된 프라이빗 블록체인인 경우가 많다는 것입니다. 어떤 것이 실용적이지 않습니까?</p>
+<p>유효성 검사기는 메시지를 수신하면 계산을 수행한 다음 트랜잭션이 유효한지 다른 모든 노드에 차례로 묻습니다. 유효성 검사를 확인한 후 첫 번째 유효성 검사자는 결정을 다른 유효성 검사자의 네트워크에 브로드캐스트합니다. 이러한 방식으로 모든 검증자가 제출한 확인을 기반으로 합의가 이루어집니다.</p>
+<p>PBFT는 대기 시간이 짧은 시스템에서 효과적이지만 검증인의 수와 처리량에 민감합니다. 많은 용량을 필요로 하지 않지만 많은 트랜잭션을 요구하는 개인 설정에 적합합니다. PBFT는 네트워크 내 거래 기록의 정확성을 보장합니다.</p>
+<p>또한 PBFT 유형인 SIEVE 프로토콜을 접했을 수도 있습니다. 비결정적 체인코드 실행을 처리합니다. XFT(Cross Fault Tolerance) 프로토콜과 CFT(Crash Fault Tolerant)인 Paxos 및 Raft 프로토콜도 있습니다. 우리는 향후 기사에서 이러한 심층적인 기술적 특성을 다룰 수 있지만 그것이 당신에게 중요하다면 언제든지 <a href="https://blockchain.intellectsoft.net/blog/consensus-protocols-that-meet-different-business-demands/mailto:blockchain@intellectsoft.net">Google에 문의</a>할 수 있습니다.</p>
 <h3 id="federated-byzantine-agreement-fba">Federated Byzantine Agreement (FBA)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Federated Byzantine Agreement (FBA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Blocks are validated if signed by a specified quorum of signers.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public or private permissionless blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>Stellar, Ripple</td>
+</tr>
+</tbody>
+</table>
+<p>Here you have a permissionless BFT protocol as opposed to the permissioned PBFT and other variants of BFT. A Federated Byzantine Agreement (FBA) allows anybody to join the network but transactions are verified by a group instead of one node broadcasting the message to others.</p>
+<p>Notably, FBA has Gateways and Market-Makers which ensure the fairness and liquidity of the network. The former act as traditional banks holding the fiat funds and creating an equivalent in virtual tokens. Market-makers keep accounts with multiple Gateways and in several currencies.</p>
+<p>여기에는 허가된 PBFT 및 기타 BFT 변형과 달리 허가 없는 BFT 프로토콜이 있습니다. FBA(Federated Byzantine Agreement)를 통해 누구나 네트워크에 가입할 수 있지만 트랜잭션은 한 노드가 메시지를 다른 노드에 브로드캐스팅하는 대신 그룹에 의해 확인됩니다.</p>
+<p>특히 FBA에는 네트워크의 공정성과 유동성을 보장하는 게이트웨이 및 마켓 메이커가 있습니다. 전자는 명목 펀드를 보유하고 가상 토큰으로 이에 상응하는 것을 생성하는 전통적인 은행 역할을 합니다. 시장 조성자는 여러 게이트웨이와 여러 통화로 계정을 유지합니다.</p>
 <h3 id="quick-review-1">Quick Review</h3>
+<ul>
+<li>
+<p>• Proof-of-Work has been the first and most reliable consensus protocol for public blockchains like Bitcoin and Ethereum, yet it is energy-inefficient.</p>
+</li>
+<li>
+<p>• Proof-of-Stake does not require hard computation. Instead, it encourages users to stake their own funds to perform the equivalent quantity of transaction validations and assumes everyone will act rationally.</p>
+</li>
+<li>
+<p>• BFT is an addition to PoS concept that makes it much faster and more tolerant to faulty nodes. It’s only practical to run on small and private setups though.</p>
+</li>
+<li>
+<p>• PBFT is a proven solution for corporate blockchains. Fast and safe but relies on throughput.</p>
+</li>
+<li>
+<p>• DBFT improves BFT by allowing participants of the BFT network to delegate their validators. Very fast but more centralized.</p>
+</li>
+<li>
+<p>• While the abovementioned BFT variants are permissioned blockchains, FBA is federated and, thus, permissionless. But there are more protocols…</p>
+</li>
+<li>
+<p>• 작업 증명은 비트코인 및 이더리움과 같은 공개 블록체인을 위한 최초이자 가장 신뢰할 수 있는 합의 프로토콜이지만 에너지 비효율적입니다.</p>
+</li>
+<li>
+<p>• 지분 증명은 어려운 계산을 필요로 하지 않습니다. 대신, 사용자가 동일한 양의 거래 검증을 수행하기 위해 자신의 자금을 걸도록 권장하고 모든 사람이 합리적으로 행동할 것이라고 가정합니다.</p>
+</li>
+<li>
+<p>•  BFT는 PoS 개념에 추가된 것으로 결함이 있는 노드에 대해 훨씬 빠르고 관대합니다. 그러나 소규모 및 개인 설정에서만 실행하는 것이 실용적입니다.</p>
+</li>
+<li>
+<p>• PBFT는 기업 블록체인을 위한 검증된 솔루션입니다. 빠르고 안전하지만 처리량에 의존합니다.</p>
+</li>
+<li>
+<p>• DBFT는 BFT 네트워크 참가자가 검증인을 위임할 수 있도록 하여 BFT를 개선합니다. 매우 빠르지만 더 중앙 집중화되어 있습니다.</p>
+</li>
+<li>
+<p>• 위에서 언급한 BFT 변종은 허가된 블록체인이지만 FBA는 연합되어 있으므로 허가가 없습니다. 그러나 더 많은 프로토콜이 있습니다 &hellip;</p>
+</li>
+</ul>
 <h2 id="directed-acyclic-graph-protocol">Directed Acyclic Graph protocol</h2>
+<p>Researcher Serguei Popov ran a <a href="https://iota.org/IOTA_Whitepaper.pdf">thought experiment</a>: what if we can avoid blocks completely?</p>
+<p>Serguei Popov 연구원은 <a href="https://iota.org/IOTA_Whitepaper.pdf">사고 실험</a>을 실행했습니다. 블록을 완전히 피할 수 있다면 어떨까요?</p>
 <h3 id="directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Directed Acyclic Graph (DAG)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>No fixed blocks that are confirmed in a random order on a linear scale.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public permissioned non-blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>IOTA, ByteBall</td>
+</tr>
+</tbody>
+</table>
+<p>The major issue with blockchain is its synchronous nature. Blockchains cannot be parallel. One can change the size or frequency of blocks as well as the parties that approve them, but there will always be a waiting queue. Alternately, Directed Acyclic Graph (DAG) technology is asynchronous which gives the competitive advantage of simultaneous events.</p>
+<p>The protocol in such systems lets participants confirm a block of transactions a few blocks away, since there will eventually be another participant proving it is correct. While this implies ultra high speeds for the network, it’s slow on a smaller scale. Additionally, there’s a danger of parasite “chains” of non-valid transactions and centralization due to preselected validators.</p>
+<p>블록체인의 주요 문제는 동기적 특성입니다. 블록체인은 병렬일 수 없습니다. 블록의 크기나 빈도와 블록을 승인하는 당사자를 변경할 수 있지만 항상 대기 대기열이 있습니다. 또는 DAG(Directed Acyclic Graph) 기술은 동시 이벤트의 경쟁 우위를 제공하는 비동기식입니다.</p>
+<p>이러한 시스템의 프로토콜을 사용하면 참가자가 몇 블록 떨어진 곳에서 트랜잭션 블록을 확인할 수 있습니다. 결국 다른 참가자가 그것이 옳다는 것을 증명할 것이기 때문입니다. 이것은 네트워크의 초고속 속도를 의미하지만 소규모에서는 느립니다. 또한 사전 선택된 유효성 검사기로 인해 유효하지 않은 거래 및 중앙 집중화의 기생 &ldquo;체인&quot;의 위험이 있습니다.</p>
 <h3 id="hashgraph">HashGraph</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>HashGraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Nodes communicate randomly using the ‘gossip about gossip’ protocol and agree on consensus after a certain communication round.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Private permissioned non-blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Round based</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>HashGraph</td>
+</tr>
+</tbody>
+</table>
+<p>The developers of this protocol claim that blockchain is an outdated system. As a substitute, they also advocate for the DAG concept. However, the key difference of HashGraph is a “gossip to gossip” protocol, where a node receives a time-stamped set of transactions that the other node “knows” about. As a result, there is an endless hash tree — or a graph — that grows over time with millions of time-stamps, the leaves. Once the majority of the network agrees on a particular event, there is no doubt it is valid.</p>
+<p>There are certain limitations however. First of all, there is little evidence of practical implementation on a large scale, especially when compared to working blockchain projects. Secondly, HashGraph technology is patented and acquiring a license costs money. This also leads to the third issue: the lack of a strong community (like those associated with open-source projects). Such a community can test the robustness of a protocol, its vulnerability towards hackers and issues of compatibility. HashGraph is currently available for private setup only.</p>
+<p>이 프로토콜의 개발자는 블록체인이 구식 시스템이라고 주장합니다. 대안으로서 그들은 또한 DAG 개념을 옹호합니다. 그러나 HashGraph의 주요 차이점은 &ldquo;가십 대 가십&rdquo; 프로토콜로, 한 노드가 다른 노드가 &ldquo;알고 있는&rdquo; 타임 스탬프 트랜잭션 집합을 수신합니다. 결과적으로 수백만 개의 타임 스탬프와 함께 시간이 지남에 따라 성장하는 끝없는 해시 트리 또는 그래프가 있습니다. 네트워크의 과반수가 특정 이벤트에 동의하면 그것이 유효하다는 데는 의심의 여지가 없습니다.</p>
+<p>그러나 특정 제한 사항이 있습니다. 우선, 특히 작업 중인 블록체인 프로젝트와 비교할 때 대규모로 실질적인 구현에 대한 증거가 거의 없습니다. 둘째, HashGraph 기술은 특허를 받았고 라이센스를 얻는 데 비용이 듭니다. 이것은 또한 세 번째 문제로 이어집니다. 강력한 커뮤니티(오픈 소스 프로젝트와 관련된 커뮤니티와 같은)의 부족입니다. 이러한 커뮤니티는 프로토콜의 견고성, 해커에 대한 취약성 및 호환성 문제를 테스트할 수 있습니다. HashGraph는 현재 비공개 설정에만 사용할 수 있습니다.</p>
 <h2 id="other-consensus-protocols-for-specific-tasks">Other Consensus Protocols for Specific Tasks</h2>
+<p>As if that wasn’t enough, people have pushed technology and the imagination even further . More researchers and blockchain developers have experimented with new consensus models that would resolve different business challenges.</p>
+<p>그것으로 충분하지 않다는 듯이 사람들은 기술과 상상력을 더욱 밀어붙였습니다. 더 많은 연구원과 블록체인 개발자가 다양한 비즈니스 과제를 해결할 수 있는 새로운 합의 모델을 실험했습니다.</p>
 <h3 id="proof-of-activity-poa">Proof-of-Activity (PoA)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Activity (PoA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>A hybrid of PoW and PoS</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public permissionless blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>Decred</td>
+</tr>
+</tbody>
+</table>
+<p>Proof-of-Activity (PoA) combines PoW and PoS protocols meaning that the participants can both mine and stake their coins to validate blocks. This way, the PoA protocol ensures a balance between miners and common participants of the network.</p>
+<p>활동 증명(PoA)은 PoW와 PoS 프로토콜을 결합하여 참가자가 블록을 검증하기 위해 코인을 채굴하고 스테이킹할 수 있음을 의미합니다. 이러한 방식으로 PoA 프로토콜은 광부와 네트워크의 일반 참가자 간의 균형을 보장합니다.</p>
 <h3 id="proof-of-location-pol">Proof-of-Location (PoL)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Location (PoL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Use beacons to notice a node in a synchronized manner and then timestamp its presence.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public permissionless blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>FOAM, Platin</td>
+</tr>
+</tbody>
+</table>
+<p>Proof-of-Location (PoL) lets users privately record authenticated location data when they choose so, without GPS. Then, they can reveal this personal information at will.</p>
+<p>Interestingly, the protocol relies on the BFT of the beacons that record geolocation and timestamp it in the blockchain which prevents the system from failures and frauds.</p>
+<p>위치 증명(PoL)을 사용하면 사용자가 원하는 경우 GPS 없이 인증된 위치 데이터를 비공개로 기록할 수 있습니다. 그런 다음 이 개인 정보를 마음대로 공개할 수 있습니다.</p>
+<p>흥미롭게도 이 프로토콜은 지리적 위치를 기록하고 블록체인에 타임스탬프를 기록하는 비콘의 BFT에 의존하여 시스템 실패 및 사기를 방지합니다.</p>
 <h3 id="proof-of-importance-poi">Proof-of-Importance (PoI)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Importance (PoI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Like PoS but with additional properties that influence your ranking.</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>High</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Public permissionless blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>NEM</td>
+</tr>
+</tbody>
+</table>
+<p>The Proof-of-Importance (PoI) consensus algorithm acts almost like PoS but includes three components:</p>
+<ul>
+<li>• The number of tokens in the account</li>
+<li>• Account transaction activity</li>
+<li>• Time the has account spent in the network</li>
+</ul>
+<p>While the first parameter plays a major role in the ranking for verifying transactions, the second and third parameters are rather weak but still help with establishing the “importance” of an account. The smaller the sum of tokens, the stronger influence of other parameters.</p>
+<p>Thus, an account that “vested” hundreds of thousands of tokens can increase its significance factor up to 3 times due to its activity and consistent presence in the network. On the other hand, it doesn’t make any difference for those who possess hundreds of millions of tokens in their account.</p>
+<p>PoI(Proof-of-Importance) 합의 알고리즘은 PoS와 거의 비슷하게 작동하지만 세 가지 구성요소를 포함합니다.</p>
+<ul>
+<li>• 계정의 토큰 수</li>
+<li>• 계정 거래 활동</li>
+<li>• 네트워크에서 사용한 계정 시간</li>
+</ul>
+<p>첫 번째 매개변수가 거래 검증 순위에서 중요한 역할을 하는 반면, 두 번째와 세 번째 매개변수는 다소 약하지만 여전히 계정의 &ldquo;중요성&quot;을 설정하는 데 도움이 됩니다. 토큰 합계가 작을수록 다른 매개변수의 영향이 더 강해집니다.</p>
+<p>따라서 수십만 개의 토큰을 &ldquo;베팅&quot;한 계정은 활동과 네트워크에서의 일관된 존재로 인해 중요도를 최대 3배까지 높일 수 있습니다. 반면에 계정에 수억 개의 토큰을 보유하고 있는 사람들에게는 아무런 차이가 없습니다.</p>
 <h3 id="proof-of-elapsed-time-poet">Proof-of-Elapsed-Time (PoET)</h3>
+<table>
+<thead>
+<tr>
+<th>Concept:</th>
+<th>Proof-of-Elapsed-Time (PoET)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principle:</td>
+<td>Blocks are created in a trusted environment with equal periods</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>DLT setup:</td>
+<td>Private permissioned or permissionless blockchain</td>
+</tr>
+<tr>
+<td>Finality:</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td>Example of use:</td>
+<td>Intel</td>
+</tr>
+</tbody>
+</table>
+<p>Chipmaker Intel didn’t lag behind and developed their own blockchain entitled IntelLedger. A consensus algorithm of IntelLedger is called Proof of Elapsed Time (PoET). Today, it is a HyperLedger consensus module.</p>
+<p>This system is similar to Proof-of-Work, but consumes far less electricity. Instead of having participants solve a cryptographic puzzle, the algorithm operates in a Trusted Execution Environment (TEE), such as Intel’s Software Guard Extensions (SGX). The PoET protocol also assures blocks get created through a lottery but without any required work.</p>
+<p>Intel’s solution offers a guaranteed wait time due to the TEE. According to the company, the proof-of-elapsed-time algorithm can scale to thousands of nodes and will properly run on any Intel processor that supports SGX. Isn’t blockchain supposed to be helping us to get away from third parties rather than relying on them though?</p>
+<p>칩 제조업체 Intel은 뒤처지지 않고 IntelLedger라는 자체 블록체인을 개발했습니다. IntelLedger의 합의 알고리즘을 PoET(Proof of Elapsed Time)라고 합니다. 오늘은 HyperLedger 합의 모듈입니다.</p>
+<p>이 시스템은 작업 증명과 유사하지만 훨씬 적은 전력을 소비합니다. 참가자가 암호화 퍼즐을 풀도록 하는 대신 알고리즘은 Intel의 SGX(Software Guard Extensions)와 같은 TEE(신뢰할 수 있는 실행 환경)에서 작동합니다. PoET 프로토콜은 또한 복권을 통해 블록이 생성되지만 필요한 작업 없이도 보장합니다.</p>
+<p>인텔의 솔루션은 TEE로 인해 보장된 대기 시간을 제공합니다. 회사에 따르면 경과 시간 증명 알고리즘은 수천 개의 노드로 확장할 수 있으며 SGX를 지원하는 모든 인텔 프로세서에서 제대로 실행됩니다. 블록체인은 우리가 제3자에게 의존하기보다 제3자로부터 벗어날 수 있도록 도와야 하지 않을까요?</p>
 <h2 id="beyond-the-mainstream-protocols">Beyond the Mainstream Protocols</h2>
+<p>There are more exotic protocols like Proof-of-Stake-Time (PoST) and Proof-of-Brain (PoB) that we just couldn’t fit in this article. Find them in <a href="https://blockchain.intellectsoft.net/blog/consensus-protocols-that-serve-different-business-needs-part-2/">Part II</a>. Moreover, our <a href="https://blockchain.intellectsoft.net/blog/blockchain-dictionary-from-a-to-z/">Blockchain glossary</a> will help you keep on top of the ever growing collection of Blockchain related terminology.</p>
+<p>PoST(Proof-of-Stake-Time) 및 PoB(Proof-of-Brain)와 같은 더 특이한 프로토콜이 있지만 이 기사에서는 다루지 못했습니다. <a href="https://blockchain.intellectsoft.net/blog/consensus-protocols-that-serve-different-business-needs-part-2/">파트 II</a>에서 찾으십시오. 또한, <a href="https://blockchain.intellectsoft.net/blog/blockchain-dictionary-from-a-to-z/">블록체인 용어집</a>을 통해 계속 증가하는 블록체인 관련 용어 모음을 파악하는 데 도움이 될 것입니다.</p>
+<p>◼[end]</p>
 
     
   </main>
