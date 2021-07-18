@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on WADRO</title>
+    <link>https://wadro.github.io/tags/golang/</link>
+    <description>Recent content in golang on WADRO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 15 Jul 2021 13:19:21 +0900</lastBuildDate><atom:link href="https://wadro.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lab golang study tutorials</title>
+      <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials/</link>
+      <pubDate>Thu, 15 Jul 2021 13:19:21 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials/</guid>
+      <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.  Hello, Go world! (전 튜토리얼을 하나로 모음) package main // 파일들(함수들)을 모아놓은 하나의 세트 import ( // 이런식으로 한번에 임포트 하는것이 권장됨(factored style) &amp;quot;fmt&amp;quot; // 표준 라이브러리 &amp;quot;time&amp;quot; // 시간 관련 라이브러리 &amp;quot;math/rand&amp;quot; // package rand 로 시작하는 파일들로 구성됨. &amp;quot;math/cmplx&amp;quot; // 복소수 라이브러리 &amp;quot;strings&amp;quot; // 문자열 관련 함수 모음 ) /* 함수 선언 방법: func 함수명(변수_이름 타입, .</description>
+    </item>
+    
+  </channel>
+</rss>
