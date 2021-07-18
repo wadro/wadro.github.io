@@ -978,8 +978,34 @@ needInt(Big) 을 출력해보세요.
 (int 는 최대 64-bit 혹은 때때로 더 작은 정수를 저장할 수 있습니다.)
 </code></pre>
 </li>
+<li>클로저 좀더 해야됨</li>
 </ol>
 <h3 id="퀴즈">퀴즈</h3>
+<ol>
+<li>array 와 slice 차이는?</li>
+<li>range 문법을 map 에 적용하면?</li>
+<li>아래 상황에서는 어떻게 될까?</li>
+</ol>
+<pre><code class="language-go">var sum = 0
+
+func adder() func(int) int {
+	var sum = 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i &lt; 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+}
+</code></pre>
 
     
   </main>
