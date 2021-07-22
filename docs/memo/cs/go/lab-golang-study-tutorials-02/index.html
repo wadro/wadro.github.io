@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.82.1" />
-  <link rel="canonical" href="/categories/computer-engineering/">
+  <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-02/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>Computer Engineering | WADRO</title>
+  <title>lab golang study tutorials 02 | WADRO</title>
 </head>
 
   <body>
@@ -301,52 +301,336 @@
       <div class="main-and-footer line-numbers match-braces">
         <div id="topofpage">
           
-<main id="main">
-  <h1>Computer Engineering</h1>
-  
-  <input
-    id="search"
-    type="text"
-    placeholder="Search by title..."
-    aria-label="Search by title"
-  />
-  
-  <ul class="patterns-list" id="list">
+  <main id="main">
     
-    <li>
-      <h2>
-        <a href="/memo/cs/go/lab-golang-study-tutorials-02/">
-          <svg
-            class="bookmark"
-            aria-hidden="true"
-            viewBox="0 0 40 50"
-            focusable="false"
-          >
-            <use xlink:href="#bookmark"></use>
-          </svg>
-          lab golang study tutorials 02
-        </a>
-      </h2>
+    <h1>lab golang study tutorials 02</h1>
+
+    Thu Jul 22, 2021
+    <br>
+    <small><em>Last modified: Thu Jul 22, 2021</em></small>
+    
+    <br>
+
+    <div class="toc">
+      <ul style="margin:0;">
+      <strong>Categories:</strong> <small>(directories)</small>
+        
+            <li style="margin:0;"> 🗂 <a href="https://wadro.github.io/categories/computer-engineering/">Computer Engineering</a></li>
+        
+      </ul>
+
+      <br />
+
+      <ul style="margin:0;">
+      <strong>Tags: </strong> <small>(sub-directories)</small>
+        
+            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/golang/">golang</a></li>
+        
+            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/go/">go</a></li>
+        
+      </ul>
+      
+      <br />
+      
+      <ul style="margin:0;">
+      <strong>Series:</strong> <small>(travel the world of knowledge!)</small>
+      
+        <li style="margin:0;"> 🖇 <a href="https://wadro.github.io/series/lab-golang-study/">lab golang study</a></li>
+      
+      </ul>
+
+    </div>
+
+    <aside>
+      <nav class="toc" aria-labelledby="toc-heading">
+        <h2 id="toc-heading">Table of contents</h2>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#go-tutorials">Go tutorials</a>
+      <ol>
+        <li><a href="#go-method">Go method!</a></li>
+        <li><a href="#노트">노트</a></li>
+      </ol>
     </li>
+  </ol>
+</nav>
+      </nav>
+      
+    </aside>
     
-    <li>
-      <h2>
-        <a href="/memo/cs/go/lab-golang-study-tutorials/">
-          <svg
-            class="bookmark"
-            aria-hidden="true"
-            viewBox="0 0 40 50"
-            focusable="false"
-          >
-            <use xlink:href="#bookmark"></use>
-          </svg>
-          lab golang study tutorials
-        </a>
-      </h2>
-    </li>
+    <h2 id="go-tutorials">Go tutorials</h2>
+<ul>
+<li>📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.</li>
+<li>method 부터 concurrency 전까지</li>
+</ul>
+<h3 id="go-method">Go method!</h3>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;math&quot;
+)
+
+type Vertex struct {
+	X, Y float64
+}
+
+func (v Vertex) AbsMethod() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+func AbsFunc(v Vertex) float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+
+type MyFloat float64 
+// 메소드 만들때 주의사항, 일반 타입 안되고 custom 타입만 가능함. 같은 패키지 내에 선언되어 있어야함. ~~(싫어하는 이유가 계속 늘어난다!)~~
+
+func (f MyFloat) Abs() float64 {
+	if f &lt; 0 {
+		return float64(-f)
+	}
+	return float64(f)
+}
+
+func (v *Vertex) AbsPointer(n float64) float64 {
+	v.X = v.X * n
+	v.Y = v.Y * n
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func (v Vertex) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
+
+func main() {
+	v := Vertex{3, 4}
+	fmt.Println(v.Abs())
+  fmt.Println(Abs(v))
+  f := MyFloat(-math.Sqrt2)
+	fmt.Println(f.Abs())
+
+  v := Vertex{3, 4}
+	fmt.Println(v.AbsPointer(2)) 
+  // 포인터를 안쓰면 각각 다른 객체(복사된 값 사용)
+  // 포인터를 쓰면 같은 레퍼런스를 참조하니까 같은 객체
+
+	v.Scale(10)
+	fmt.Println(v.AbsPointer(2)) 
+}
+
+</code></pre>
+<h3 id="노트">노트</h3>
+<ol>
+<li>
+<p>메소드 주의사항</p>
+<ol>
+<li>
+<p>함수는 인자 넣을때 포인터 구분함(&amp;붙여야됨)
+메소드는 인자 넣을때 포인터 <strong>알아서</strong> 판단함
+진짜 참 일관적으로 속편한 언어&hellip;
+<del>언어는 속이 편한데 개발자가 불편&hellip;</del>
+v.Scale(5) == (&amp;v).Scale(5)</p>
+<p>다행히 참조와 역참조 둘다 같은 특징을 가짐
+p.Abs() 라는 메서드는 (*p).Abs() 로도 사용가능
+그니까 value receiver이든 reference receiver 이든 메소드는 아무 신경안씀
+대신 반드시 주의할점은,
+레퍼런스 리시버는 값을 바꾸고,
+값 리시버는 복사본을 만듬</p>
+<p>일반적으로 특정 유형의 모든 방법에는 값이나 포인터 리시버가 있어야 하지만 둘 다 혼합되어서는 안됩니다.</p>
+<pre><code class="language-go">
+
+type Abser interface {
+  Abs() float64
+}
+
+func main() {
+  var a Abser
+  f := MyFloat(-math.Sqrt2)
+  v := Vertex{3, 4}
+
+  a = f  // a MyFloat implements Abser
+        
+  fmt.Println(a.Abs()) //1.4142135623730951
+
+  a = &amp;v // a *Vertex implements Abser
+
+  // In the following line, v is a Vertex (not *Vertex)
+  // and does NOT implement Abser.
+  // a = v
+
+  fmt.Println(a.Abs()) // 5
+        
+}
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+  if f &lt; 0 {
+    return float64(-f)
+  }
+  return float64(f)
+}
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v *Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+</code></pre>
+<p>여기서 또 애매한 사실은,</p>
+<pre><code class="language-go">func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+      func (v *Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+</code></pre>
+<p>이렇게 하면 redeclared 라고 하면서,
+아까 예제의 상황에서는</p>
+<pre><code class="language-go">func main() {
+  a = &amp;v // a *Vertex implements Abser
+  fmt.Println(a.Abs())
+
+  // In the following line, v is a Vertex (not *Vertex)
+  // and does NOT implement Abser.
+  a = v
+
+  fmt.Println(a.Abs())
+}
+
+func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+</code></pre>
+<p>이건 또 잘 실행 된다&hellip;
+값 리시버에서는 주소 넣어도 되고, 값 넣어도 되는데,
+주소 리시버에서는 꼭 주소만 넣어야 된다.
+이게 뭐야?</p>
+</li>
+</ol>
+</li>
+<li>
+<p>자바를 잘몰라서&hellip;
+무슨 뜻이지?</p>
+<ul>
+<li>인터페이스의 암시적 구현
+<ul>
+<li>type implements는 메소드를 실행함으로써 인터페이스를 구현합니다.<br>
+명시적 intent의 선언도, &ldquo;implementation&quot;의 키워드도 없습니다.<br>
+암시적 인터페이스는 인터페이스의 정의를 구현으로부터 분리하며,<br>
+이는 사전 정렬 없이 어떠한 패키지에 등장할 수 있습니다.<br>
+?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>아래 나온 main 은 패키지 이름일듯?
+({Hello}, main.T)
+Hello
+(3.141592653589793, main.F)</p>
+</li>
+<li>
+<p>영어공부</p>
+<ul>
+<li>Under the hood : 내부</li>
+<li>concrete type? 구체적인 타입 이름을 말하는 거겠지? 추상 타입도 있나? auto 같은거?
+튜플이라고 하니까 (value, type)
+직관적으로는 무슨 말을 하려고 하는지
+의도는 알겠는데,
+말은 모르겠다.
+아무튼 이름 같아도 타입 다르면 다른거라는 거지.</li>
+</ul>
+</li>
+<li>
+<p>nil receiver 가 좋다고 하던데</p>
+<pre><code class="language-go">type I interface {
+  M()
+}
+
+type T struct {
+  S string
+}
+
+func (t *T) M() {
+  // if t == nil {
+  // 	fmt.Println(&quot;this is&quot;,t)
+  // 	return
+  // }
+  fmt.Println(t)
+}
+/*
+  주석 처리 하면
+  (&lt;nil&gt;, *main.T)
+  &lt;nil&gt;
+  (&amp;{hello}, *main.T)
+  &amp;{hello}
+
+  주석 풀면
+  (&lt;nil&gt;, *main.T)
+  this is &lt;nil&gt;
+  (&amp;{hello}, *main.T)
+  &amp;{hello}
+
+  t 를 *t 로 하면 t.S 와 같은 에러 발생
+  panic: runtime error: invalid memory address or nil pointer dereference
+  니 멋대로 해라...
+
+  아래는 실행 잘됨.
+    func (t *T) M() {
+      if t == nil {
+          fmt.Println(&quot;this is&quot;,t)
+          return
+        }
+      fmt.Println(*t)
+    }
+*/
+
+
+func main() {
+  var i I
+
+  var t *T
+  i = t
+  describe(i)
+  i.M()
+
+  i = &amp;T{&quot;hello&quot;}
+  describe(i)
+  i.M()
+}
+
+func describe(i I) {
+  fmt.Printf(&quot;(%v, %T)\n&quot;, i, i)
+}
+</code></pre>
+</li>
+<li>
+<p>type assertion</p>
+<pre><code class="language-go">var i interface{} = &quot;hello&quot;
+
+ s := i.(string)
+ fmt.Println(s)
+
+ s, ok := i.(string)
+ fmt.Println(s, ok)
+
+ f, ok := i.(float64)
+ fmt.Println(f, ok)
+
+ f = i.(float64) // panic
+ fmt.Println(f)
+</code></pre>
+</li>
+</ol>
+
     
-  </ul>
-</main>
+  </main>
 
 
           

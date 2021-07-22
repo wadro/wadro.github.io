@@ -6,7 +6,16 @@
     <description>Recent content in lab golang study on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Jul 2021 13:19:21 +0900</lastBuildDate><atom:link href="https://wadro.github.io/series/lab-golang-study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 19:55:35 +0900</lastBuildDate><atom:link href="https://wadro.github.io/series/lab-golang-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lab golang study tutorials 02</title>
+      <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</link>
+      <pubDate>Thu, 22 Jul 2021 19:55:35 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</guid>
+      <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다. method 부터 concurrency 전까지  Go method! package main import ( &amp;quot;fmt&amp;quot; &amp;quot;math&amp;quot; ) type Vertex struct { X, Y float64 } func (v Vertex) AbsMethod() float64 { return math.Sqrt(v.X*v.X + v.Y*v.Y) } func AbsFunc(v Vertex) float64 { return math.Sqrt(v.X*v.X + v.Y*v.Y) } type MyFloat float64 // 메소드 만들때 주의사항, 일반 타입 안되고 custom 타입만 가능함. 같은 패키지 내에 선언되어 있어야함.</description>
+    </item>
+    
     <item>
       <title>lab golang study tutorials</title>
       <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials/</link>
