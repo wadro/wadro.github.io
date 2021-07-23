@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.86.0-DEV" />
   <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-02/">
 
   
@@ -452,7 +452,7 @@ func main() {
   v := Vertex{3, 4}
 
   a = f  // a MyFloat implements Abser
-        
+
   fmt.Println(a.Abs()) //1.4142135623730951
 
   a = &amp;v // a *Vertex implements Abser
@@ -462,7 +462,7 @@ func main() {
   // a = v
 
   fmt.Println(a.Abs()) // 5
-        
+
 }
 
 type MyFloat float64
@@ -627,7 +627,54 @@ func describe(i I) {
  fmt.Println(f)
 </code></pre>
 </li>
+<li>
+<p>type switch</p>
+<pre><code class="language-go">
+ func do(i interface{}) {
+   switch v := i.(type) {
+   case int:
+     fmt.Printf(&quot;Twice %v(%T) is %v\n&quot;, v,v, v*2)
+   case string:
+     fmt.Printf(&quot;%q(%T) is %v bytes long\n&quot;, v,v, len(v))
+   default:
+     fmt.Printf(&quot;I don't know about type %T!\n&quot;, v)
+   }
+ }
+
+ func main() {
+   do(21)
+   do(&quot;hello&quot;)
+   do(true)
+ }
+
+</code></pre>
+</li>
+<li>
+<p>Stringers
+함수를 만들어놓으면 print할때 설정한것 처럼 나옴
+함수 주석처리하면 그냥 객체만 나옴(아래 설정한 문장이 아니라)</p>
+<pre><code class="language-go">type Person struct {
+   Name string
+   Age  int
+ }
+
+ func (p Person) String() string {
+   return fmt.Sprintf(&quot;%v (%v years)&quot;, p.Name, p.Age)
+ }
+
+ func main() {
+   a := Person{&quot;Arthur Dent&quot;, 42}
+   z := Person{&quot;Zaphod Beeblebrox&quot;, 9001}
+   fmt.Println(a, z)
+ }
+</code></pre>
+</li>
 </ol>
+<p>io.Reader 의 타입? 아마 다른 인터페이스 (*strings.Reader)<br>
+error, io.EOF 의 타입은 (*errors.errorString)</p>
+<p>// <del>진도는 strings까지 했음</del>
+image 까지 하긴 했는데,<br>
+image 라이브러리는 나중에 사용하게 되면 다시 보는게 나을듯</p>
 
     
   </main>
