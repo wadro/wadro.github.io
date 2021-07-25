@@ -6,11 +6,20 @@
     <description>Recent content in Categories on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 22 Jul 2021 19:55:35 +0900</lastBuildDate><atom:link href="https://wadro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 21:03:02 +0900</lastBuildDate><atom:link href="https://wadro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>graduate</title>
+      <link>https://wadro.github.io/categories/graduate/</link>
+      <pubDate>Sun, 25 Jul 2021 21:03:02 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/categories/graduate/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Computer Engineering</title>
       <link>https://wadro.github.io/categories/computer-engineering/</link>
-      <pubDate>Thu, 22 Jul 2021 19:55:35 +0900</pubDate>
+      <pubDate>Sun, 25 Jul 2021 14:03:14 +0900</pubDate>
       
       <guid>https://wadro.github.io/categories/computer-engineering/</guid>
       <description></description>

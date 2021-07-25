@@ -3,30 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wadro.github.io/categories/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/categories/computer-engineering/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
+    <loc>https://wadro.github.io/tags/dcc/</loc>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/tags/go/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
+    <loc>https://wadro.github.io/categories/graduate/</loc>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/tags/golang/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/series/lab-golang-study/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/memo/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/series/</loc>
-    <lastmod>2021-07-22T19:55:35+09:00</lastmod>
+    <loc>https://wadro.github.io/slide/</loc>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/tags/</loc>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-jul-25/</loc>
+    <lastmod>2021-07-25T21:03:03+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/categories/computer-engineering/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/go/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/golang/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/series/lab-golang-study/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/series/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</loc>
     <lastmod>2021-07-22T19:55:35+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/graduate/references/consensus-protocols-that-meet-different-business-demands.-part-i/</loc>
@@ -42,9 +57,6 @@
     <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/slide/likelion/likelion-week1/</loc>
-    <lastmod>2021-05-16T17:11:50+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/slide/</loc>
     <lastmod>2021-05-16T17:11:50+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/</loc>

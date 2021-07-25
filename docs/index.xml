@@ -8,6 +8,24 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 28 Apr 2021 14:37:16 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>진행상황 2021 Jul 25</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-jul-25/</link>
+      <pubDate>Sun, 25 Jul 2021 21:03:02 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-jul-25/</guid>
+      <description>읽은 논문 리스트  Caterpillar: A business process execution engine on the Ethereum Blockchain  새롭게 알게된 개념  bpmn - business process management notation bpmn 개념  그 외 진행 내용  golang - basic syntax, method, pointer, closure, etc - (스터디 내용 정리) 황용환 님과 대화 블록체인 플랫폼 조사 -&amp;gt; 솔라나, 아이오타, 홀로체인  조건1: DID method 가능한가 조건2: Smart Contract 가능한가   제6회 기업설명회(롯데정보통신,블록체인랩스,코인플러그) - 이노베이션 아카데미(42seoul)  보고 싶은 논문  Addressing Distributed Ledger Transaction Processing Limitations for the Internet-of-Things - IEEE Engineering Management Review -&amp;gt; IOTA 관련 논문 Thinking Out of the Blocks: Holochain for Distributed Security in IoT Healthcare - IEEE INTERNET OF THINGS JOURNAL -&amp;gt; Holochain 관련 논문  추후 진행 예정  golang 은 튜토리얼 까지만 진행 rust 언어 학습 (매주 1시 화면 공유로 진행)  기타 참고 자료  토큰 경제와 블록체인의 미래 - 이슈 리포트 읽기(BPM 관련 한국어 글) Caterpillar: A Blockchain-Based Business Process Management System  </description>
+    </item>
+    
+    <item>
+      <title>lab golang study tutorials 03</title>
+      <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</link>
+      <pubDate>Sun, 25 Jul 2021 14:03:14 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</guid>
+      <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.  Hello, Go world! 3 package main import ( &amp;quot;fmt&amp;quot; &amp;quot;time&amp;quot; ) func say(s string) { for i := 0; i &amp;lt; 5; i++ { time.Sleep(100 * time.Millisecond) fmt.Println(s) } } func main() { go say(&amp;quot;goroutine0&amp;quot;) say(&amp;quot;main0&amp;quot;) // 순차 실행끼리는 순서 맞춰서 실행됨 say(&amp;quot;main1&amp;quot;) // goroutine 끼리는 독립적으로 비동기식으로 처리됨 () go say(&amp;quot;goroutine2&amp;quot;) // 나중에 나오는 순차 실행과 함께 실행됨 go say(&amp;quot;goroutine1&amp;quot;) // 여기서는 say(&amp;quot;main2&amp;quot;) say(&amp;quot;main2&amp;quot;) }  output main0 goroutine0 goroutine0 main0 main0 goroutine0 goroutine0 main0 main0 goroutine0 main1 main1 main1 main1 main1 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2  </description>
+    </item>
+    
+    <item>
       <title>lab golang study tutorials 02</title>
       <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</link>
       <pubDate>Thu, 22 Jul 2021 19:55:35 +0900</pubDate>

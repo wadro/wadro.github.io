@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Slides on WADRO</title>
-    <link>https://wadro.github.io/slide/</link>
-    <description>Recent content in Slides on WADRO</description>
+    <title>graduate on WADRO</title>
+    <link>https://wadro.github.io/categories/graduate/</link>
+    <description>Recent content in graduate on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 25 Jul 2021 21:03:02 +0900</lastBuildDate><atom:link href="https://wadro.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 21:03:02 +0900</lastBuildDate><atom:link href="https://wadro.github.io/categories/graduate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>진행상황 2021 Jul 25</title>
       <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-jul-25/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-jul-25/</guid>
       <description>읽은 논문 리스트  Caterpillar: A business process execution engine on the Ethereum Blockchain  새롭게 알게된 개념  bpmn - business process management notation bpmn 개념  그 외 진행 내용  golang - basic syntax, method, pointer, closure, etc - (스터디 내용 정리) 황용환 님과 대화 블록체인 플랫폼 조사 -&amp;gt; 솔라나, 아이오타, 홀로체인  조건1: DID method 가능한가 조건2: Smart Contract 가능한가   제6회 기업설명회(롯데정보통신,블록체인랩스,코인플러그) - 이노베이션 아카데미(42seoul)  보고 싶은 논문  Addressing Distributed Ledger Transaction Processing Limitations for the Internet-of-Things - IEEE Engineering Management Review -&amp;gt; IOTA 관련 논문 Thinking Out of the Blocks: Holochain for Distributed Security in IoT Healthcare - IEEE INTERNET OF THINGS JOURNAL -&amp;gt; Holochain 관련 논문  추후 진행 예정  golang 은 튜토리얼 까지만 진행 rust 언어 학습 (매주 1시 화면 공유로 진행)  기타 참고 자료  토큰 경제와 블록체인의 미래 - 이슈 리포트 읽기(BPM 관련 한국어 글) Caterpillar: A Blockchain-Based Business Process Management System  </description>
-    </item>
-    
-    <item>
-      <title>likelion week1</title>
-      <link>https://wadro.github.io/slide/likelion/likelion-week1/</link>
-      <pubDate>Sun, 16 May 2021 17:11:49 +0900</pubDate>
-      
-      <guid>https://wadro.github.io/slide/likelion/likelion-week1/</guid>
-      <description>아이디어톤 PPT ideathon ideathon(remote control version)</description>
     </item>
     
   </channel>
