@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.86.0-DEV" />
-  <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-03/">
+  <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-01/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>lab golang study tutorials 03 | WADRO</title>
+  <title>lab golang study tutorials 01 | WADRO</title>
 </head>
 
   <body>
@@ -303,11 +303,11 @@
           
   <main id="main">
     
-    <h1>lab golang study tutorials 03</h1>
+    <h1>lab golang study tutorials 01</h1>
 
-    Sun Jul 25, 2021
+    Thu Jul 15, 2021
     <br>
-    <small><em>Last modified: Sun Jul 25, 2021</em></small>
+    <small><em>Last modified: Sun Jul 18, 2021</em></small>
     
     <br>
 
@@ -348,11 +348,9 @@
   <ol>
     <li><a href="#go-tutorials">Go tutorials</a>
       <ol>
-        <li><a href="#hello-go-world-3">Hello, Go world! 3</a>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
+        <li><a href="#hello-go-world-전-튜토리얼을-하나로-모음">Hello, Go world! (전 튜토리얼을 하나로 모음)</a></li>
+        <li><a href="#질문-리스트">질문 리스트</a></li>
+        <li><a href="#퀴즈">퀴즈</a></li>
       </ol>
     </li>
   </ol>
@@ -365,137 +363,649 @@
 <ul>
 <li>📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.</li>
 </ul>
-<h3 id="hello-go-world-3">Hello, Go world! 3</h3>
-<h6 class="codeblock" id="goroutinesgo"><strong><code>goroutines.go</code></strong></h6>
-<pre><code class="language-go">package main
+<h3 id="hello-go-world-전-튜토리얼을-하나로-모음">Hello, Go world! (전 튜토리얼을 하나로 모음)</h3>
+<pre><code class="language-go">package main // 파일들(함수들)을 모아놓은 하나의 세트
 
-import (
-	&quot;fmt&quot;
-	&quot;time&quot;
+import ( // 이런식으로 한번에 임포트 하는것이 권장됨(factored style)
+  &quot;fmt&quot; // 표준 라이브러리
+  &quot;time&quot; // 시간 관련 라이브러리
+  &quot;math/rand&quot; // package rand 로 시작하는 파일들로 구성됨.
+  &quot;math/cmplx&quot; // 복소수 라이브러리
+  &quot;strings&quot; // 문자열 관련 함수 모음
 )
 
-func say(s string) {
-	for i := 0; i &lt; 5; i++ {
-		time.Sleep(100 * time.Millisecond)
-		fmt.Println(s)
-	}
+/*
+  함수 선언 방법: 
+    func 함수명(변수_이름  타입, ...) 출력_타입 {
+      ...
+      return 출력값
+    }
+*/
+func add(x int, y int) int { 
+	return x + y
 }
+/* 
+  위와 같은 함수:
+  func add(x, y int) int { 
+    // 같은 타입이면 묶어서 선언 가능
+	  return x + y
+  }
+*/
+func swap(x, y string) (string, string) {
+	return y, x // 복수 개의 결과 출력 가능
+}
+
+func split(sum int) (x, y int) { // 결과값에 이름 붙일수 있음
+	x = sum * 4 / 9
+	y = sum - x
+	return // 아무것도 없으면 결과값으로 선언한 변수들이 출력됨
+}
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v &lt; lim { // if 변수 선언(스코프는 if 또는 else {}블록안에서만 유효함)
+		return v
+	}
+	return lim
+}
+
+
+var c, python, java bool // 전역변수
+var i, j int = 1, 2 // 초기값 선언
+
+var ( // factored 선언 가능
+	ToBe   bool       = false
+	MaxInt uint64     = 1&lt;&lt;64 - 1
+	z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+const Pi = 3.14 // 상수는 := 표기법으로 선언 못함
 
 func main() {
-	go say(&quot;goroutine0&quot;)
-	say(&quot;main0&quot;) // 순차 실행끼리는 순서 맞춰서 실행됨
-	say(&quot;main1&quot;) // goroutine 끼리는 독립적으로 비동기식으로 처리됨 ()
+  fmt.Println(&quot;Hello, 世界&quot;) // \n 포함된 함수
+  fmt.Println(&quot;The time is&quot;, time.Now()) // 현재 시각 출력
+  fmt.Println(math.pi) // 대문자로 시작하면 export 되고(다른 파일에서 사용가능), 소문자로 시작하면 export 안됨
+  fmt.Println(add(42, 13))
+  a, b := swap(&quot;hello&quot;, &quot;world&quot;)
 
-	go say(&quot;goroutine2&quot;) // 나중에 나오는 순차 실행과 함께 실행됨
-	go say(&quot;goroutine1&quot;) // 여기서는 say(&quot;main2&quot;)
+  var i int // 지역변수, i 초기화(0)
+  var c, python, java = true, false, &quot;no!&quot; // 선언된 값으로 초기화
+  k := 3 // 함수 안에서는 짧은 표현식 가능, 함수 밖에서는 에러. var 로 시작해야함
+  fmt.Println(i,j,k, c, python, java)
 
-	say(&quot;main2&quot;)
+  fmt.Printf(&quot;Type: %T Value: %v\n&quot;, ToBe, ToBe)
+  fmt.Printf(&quot;Type: %T Value: %v\n&quot;, MaxInt, MaxInt)
+  fmt.Printf(&quot;Type: %T Value: %v\n&quot;, z, z)
 
-}
-
-
-</code></pre>
-<h6 class="codeblock" id="output"><strong><code>output</code></strong></h6>
-<pre><code>main0
-goroutine0
-goroutine0
-main0
-main0
-goroutine0
-goroutine0
-main0
-main0
-goroutine0
-main1
-main1
-main1
-main1
-main1
-goroutine1
-main2
-goroutine2
-main2
-goroutine1
-goroutine2
-goroutine1
-main2
-goroutine2
-main2
-goroutine1
-goroutine2
-goroutine1
-main2
-</code></pre>
-<h6 class="codeblock" id="channelsgo"><strong><code>channels.go</code></strong></h6>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func sum(s []int, c chan int) {
-	sum := 0
-	for _, v := range s {
-		sum += v
+  sum := 0
+	for i := 0; i &lt; 10; i++ {
+		sum += i
 	}
-	c &lt;- sum // send sum to c
-}
+	fmt.Println(sum)
+  sum = 1
+	for ; sum &lt; 1000; {
+		sum += sum
+	}
+	fmt.Println(sum)
 
-func main() {
-	s := []int{7, 2, 8, -9, 4, 0}
+  sum = 1
+	for sum &lt; 1000 { // for == while
+		sum += sum
+    if sum &gt; 100 {
+      break
+	  }
+	}
+	fmt.Println(sum)
 
-	c := make(chan int)
-	go sum(s[:len(s)/2], c)
-	go sum(s[len(s)/2:], c)
-	x, y := &lt;-c, &lt;-c // receive from c // 아마 스택 개념?
+  /*
+  for {
+	}
+  // 무한 루프
+  */
 
 
-	fmt.Printf(&quot;%T, %v \n&quot;,c,c)
+  // Go 의 switch문은 break 안해도 된다!
+  switch os := runtime.GOOS; os {
+	case &quot;darwin&quot;:
+		fmt.Println(&quot;OS X.&quot;)
+	case &quot;linux&quot;:
+		fmt.Println(&quot;Linux.&quot;)
+	default:
+		// freebsd, openbsd,
+		// plan9, windows...
+		fmt.Printf(&quot;%s.\n&quot;, os)
+	}
 
-	fmt.Println(x, y, x+y)
-}
+  switch { // 조건 없으면 switch true 와 같음
+	case t.Hour() &lt; 12:
+		fmt.Println(&quot;Good morning!&quot;)
+	case t.Hour() &lt; 17:
+		fmt.Println(&quot;Good afternoon.&quot;)
+	default:
+		fmt.Println(&quot;Good evening.&quot;)
+	}
 
-</code></pre>
-<h6 class="codeblock" id="output-1"><strong><code>output</code></strong></h6>
-<pre><code>chan int, 0xc000100060 
--5 17 12
-</code></pre>
-<h6 class="codeblock" id="channels-reversego"><strong><code>channels-reverse.go</code></strong></h6>
-<pre><code class="language-go">func main() {
-	s := []int{7, 2, 8, -9, 4, 0}
 
-	c := make(chan int)
-	go sum(s[len(s)/2:], c)
-	go sum(s[:len(s)/2], c)
+  /*
+    1. defer 문은 자신이 포함된 함수 블록이 전부 실행되면 제일 마지막에 실행됨
+    2. stack 구조(defer 를 두개 하면 나중에 들어간 쪽이 먼저 실행됨)
+  */ 
+  defer fmt.Println(&quot;world&quot;) 
+  for i := 0; i &lt; 10; i++ {
+		defer fmt.Println(i)
+	}
+  
+  /*
+    Go의 포인터는 포인터 연산없이 그냥 
+    주소 ⊃ 값 의 관계,
+    address ⊃ value 의 관계에서
+    address == &amp;value 참조(주소&lt;-값)
+    *address == value 역참조(주소-&gt;값)
+  */
 
-	x, y:= &lt;-c, &lt;-c // receive from c // 아마 스택 개념?
+  i, j := 42, 2701
+
+	p := &amp;i         // point to i
+	fmt.Println(*p) // read i through the pointer
+	*p = 21         // set i through the pointer
+	fmt.Println(i)  // see the new value of i
+
+	p = &amp;j         // point to j
+	*p = *p / 37   // divide j through the pointer
+	fmt.Println(j) // see the new value of j
+
+
+  type Vertex struct { 
+    // 구조체는 여러 타입을 하나로 모은 집합
+    X int
+    Y int
+  }
+
+  fmt.Println(Vertex{1, 2})
+  v := Vertex{1, 2}
+	v.X = 4 // .(dot) 오퍼레이터로 접근 가능
+	fmt.Println(v.X)
+
+
+  v := Vertex{1, 2}
+	p := &amp;v // 원래는 주소값이니까 (*p).X 이렇게 써야하는데
+	p.X = 1e9  // 생략 가능함
+  /*
+    c 에서는 -&gt; (arrow) 오퍼레이터를 썼는데
+    Go 에서는 단순함을 위해서 그냥 생략한듯?
+    나중에 함수형을 지원하기 위해서일까?
+    아직까지도 안넣은거 보면 그냥 아예 생각이 없는듯 
+    2021-07-18T16:24:50+09:00 
+  */
+  
+	fmt.Println(v)
+
+
+  v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{Y: 1}  // X:0 is implicit?
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &amp;Vertex{1, 2} // has type *Vertex
+
+  // 쉽게(?!) 기억하는 법
+  // type =&gt; some value of some type ==&gt; x: type
+  // array =&gt; n number of type ==&gt; [n]type
+  var a [10]int
+  // declares a variable a as an array of **ten integers**
+
+  // 주의: array 는 타입의 일종이므로 resize 불가
+  // array의 카피본인 slice 라는 개념이 있음
+  // 주의2: slice 는 레퍼런스를 공유함
+  // 즉, slice 수정하면 array 도 수정됨
+  // 그리고 같은 array를 레퍼런스를 가지는 slice 또한 레퍼런스를 공유함
+  primes := [6]int{2, 3, 5, 7, 11, 13}
+
+	var s []int = primes[1:4]
+	fmt.Println(s)
+
+
+  // slice만 만들면 array는 자동 생성됨(일종의 레퍼런스)
+  q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
 	
+	q1 := q[0:4]
+	q1[2] = 1000
+	
+	r := []bool{true, false, true, true, false, true}
+	fmt.Println(r)
+	
+	
+	fmt.Println(q)
+	
+	s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Println(s)
 
-	fmt.Printf(&quot;%T, %v \n&quot;,c,c)
+  s := []int{2, 3, 5, 7, 11, 13}
 
-	fmt.Println(x, y, x+y)
+	s = s[1:4]
+	fmt.Println(s)
+
+	s = s[:2]
+	fmt.Println(s) // 상한 하한 없으면 그냥 끝까지
+
+	s = s[1:]
+	fmt.Println(s)
+
+
+  s := []int{2, 3, 5, 7, 11, 13}
+	printSlice(s)
+
+	// Slice the slice to give it zero length.
+	s = s[:1]
+	printSlice(s)
+
+	// Extend its length.
+	s = s[1:4]
+	printSlice(s)
+	s = s[:5]
+	printSlice(s)
+	// Drop its first two values.
+	s = s[2:]
+	printSlice(s)
+	s = s[2:]
+	printSlice(s)
+
+  s := []int{2, 3, 5, 7, 11, 13}
+	printSlice(s)
+
+	// Slice the slice to give it zero length.
+	s = s[2:]
+	printSlice(s)
+
+	// Extend its length.
+	s = s[1:2]
+	printSlice(s)
+	
+	s = s[:3]
+	printSlice(s)
+	
+	// Drop its first two values.
+	s = s[2:]
+	printSlice(s)
+	s = s[1:]
+	printSlice(s)
+	
+	s = s[:1]
+	printSlice(s)
+
+
+  var s []int
+	var p *int
+	fmt.Println( s, len(s), cap(s),p)
+	if s == nil  {
+		fmt.Println(&quot;nil slice&quot;)
+	}
+	if p == nil {
+		fmt.Println(&quot;nil pointer&quot;)
+	}
+	fmt.Printf(&quot;%T, %T&quot; ,s,p)
+
+  a := make([]int, 5)
+	printSliceAndString(&quot;a&quot;, a)
+
+	b := make([]int, 0, 5)
+	printSliceAndString(&quot;b&quot;, b)
+
+	c := b[:2]
+	printSliceAndString(&quot;c&quot;, c)
+
+	d := c[2:5]
+	printSliceAndString(&quot;d&quot;, d)
+
+  board := [][]string{
+		[]string{&quot;_&quot;, &quot;_&quot;, &quot;_&quot;},
+		[]string{&quot;_&quot;, &quot;_&quot;, &quot;_&quot;},
+		[]string{&quot;_&quot;, &quot;_&quot;, &quot;_&quot;},
+	}
+
+	// The players take turns.
+	board[0][0] = &quot;X&quot;
+	board[2][2] = &quot;O&quot;
+	board[1][2] = &quot;X&quot;
+	board[1][0] = &quot;O&quot;
+	board[0][2] = &quot;X&quot;
+	fmt.Println(len(board))
+	fmt.Println((board[0]))
+
+  // strings.Join -&gt; string
+  // func append(s []T, vs ...T) []T
+
+	for i := 0; i &lt; len(board); i++ {
+		fmt.Printf(&quot;%s\n&quot;, strings.Join(board[i], &quot; &quot;))
+	}
+
+
+  var s []int
+	printSlice(s)
+  if s == nil {
+		fmt.Println(&quot;nil slice!&quot;)
+	}
+	// append works on nil slices.
+	s = append(s, 0)
+	printSlice(s)
+  if s == nil {
+		fmt.Println(&quot;nil slice!&quot;)
+	}
+	// The slice grows as needed.
+	s = append(s, 1)
+	printSlice(s)
+
+	// We can add more than one element at a time.
+	s = append(s, 2, 3, 4)
+	printSlice(s)
+
+
+  // range =&gt; iterator
+  // for 문 하고 같이 쓰이니까 그냥 하나의 문법이라고 보는게 맞을듯
+
+  var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+  for i, v := range pow {
+		fmt.Printf(&quot;2**%d = %d\n&quot;, i, v)
+	}
+  for i:=0; i&lt;len(pow); i++ {
+		fmt.Printf(&quot;2**%d = %d\n&quot;, i, pow[i])
+  }
+
+  fmt.Printf(&quot;this is range\n&quot;)
+	for i, d := range pow {
+		res := math.Pow(2, float64(i))
+		fmt.Printf(&quot;2**%d = %d == %f\n&quot;, i,d,res)
+	}
+	
+	fmt.Println()
+	fmt.Printf(&quot;this is just for loop\n&quot;)
+	for i:=0; i&lt;len(pow); i++ {
+		res := math.Pow(2, float64(i))
+		fmt.Printf(&quot;2**%d = %d == %f\n&quot;, i, pow[i], res)
+  }
+
+  // 이거 좋은 구문인듯, 2 거듭제곱을 이런식으로 구한다는게 비트연산이라서 좋을듯
+  // 확실히 이런 부분을 좀 배우면 좋을텐데...
+
+  pow := make([]int, 10)
+	for i := range pow {
+		pow[i] = 1 &lt;&lt; uint(i) // == 2**i
+	}
+	for _, value := range pow {
+		fmt.Printf(&quot;%d\n&quot;, value)
+	}
+
+  type Gps struct {
+	  Lat, Long float64
+  }
+  
+  var m map[string]Gps
+  m = make(map[string]Gps)
+	m[&quot;Bell Labs&quot;] = Gps{
+		40.68433, -74.39967,
+	}
+  
+	fmt.Println(m[&quot;Bell Labs&quot;])
+
+  var m = map[string]Gps{
+	&quot;Bell Labs&quot;: Vertex{
+		40.68433, -74.39967,
+	},
+  &quot;Google&quot;: {
+		37.42202, -122.08408},}
+
+msi := make(map[string]int)
+
+msi[&quot;Answer&quot;] = 42
+fmt.Println(&quot;The value:&quot;, msi[&quot;Answer&quot;])
+
+msi[&quot;Answer&quot;] = 48
+fmt.Println(&quot;The value:&quot;, msi[&quot;Answer&quot;])
+
+delete(msi, &quot;Answer&quot;)
+fmt.Println(&quot;The value:&quot;, msi[&quot;Answer&quot;])
+
+val, ok := msi[&quot;Answer&quot;]
+fmt.Println(&quot;The value:&quot;, val, &quot;Present?&quot;, ok)
+
+
+hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+}
+
+fmt.Printf(&quot;type is %T\n&quot;,hypot)
+fmt.Println(hypot(5, 12))
+
+fmt.Println(compute(hypot))
+fmt.Println(compute(math.Pow))
+
+pos, neg := adder(), adder()
+for i := 0; i &lt; 10; i++ {
+  fmt.Println(
+    pos(i),
+    neg(-2*i),
+  )
+}
+
+/*
+  또 싫어하는 점 발견...
+  세미콜론은 강제하지 않으면서
+  struct 의 콤마는 강제 됨...
+  콤마 안하면 에러남...
+  콤마 대신 {} 중괄호 블록을 닫으면 에러 안남. 진짜 이상한데도 간단해서 사람들이 쓰는건가?
+  javascript 나 lisp 처럼?
+  차라리 rust 를 쓰겠다. 웹은 대체제가 따로 없고 그냥 트랜스파일러? 트랜스 컴파일러만 있을뿐이고...
+  lisp 는 문법이 워낙 단순하지만 해석하기가 좀 힘든 면이 있어서...
+  진짜 극도의 단순함을 추구하는 변태적인 언어라고 해야하나...
+  haskell 도 따지고 보면 엄밀한 순수함을 따지는 변태고...
+  언어라는게 다 그렇지뭐...
+  rust도 안해봐서 그렇지 막상 배우면 또 뭔가 있을지는 모르겠다.
+  근데 ownership 에 너무 반해서 또 빨리 배우고 싶은 마음도 공존함.
+*/
+
+  /*
+    A slice is formed by specifying two indices, a low and high bound, separated by a colon:
+    a[low : high]
+
+    #slice-2 아무튼 그래도 정리를 하자면,
+    capacity 라는 개념은 low bound 에만 영향을 받는다
+    high bound 에는 아무런 영향이 없다
+
+    length 라는 개념은 
+    low bound, high bound 모두의 영향을 받는다
+
+    The zero value of a slice is nil.
+
+    A nil slice has a length and capacity of 0 and has no underlying array.
+  */
+
+  /*
+    #slice-1 여기서 내가 go를 싫어하는 이유
+    계산 방식이 통일되지않고 좌우가 다르다
+
+    어떤 느낌이냐면,
+    나중에 gob 이라는 라이브러리에서
+
+    인코딩 할때는 비어있는 버퍼를 인코더 영역으로 지정하고 b 라는 변수를 인코딩해서 저장한다
+    (여기서 b 는 Block이라는 타입의 포인터 =&gt; 즉, 주소)
+    var res bytes.Buffer
+    encoder := gob.NewEncoder(&amp;res)
+
+    err := encoder.Encode(b)
+
+    그리고 디코딩 할때는 data의 스트림을 받아서 
+    디코더 객체로 만듬
+    그리고나서 만들어진 객체를 디코딩하는데,
+    이때 비어있는 block 이라는 변수의 주소에 집어넣음
+    (여기서 block 은 Block이라는 타입의 값 =&gt; 주소 아님)
+
+    var block Block
+
+    decoder := gob.NewDecoder(bytes.NewReader(data))
+
+    err := decoder.Decode(&amp;block)
+
+
+    참고: 
+    binary 라이브러리 쓸떄,
+    .BigEndian 은 인자 순서대로 들어가고,
+    .LittleEndian 은 인자의 역순으로 들어감
+
+    그래서 랭귀지가 프로그래머에 맞추는게 아니라,
+    프로그래머가 랭귀지에 맞춰야하는 어이없는 상황이 생긴다
+
+    함수형 언어처럼 여러 제약에 적응해서 얻는게 많으면 몰라도, 이건 그냥 언어 자체가 주는 혼란때문에 얻는것도 없이 헷갈리게 된다
+
+    차라리 아예 자유도를 높이려면 
+    clojure 처럼 아예 규칙이 몇개 없던지,
+    (심플해서 코드는 빨리 읽는데, 
+    코드를 이해하기가 어렵다
+    컴퓨터는 이해하기 쉬울듯) 
+
+    haskell이나 rust 처럼 아예 자유도를 제한해서 표현력을 잃는 대신, 
+    깔끔함과 안정성을 확보하는게 낫다고 생각한다
+    (코드를 읽기는 어려운 대신, 
+    이해하는건 상대적으로 쉽다
+    인간이 이해하기 쉬운 수학과 유사한 문법)
+  */
+}
+
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+
+
+
+func printSlice(s []int) {
+	fmt.Printf(&quot;len=%d cap=%d %v\n&quot;, len(s), cap(s), s)
+}
+func printSliceAndString(s string, x []int) {
+	fmt.Printf(&quot;%s len=%d cap=%d %v\n&quot;,
+		s, len(x), cap(x), x)
+}
+
+</code></pre>
+<blockquote>
+<p>Note:</p>
+</blockquote>
+<ol>
+<li>세미콜론 없음</li>
+<li>기본 타입:
+<pre><code>bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // uint8의 별칭
+
+rune // int32의 별칭
+     // 유니코드에서 code point를 의미합니다.
+
+float32 float64
+
+complex64 complex128
+</code></pre>
+</li>
+<li>초기값:
+<pre><code>zero value 는 다음과 같습니다.
+
+숫자 type에는 0
+boolean type에는 false
+string에는 &quot;&quot; (빈 문자열)
+
+추가: 
+slice 기본값은 nil slice ~~(넥 슬라이스!)~~
+포인터 기본값도 nil 포인터 &lt;nil&gt;
+</code></pre>
+</li>
+<li>타입 변환
+<pre><code class="language-go">var i int = 42
+var f float64 = float64(i)
+var u uint = uint(f)
+
+// 혹은 좀 더 간단히: 
+
+i := 42
+f := float64(i)
+u := uint(f)   
+</code></pre>
+</li>
+<li>반복문은 for 밖에 없음.
+<ul>
+<li>() 괄호 없고, {} 필수!</li>
+</ul>
+</li>
+</ol>
+<h3 id="질문-리스트">질문 리스트</h3>
+<ol>
+<li>이해가 100퍼센트 안됨.
+<pre><code>Numeric Constants
+Numeric constants are high-precision values.
+
+An untyped constant takes the type needed by its context.
+
+Try printing needInt(Big) too.
+
+(An int can store at maximum a 64-bit integer, and sometimes less.)
+
+숫자형 상수
+숫자형 상수는 매우 정확한 값 입니다.
+
+type이 정해지지 않은 상수는 그것의 문맥에서 필요한 type을 취합니다.
+
+needInt(Big) 을 출력해보세요.
+
+(int 는 최대 64-bit 혹은 때때로 더 작은 정수를 저장할 수 있습니다.)
+</code></pre>
+</li>
+<li>클로저 좀더 해야됨</li>
+</ol>
+<h3 id="퀴즈">퀴즈</h3>
+<ol>
+<li>array 와 slice 차이는?</li>
+<li>range 문법을 map 에 적용하면?</li>
+<li>아래 상황에서는 어떻게 될까?</li>
+</ol>
+<pre><code class="language-go">var sum = 0
+
+func adder() func(int) int {
+	var sum = 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i &lt; 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
 }
 </code></pre>
-<h6 class="codeblock" id="output-reverse"><strong><code>output-reverse</code></strong></h6>
-<pre><code>chan int, 0xc000062060 
-17 -5 12
-</code></pre>
-<p>2
-7
-8
-4
--9
-0</p>
-<p>[7]
-[2]
-[8]
-[-9]
-[4]
-[0]
-7
-8
-2
--9
-0
-4</p>
 
     
   </main>

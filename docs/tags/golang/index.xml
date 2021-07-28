@@ -13,7 +13,7 @@
       <pubDate>Sun, 25 Jul 2021 14:03:14 +0900</pubDate>
       
       <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</guid>
-      <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.  Hello, Go world! 3 package main import ( &amp;quot;fmt&amp;quot; &amp;quot;time&amp;quot; ) func say(s string) { for i := 0; i &amp;lt; 5; i++ { time.Sleep(100 * time.Millisecond) fmt.Println(s) } } func main() { go say(&amp;quot;goroutine0&amp;quot;) say(&amp;quot;main0&amp;quot;) // 순차 실행끼리는 순서 맞춰서 실행됨 say(&amp;quot;main1&amp;quot;) // goroutine 끼리는 독립적으로 비동기식으로 처리됨 () go say(&amp;quot;goroutine2&amp;quot;) // 나중에 나오는 순차 실행과 함께 실행됨 go say(&amp;quot;goroutine1&amp;quot;) // 여기서는 say(&amp;quot;main2&amp;quot;) say(&amp;quot;main2&amp;quot;) }  output main0 goroutine0 goroutine0 main0 main0 goroutine0 goroutine0 main0 main0 goroutine0 main1 main1 main1 main1 main1 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2  </description>
+      <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.  Hello, Go world! 3 goroutines.go package main import ( &amp;quot;fmt&amp;quot; &amp;quot;time&amp;quot; ) func say(s string) { for i := 0; i &amp;lt; 5; i++ { time.Sleep(100 * time.Millisecond) fmt.Println(s) } } func main() { go say(&amp;quot;goroutine0&amp;quot;) say(&amp;quot;main0&amp;quot;) // 순차 실행끼리는 순서 맞춰서 실행됨 say(&amp;quot;main1&amp;quot;) // goroutine 끼리는 독립적으로 비동기식으로 처리됨 () go say(&amp;quot;goroutine2&amp;quot;) // 나중에 나오는 순차 실행과 함께 실행됨 go say(&amp;quot;goroutine1&amp;quot;) // 여기서는 say(&amp;quot;main2&amp;quot;) say(&amp;quot;main2&amp;quot;) }  output main0 goroutine0 goroutine0 main0 main0 goroutine0 goroutine0 main0 main0 goroutine0 main1 main1 main1 main1 main1 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2 goroutine2 main2 goroutine1 goroutine2 goroutine1 main2  channels.</description>
     </item>
     
     <item>
@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>lab golang study tutorials</title>
-      <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials/</link>
+      <title>lab golang study tutorials 01</title>
+      <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-01/</link>
       <pubDate>Thu, 15 Jul 2021 13:19:21 +0900</pubDate>
       
-      <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials/</guid>
+      <guid>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-01/</guid>
       <description>Go tutorials  📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.  Hello, Go world! (전 튜토리얼을 하나로 모음) package main // 파일들(함수들)을 모아놓은 하나의 세트 import ( // 이런식으로 한번에 임포트 하는것이 권장됨(factored style) &amp;quot;fmt&amp;quot; // 표준 라이브러리 &amp;quot;time&amp;quot; // 시간 관련 라이브러리 &amp;quot;math/rand&amp;quot; // package rand 로 시작하는 파일들로 구성됨. &amp;quot;math/cmplx&amp;quot; // 복소수 라이브러리 &amp;quot;strings&amp;quot; // 문자열 관련 함수 모음 ) /* 함수 선언 방법: func 함수명(변수_이름 타입, .</description>
     </item>
     
