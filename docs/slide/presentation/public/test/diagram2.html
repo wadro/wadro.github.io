@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Diagram2</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <style>
+      .arrowheadPath {
+        /* fill: @arrowheadColor; */
+        fill: white;
+      }
+      .arrowheadStyle {
+        fill: white;
+      }
+
+      .edgePath .path {
+        /* stroke: @lineColor; */
+        stroke: white;
+      }
+    </style>
+	</head>
+	<body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+      startOnLoad:true
+      });
+      // edgeData.arrowheadStyle = 'fill: #333';
+      
+    </script>
+
+    
+    
+    <style>
+      .slide{
+        background-color: #424242;
+      }
+    </style>
+		<div class="reveal">
+			<div class="slides">
+        <script type="text/template">
+          - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Item 3 <!-- .element: class="fragment" data-fragment-index="3" -->
+        </script>
+
+        <script type="text/template">
+          <!-- .slide: data-background="#696969" -->
+
+          Markdown content
+        </script>
+        <section>Slide 1
+          
+          And here is another:
+          <div class="mermaid">
+            %%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+
+            graph TD
+            A[Client] -->|tcp_123| B(Load Balancer)
+            B -->|tcp_456| C[Server1]
+            B -->|tcp_456| D[Server2]
+          </div>
+        </section>
+				<section>
+          <section>Slide 2
+            <div class="mermaid">
+            graph LR
+                id1(Start)-->id2(Stop)
+                style id1 fill:#f9f,stroke:#333,stroke-width:4px
+                style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+                linkStyle 0 stroke:#ff3,stroke-width:4px,color:red;
+
+            </div>
+          </section>
+
+          <section>
+            Here is one mermaid diagram:
+            <div class="mermaid">
+              graph TD
+                A[Client] --> B[Load Balancer]
+                B --> C[Server1]
+                B --> D[Server2]
+            </div>
+          </section>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          <!-- .slide: data-background="#ffff00" -->
+
+            ## Slide 1
+            A paragraph with some text and a [link](http://hakim.se).
+            ---
+            ## Slide 2
+            ---
+            ## Slide 3
+          </textarea>
+        </section>
+        <script type="text/template">
+
+        </script>
+        <section>
+            Markdown content
+            <div class="mermaid">
+              graph LR;
+                  A--v-->B{B}
+                  B-->|v|C[C]
+                  B-- x -->Z[E]
+                  C-->D{D};
+
+                  linkStyle 0 stroke-width:2px,fill:none,stroke:blue;
+                  linkStyle 1 stroke-width:2px,fill:none,stroke:green;
+                  linkStyle 2 stroke-width:2px,fill:none,stroke:yellow;
+                  linkStyle 3 stroke-width:2px,fill:none,stroke:pink;
+                  linkStyle default stroke-width:2px,fill:none,stroke:red;
+            </div>
+
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js [1-2|3|4]
+            let a = 1;
+            let b = 2;
+            let c = x => 1 + 2 + x;
+            c(3);
+            ```
+
+            
+          </textarea>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+          </script>
+        </section>
+        
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        disableLayout: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
