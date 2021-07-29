@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.86.0-DEV" />
+  <meta name="generator" content="Hugo 0.86.0" />
   <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-03/">
 
   
@@ -350,7 +350,8 @@
       <ol>
         <li><a href="#hello-go-world-3">Hello, Go world! 3</a>
           <ol>
-            <li></li>
+            <li><a href="#codeblocks">codeblocks</a></li>
+            <li><a href="#select-부터-다시">select 부터 다시!</a></li>
           </ol>
         </li>
       </ol>
@@ -366,6 +367,7 @@
 <li>📔📝본 내용은 tour.golang.org 에 있는 내용을 정리한 글입니다.</li>
 </ul>
 <h3 id="hello-go-world-3">Hello, Go world! 3</h3>
+<h4 id="codeblocks">codeblocks</h4>
 <h6 class="codeblock" id="goroutinesgo"><strong><code>goroutines.go</code></strong></h6>
 <pre><code class="language-go">package main
 
@@ -466,7 +468,7 @@ func main() {
 	go sum(s[len(s)/2:], c)
 	go sum(s[:len(s)/2], c)
 
-	x, y:= &lt;-c, &lt;-c // receive from c // 아마 스택 개념?
+	x, y:= &lt;-c, &lt;-c // receive from c // 아마 channel은 스택 개념? 
 	
 
 	fmt.Printf(&quot;%T, %v \n&quot;,c,c)
@@ -478,13 +480,29 @@ func main() {
 <pre><code>chan int, 0xc000062060 
 17 -5 12
 </code></pre>
-<p>2
+<h6 class="codeblock" id="channel-testgo"><strong><code>channel-test.go</code></strong></h6>
+<pre><code class="language-go">func main() {
+	s := []int{7, 2, 8, -9, 4, 0}
+
+	c := make(chan int)
+	for index, _ := range s {
+		go sum(s[index:index+1],c)
+	}
+	for i := range c {
+		fmt.Println(i)
+	}
+	
+}
+</code></pre>
+<h6 class="codeblock" id="output-test"><strong><code>output-test</code></strong></h6>
+<pre><code>2
 7
 8
 4
 -9
-0</p>
-<p>[7]
+0
+
+[7]
 [2]
 [8]
 [-9]
@@ -495,7 +513,319 @@ func main() {
 2
 -9
 0
+4
+
+
+0
+-9
+4
+8
+2
+7
+
+
+0
+2
+7
+-9
+8
+4
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan receive]:
+main.main()
+	/tmp/sandbox710675921/prog.go:20 +0x193
+
+</code></pre>
+<h6 class="codeblock" id="buffered-channelsgo"><strong><code>buffered-channels.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func chanfunc(c chan int,integer int) {
+	c &lt;- integer
+}
+
+func main() {
+	ch := make(chan int)
+	
+	go chanfunc(ch,1)	
+	go chanfunc(ch,2)
+	go chanfunc(ch,3)
+
+	fmt.Println(&lt;-ch)
+	fmt.Println(&lt;-ch)
+  fmt.Println(&lt;-ch)
+}
+
+</code></pre>
+<h6 class="codeblock" id="no-buffered-channels-blockgo"><strong><code>no-buffered-channels-block.go</code></strong></h6>
+<pre><code class="language-go">func main() {
+	ch := make(chan int)
+	go chanfunc(ch,1)	
+
+	chanfunc(ch,2)	
+
+	fmt.Println(&lt;-ch)
+
+
+}
+</code></pre>
+<h6 class="codeblock" id="no-buffered-channels-block-output"><strong><code>no-buffered-channels-block-output</code></strong></h6>
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox977088187/prog.go:5
+main.main()
+	/tmp/sandbox977088187/prog.go:12 +0x87
+
+goroutine 20 [chan send]:
+main.chanfunc(0xc00009c060, 0x1)
+	/tmp/sandbox977088187/prog.go:5 +0x3f
+created by main.main
+	/tmp/sandbox977088187/prog.go:10 +0x65
+
+
+/// goroutine 없을때
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox473627473/prog.go:5
+main.main()
+	/tmp/sandbox473627473/prog.go:11 +0x65
+
+
+/// print 없을때
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox473783957/prog.go:5
+main.main()
+	/tmp/sandbox473783957/prog.go:11 +0x57
+
+</code></pre>
+<h6 class="codeblock" id="range-and-closego"><strong><code>range-and-close.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func fibonacci(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i &lt; n; i++ {
+		c &lt;- x
+		x, y = y, x+y
+	}
+	close(c)
+}
+
+func main() {
+	c := make(chan int, 10)
+	go fibonacci(cap(c), c)
+	// fibonacci(10, c) // capacity 주면 goroutine 안써도 값 들어감
+  // go fibonacci(11, c) // goroutine 쓰면 capacity 초과해도 값 들어감
+
+	for i := range c {
+		fmt.Println(i,&quot; (i)&quot;)
+
+		v, ok:= &lt;-c
+		
+		fmt.Println(v,ok)
+	}
+	v, ok:= &lt;-c
+		
+	fmt.Println(&quot;final check: &quot;,v,ok)
+	
+}
+
+</code></pre>
+<h6 class="codeblock" id="range-and-close-output"><strong><code>range-and-close-output</code></strong></h6>
+<pre><code>0  (i)
+1 true
+1  (i)
+2 true
+3  (i)
+5 true
+8  (i)
+13 true
+21  (i)
+34 true
+final check:  0 false
+</code></pre>
+<h6 class="codeblock" id="channels-close-test-1go"><strong><code>channels-close-test-1.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func sum(s []int, c chan int) {
+	sum := 0
+	for _, v := range s {
+		sum += v
+	}
+	c &lt;- sum // send sum to c
+
+}
+func closechan(c chan int, iter []int) {
+	for index, _ := range iter {
+		go sum(iter[index:index+1],c) // 여기가 다름!! 
+	} 
+	close(c)
+}
+
+func main() {
+	s := []int{7, 2, 8, -9, 4, 0}
+	
+	c := make(chan int)
+	go closechan(c,s)
+
+	for i := range c {	
+		fmt.Println(i)
+	}
+	/*
+		go sum(s[:len(s)/2], c)
+		go sum(s[len(s)/2:], c)
+		x, y := &lt;-c, &lt;-c // receive from c
+
+		fmt.Println(x, y, x+y)
+	*/
+}
+
+</code></pre>
+<h6 class="codeblock" id="output-2"><strong><code>output</code></strong></h6>
+<pre><code>/// goroutine 쓰면 아무것도 안뜬다!?
+
+Program exited.
+</code></pre>
+<h6 class="codeblock" id="channels-close-test-1go-1"><strong><code>channels-close-test-1.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func sum(s []int, c chan int) {
+	sum := 0
+	for _, v := range s {
+		sum += v
+	}
+	c &lt;- sum // send sum to c
+
+}
+func closechan(c chan int, iter []int) {
+	for index, _ := range iter {
+		sum(iter[index:index+1],c) // 여기가 다름!!
+	} 
+	close(c)
+}
+
+func main() {
+	s := []int{7, 2, 8, -9, 4, 0}
+	
+	c := make(chan int)
+	go closechan(c,s)
+
+	for i := range c {	
+		fmt.Println(i)
+	}
+	/*
+		go sum(s[:len(s)/2], c)
+		go sum(s[len(s)/2:], c)
+		x, y := &lt;-c, &lt;-c // receive from c
+
+		fmt.Println(x, y, x+y)
+	*/
+}
+
+</code></pre>
+<h6 class="codeblock" id="output-3"><strong><code>output</code></strong></h6>
+<pre><code>/// goroutine 안쓰면 뜬다!?
+
+7
+2
+8
+-9
+4
+0
+</code></pre>
+<blockquote>
+<p>느낀점:
+goroutine 을 쓰면, 다른 execution 이라고 보는게 맞을 것 같다.</p>
+<p>참고:
+close(c) 없애고, goroutine 없으면
+7
+2
+8
+-9
+4
+0</p>
+<p>있으면
+0
+8
+7
+2
+-9
 4</p>
+<p>아래는 공통적으로 나오는 경고문</p>
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan receive]:
+main.main()
+  /tmp/sandbox232678665/prog.go:26 +0x14c
+</code></pre>
+</blockquote>
+<h6 class="codeblock" id="testgo"><strong><code>test.go</code></strong></h6>
+<pre><code class="language-go">
+/*
+  both are possible! 
+  
+  c := make(chan int)
+	go closechan(c,s)
+
+  c := make(chan int, 10)
+	closechan(c,s)
+*/
+
+package main
+
+import &quot;fmt&quot;
+
+func sum(s []int, c chan int) {
+	sum := 0
+	for _, v := range s {
+		sum += v
+	}
+	c &lt;- sum // send sum to c
+
+}
+func closechan(c chan int, iter []int) {
+	for index, _ := range iter {
+	 	sum(iter[index:index+1],c) // 여기가 다름!!
+	} 
+	close(c)
+}
+
+func main() {
+	s := []int{7, 2, 8, -9, 4, 0}
+	
+	c := make(chan int)
+	go closechan(c,s)
+
+	for i := range c {	
+		fmt.Println(i)
+	}
+	/*
+		go sum(s[:len(s)/2], c)
+		go sum(s[len(s)/2:], c)
+		x, y := &lt;-c, &lt;-c // receive from c
+
+		fmt.Println(x, y, x+y)
+	*/
+}
+
+</code></pre>
+<h4 id="select-부터-다시">select 부터 다시!</h4>
 
     
   </main>

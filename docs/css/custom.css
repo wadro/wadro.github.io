@@ -70,7 +70,7 @@ ol,ul{
 h6.codeblock {
   font-size: 0.9rem;
 }
-h6.codeblock + div.code-toolbar {
+h6.codeblock + div.code-toolbar, h6.codeblock + pre {
   margin-top: 3px !important;
 }
 div.code-toolbar > pre {
