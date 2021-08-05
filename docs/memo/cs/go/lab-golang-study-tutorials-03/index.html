@@ -537,125 +537,6 @@ main.main()
 	/tmp/sandbox710675921/prog.go:20 +0x193
 
 </code></pre>
-<h6 class="codeblock" id="buffered-channelsgo"><strong><code>buffered-channels.go</code></strong></h6>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func chanfunc(c chan int,integer int) {
-	c &lt;- integer
-}
-
-func main() {
-	ch := make(chan int)
-	
-	go chanfunc(ch,1)	
-	go chanfunc(ch,2)
-	go chanfunc(ch,3)
-
-	fmt.Println(&lt;-ch)
-	fmt.Println(&lt;-ch)
-  fmt.Println(&lt;-ch)
-}
-
-</code></pre>
-<h6 class="codeblock" id="no-buffered-channels-blockgo"><strong><code>no-buffered-channels-block.go</code></strong></h6>
-<pre><code class="language-go">func main() {
-	ch := make(chan int)
-	go chanfunc(ch,1)	
-
-	chanfunc(ch,2)	
-
-	fmt.Println(&lt;-ch)
-
-
-}
-</code></pre>
-<h6 class="codeblock" id="no-buffered-channels-block-output"><strong><code>no-buffered-channels-block-output</code></strong></h6>
-<pre><code>fatal error: all goroutines are asleep - deadlock!
-
-goroutine 1 [chan send]:
-main.chanfunc(...)
-	/tmp/sandbox977088187/prog.go:5
-main.main()
-	/tmp/sandbox977088187/prog.go:12 +0x87
-
-goroutine 20 [chan send]:
-main.chanfunc(0xc00009c060, 0x1)
-	/tmp/sandbox977088187/prog.go:5 +0x3f
-created by main.main
-	/tmp/sandbox977088187/prog.go:10 +0x65
-
-
-/// goroutine 없을때
-fatal error: all goroutines are asleep - deadlock!
-
-goroutine 1 [chan send]:
-main.chanfunc(...)
-	/tmp/sandbox473627473/prog.go:5
-main.main()
-	/tmp/sandbox473627473/prog.go:11 +0x65
-
-
-/// print 없을때
-fatal error: all goroutines are asleep - deadlock!
-
-goroutine 1 [chan send]:
-main.chanfunc(...)
-	/tmp/sandbox473783957/prog.go:5
-main.main()
-	/tmp/sandbox473783957/prog.go:11 +0x57
-
-</code></pre>
-<h6 class="codeblock" id="range-and-closego"><strong><code>range-and-close.go</code></strong></h6>
-<pre><code class="language-go">package main
-
-import (
-	&quot;fmt&quot;
-)
-
-func fibonacci(n int, c chan int) {
-	x, y := 0, 1
-	for i := 0; i &lt; n; i++ {
-		c &lt;- x
-		x, y = y, x+y
-	}
-	close(c)
-}
-
-func main() {
-	c := make(chan int, 10)
-	go fibonacci(cap(c), c)
-	// fibonacci(10, c) // capacity 주면 goroutine 안써도 값 들어감
-  // go fibonacci(11, c) // goroutine 쓰면 capacity 초과해도 값 들어감
-
-	for i := range c {
-		fmt.Println(i,&quot; (i)&quot;)
-
-		v, ok:= &lt;-c
-		
-		fmt.Println(v,ok)
-	}
-	v, ok:= &lt;-c
-		
-	fmt.Println(&quot;final check: &quot;,v,ok)
-	
-}
-
-</code></pre>
-<h6 class="codeblock" id="range-and-close-output"><strong><code>range-and-close-output</code></strong></h6>
-<pre><code>0  (i)
-1 true
-1  (i)
-2 true
-3  (i)
-5 true
-8  (i)
-13 true
-21  (i)
-34 true
-final check:  0 false
-</code></pre>
 <h6 class="codeblock" id="channels-close-test-1go"><strong><code>channels-close-test-1.go</code></strong></h6>
 <pre><code class="language-go">package main
 
@@ -824,6 +705,177 @@ func main() {
 	*/
 }
 
+</code></pre>
+<h6 class="codeblock" id="buffered-channelsgo"><strong><code>buffered-channels.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func chanfunc(c chan int,integer int) {
+	c &lt;- integer
+}
+
+func main() {
+	ch := make(chan int)
+	
+	go chanfunc(ch,1)	
+	go chanfunc(ch,2)
+	go chanfunc(ch,3)
+
+	fmt.Println(&lt;-ch)
+	fmt.Println(&lt;-ch)
+  fmt.Println(&lt;-ch)
+}
+
+</code></pre>
+<h6 class="codeblock" id="no-buffered-channels-blockgo"><strong><code>no-buffered-channels-block.go</code></strong></h6>
+<pre><code class="language-go">func main() {
+	ch := make(chan int)
+	go chanfunc(ch,1)	
+
+	chanfunc(ch,2)	
+
+	fmt.Println(&lt;-ch)
+
+
+}
+</code></pre>
+<h6 class="codeblock" id="no-buffered-channels-block-output"><strong><code>no-buffered-channels-block-output</code></strong></h6>
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox977088187/prog.go:5
+main.main()
+	/tmp/sandbox977088187/prog.go:12 +0x87
+
+goroutine 20 [chan send]:
+main.chanfunc(0xc00009c060, 0x1)
+	/tmp/sandbox977088187/prog.go:5 +0x3f
+created by main.main
+	/tmp/sandbox977088187/prog.go:10 +0x65
+
+
+/// goroutine 없을때
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox473627473/prog.go:5
+main.main()
+	/tmp/sandbox473627473/prog.go:11 +0x65
+
+
+/// print 없을때
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.chanfunc(...)
+	/tmp/sandbox473783957/prog.go:5
+main.main()
+	/tmp/sandbox473783957/prog.go:11 +0x57
+
+</code></pre>
+<h6 class="codeblock" id="range-and-closego"><strong><code>range-and-close.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func fibonacci(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i &lt; n; i++ {
+		c &lt;- x
+		x, y = y, x+y
+	}
+	close(c)
+}
+
+func main() {
+	c := make(chan int, 10)
+	go fibonacci(cap(c), c)
+	// fibonacci(10, c) // capacity 주면 goroutine 안써도 값 들어감
+  // go fibonacci(11, c) // goroutine 쓰면 capacity 초과해도 값 들어감
+
+	for i := range c {
+		fmt.Println(i,&quot; (i)&quot;)
+
+		v, ok:= &lt;-c
+		
+		fmt.Println(v,ok)
+	}
+	v, ok:= &lt;-c
+		
+	fmt.Println(&quot;final check: &quot;,v,ok)
+	
+}
+
+</code></pre>
+<h6 class="codeblock" id="range-and-close-output"><strong><code>range-and-close-output</code></strong></h6>
+<pre><code>0  (i)
+1 true
+1  (i)
+2 true
+3  (i)
+5 true
+8  (i)
+13 true
+21  (i)
+34 true
+final check:  0 false
+</code></pre>
+<h6 class="codeblock" id="channels-close-buffer-size-testgo"><strong><code>channels-close-buffer-size-test.go</code></strong></h6>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func fibonacci(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i &lt; n; i++ {
+		c &lt;- x
+		x, y = y, x+y
+	}
+	fmt.Println(&quot;gogo&quot;)
+	close(c)
+}
+
+func main() {
+	c := make(chan int, 1)
+	// go fibonacci(cap(c), c)
+	// fibonacci(10, c) // capacity 주면 goroutine 안써도 값 들어감
+    go fibonacci(10, c) // goroutine 쓰면 capacity 초과해도 값 들어감
+
+	for i := range c {
+		fmt.Println(i,&quot; (i)&quot;)
+		time.Sleep(1000*time.Millisecond)
+
+		
+	}
+	v, ok:= &lt;-c
+		
+	fmt.Println(&quot;final check: &quot;,v,ok)
+	
+}
+
+
+</code></pre>
+<h6 class="codeblock" id="output-4"><strong><code>output</code></strong></h6>
+<pre><code>0  (i)
+1  (i)
+1  (i)
+2  (i)
+3  (i)
+5  (i)
+8  (i)
+13  (i)
+21  (i)
+gogo
+34  (i)
+final check:  0 false
 </code></pre>
 <h4 id="select-부터-다시">select 부터 다시!</h4>
 

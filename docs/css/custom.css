@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
   background-color: #FFF;
+  font-family: 'Hahmlet', serif;
+
   /*  
   #FFE8F5
   #FBF8BE
@@ -58,6 +61,27 @@ ol,ul{
   word-wrap: break-word;
 }
 
+table {
+  overflow-wrap: break-word;
+}
+th {
+  background-color: hsl(226, 23%, 31%);
+  color: #bcbdd0;
+  font-size: large;
+}
+td{
+  background-color: hsl(226, 23%, 11%);
+  color: #bcbdd0;
+  font-size: medium;
+}
+table code {
+  /* color: #a6a9d6; */
+  color: #dee9f3;
+}
+th, td {
+  /* border: 0px solid hsl(226, 23%, 31%); */
+  border: 0.5px solid #5b5b64;
+}
 
 #toparrow{
   position: fixed;

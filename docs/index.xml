@@ -109,7 +109,8 @@ My Subheading A collection of textile samples lay spread out on the table - Sams
   hugo new site (블로그 파일 모아 놓을 폴더 이름) e.g. hugo new site blog
   cd (블로그 파일 모아 놓을 폴더 이름) e.g. cd blog
   git init
-이 부분은 각자 쓰고 싶은 테마를 찾아볼것.여기서 -&amp;gt; git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+이 부분은 각자 쓰고 싶은 테마를 찾아볼것.여기서 -&amp;gt; git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git
+themes/ananke
   hugo new posts/(쓰고싶은이름).md
   터미널(powershell)에 hugo 엔터 누르면 markdown 으로 작성된 파일이 알아서 html,css,js 파일로 변환됨.</description>
     </item>
