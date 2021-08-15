@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.82.1" />
-  <link rel="canonical" href="/categories/">
+  <link rel="canonical" href="/memo/cs/rustlang/rust-book/hello-world-and-cargo/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>Categories | WADRO</title>
+  <title>hello, world! and cargo | WADRO</title>
 </head>
 
   <body>
@@ -221,7 +221,7 @@
       
       
       
-      <a href="/categories/" aria-current="page">
+      <a href="/categories/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -302,76 +302,157 @@
         <div id="topofpage">
           
   <main id="main">
-    <h1>Categories</h1>
-    <ul class="patterns-list">
+    
+    <h1>hello, world! and cargo</h1>
+
+    Mon Aug 2, 2021
+    <br>
+    <small><em>Last modified: Mon Aug 2, 2021</em></small>
+    
+    <br>
+
+    <div class="toc">
+      <ul style="margin:0;">
+      <strong>Categories:</strong> <small>(directories)</small>
+        
+            <li style="margin:0;"> 🗂 <a href="https://wadro.github.io/categories/cs/">cs</a></li>
+        
+      </ul>
+
+      <br />
+
+      <ul style="margin:0;">
+      <strong>Tags: </strong> <small>(sub-directories)</small>
+        
+            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/rust/">rust</a></li>
+        
+            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/%EB%9F%AC%EC%8A%A4%ED%8A%B8-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/">러스트 튜토리얼</a></li>
+        
+      </ul>
       
+      <br />
+      
+      <ul style="margin:0;">
+      <strong>Series:</strong> <small>(travel the world of knowledge!)</small>
+      
+        <li style="margin:0;"> 🖇 <a href="https://wadro.github.io/series/rust-book/">rust book</a></li>
+      
+      </ul>
+
+    </div>
+
+    <aside>
+      <nav class="toc" aria-labelledby="toc-heading">
+        <h2 id="toc-heading">Table of contents</h2>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#착한-반말-컨셉">착한 반말 컨셉</a></li>
+    <li><a href="#rust-튜토리얼">Rust 튜토리얼</a>
+      <ol>
         <li>
-          <h2>
-            <a href="/categories/computer-engineering/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (3) Computer Engineering
-            </a>
-          </h2>
+          <ol>
+            <li></li>
+          </ol>
         </li>
-      
-        <li>
-          <h2>
-            <a href="/categories/cs/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (3) cs
-            </a>
-          </h2>
-        </li>
-      
-        <li>
-          <h2>
-            <a href="/categories/graduate/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (1) graduate
-            </a>
-          </h2>
-        </li>
-      
-        <li>
-          <h2>
-            <a href="/categories/hugo/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (1) hugo
-            </a>
-          </h2>
-        </li>
-      
-        <li>
-          <h2>
-            <a href="/categories/likelion/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (1) likelion
-            </a>
-          </h2>
-        </li>
-      
-        <li>
-          <h2>
-            <a href="/categories/%EB%B8%94%EB%A1%9C%EA%B7%B8/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (1) 블로그
-            </a>
-          </h2>
-        </li>
-      
-    </ul>
+        <li><a href="#cargo-버젼-체크">cargo 버젼 체크</a></li>
+        <li><a href="#새로운-프로젝트-생성">새로운 프로젝트 생성</a></li>
+        <li><a href="#cargotoml-파일-구성">cargo.toml 파일 구성</a></li>
+        <li><a href="#주의">주의</a></li>
+        <li><a href="#chapter-3">Chapter 3</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+      </nav>  
+    </aside>
+    
+    <h2 id="착한-반말-컨셉">착한 반말 컨셉</h2>
+<h2 id="rust-튜토리얼">Rust 튜토리얼</h2>
+<ol>
+<li>먼저  WSL2 설치 가이드 <a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10">링크</a></li>
+<li>설치 후 기초 예제 <a href="https://doc.rust-lang.org/book/ch01-03-hello-cargo.html">링크</a></li>
+</ol>
+<p><em>terminal</em></p>
+<pre><code>$ mkdir ~/projects
+$ cd ~/projects
+$ mkdir hello_world
+$ cd hello_world
+
+</code></pre>
+<h6 class="codeblock" id="hello_worldrs"><strong><code>hello_world.rs</code></strong></h6>
+<pre><code class="language-rust">fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<h6 class="codeblock" id="output"><strong><code>output</code></strong></h6>
+<pre><code>$ rustc main.rs
+$ ./main
+Hello, world!
+
+</code></pre>
+<h3 id="cargo-버젼-체크">cargo 버젼 체크</h3>
+<pre><code>$ cargo --version
+</code></pre>
+<h3 id="새로운-프로젝트-생성">새로운 프로젝트 생성</h3>
+<pre><code>$ cargo new hello_cargo
+$ cd hello_cargo
+</code></pre>
+<h3 id="cargotoml-파일-구성">cargo.toml 파일 구성</h3>
+<pre><code class="language-toml">[package]
+name = &quot;hello_cargo&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
+edition = &quot;2018&quot;
+
+[dependencies]
+
+</code></pre>
+<blockquote>
+<p>note: <code>edition</code> key in Appendix E. -&gt; 여기서 toml 파일 설정에 대해 좀더 알아볼 예정.</p>
+</blockquote>
+<ul>
+<li>dependencies 는 rust 에서 crates 라는 이름으로 불림. (packages of code are referred to as crates)</li>
+<li>The top-level project directory is just for README files, license information, configuration files, and anything else not related to your code.</li>
+<li>가장 탑레벨의 프로젝트 디렉토리에는 README 파일, 라이센스 정보, 설정 파일 등이 들어가.</li>
+</ul>
+<p>이제 프로젝트 폴더에서  &lt;폴더이름&gt;/hello_cargo
+<code>cargo build</code> 를 하면 이렇게 나올거야.</p>
+<pre><code>$ cargo build
+   Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.85 secs
+</code></pre>
+<p>실행 할때는 폴더명이 좀 다른데,
+현재 폴더에서 target/debug/ 아래에 실행 파일이 있을거야.</p>
+<pre><code>$ ./target/debug/hello_cargo # or .\target\debug\hello_cargo.exe on Windows
+Hello, world!
+</code></pre>
+<p>cargo build 후에 실행 파일을 실행하는 방법도 있지만,
+cargo run 으로 한번에 실행하는 방식도 있어.</p>
+<pre><code>$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/hello_cargo`
+Hello, world!
+
+</code></pre>
+<p><code>cargo check</code> 라는 커맨드는 컴파일도 하지않고 그냥 코드가 제대로 잘 작성되었는지 체크하는 커맨드야.
+언제 쓰냐고? 보통 <code>cargo build</code> 보다 <code>cargo check</code> 가 훨씬 빠르기 때문에, 중간 중간 체크하기 위해서 사용될수 있어.
+실행할 준비가 되었다고 생각하면 <code>cargo build</code> 를 통해 컴파일해보고 실행하면 돼!</p>
+<p>cargo 를 사용하면서 부터는 어떤 운영체제든 상관없이 일관된 커맨드를 사용하기때문에 헷갈릴 일도 없지.</p>
+<p>Release 할때는 <code>cargo build --release</code>  커맨드를 사용해.
+target/debug 대신 target/release 폴더에 파일을 생성하지.
+컴파일은 느리게 되지만 빠른 실행이 될수 있도록 도와줘.</p>
+<p>이미 존재하는 프로젝트를 카피해서 빌드해보고 싶다면, 아래 커맨드를 입력하면돼.</p>
+<pre><code>$ git clone example.org/someproject
+$ cd someproject
+$ cargo build
+
+</code></pre>
+<h3 id="주의">주의</h3>
+<p>챕터 2로 넘어가기 전에, 좀더 기초를 쌓고 프로젝트를 해보고 싶은 사람들(나를 포함)은 챕터 3를 먼저 하는걸 추천할게.</p>
+<h3 id="chapter-3">Chapter 3</h3>
+<p>다음 페이지에서 계속&hellip;</p>
+
+    
   </main>
 
 
