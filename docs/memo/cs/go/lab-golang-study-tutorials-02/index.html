@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.86.0" />
   <link rel="canonical" href="/memo/cs/go/lab-golang-study-tutorials-02/">
 
   
@@ -451,7 +451,7 @@ func main() {
   v := Vertex{3, 4}
 
   a = f  // a MyFloat implements Abser
-        
+
   fmt.Println(a.Abs()) //1.4142135623730951
 
   a = &amp;v // a *Vertex implements Abser
@@ -461,7 +461,7 @@ func main() {
   // a = v
 
   fmt.Println(a.Abs()) // 5
-        
+
 }
 
 type MyFloat float64
@@ -628,7 +628,7 @@ func describe(i I) {
 </li>
 <li>
 <p>type switch</p>
-<pre><code class="language-go">   
+<pre><code class="language-go">
  func do(i interface{}) {
    switch v := i.(type) {
    case int:

@@ -8,7 +8,7 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 02 Aug 2021 14:19:54 +0900</lastBuildDate><atom:link href="https://wadro.github.io/memo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chapter 3  Common Programming Concepts</title>
+      <title>(continued on post) Chapter 3  Common Programming Concepts</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/</link>
       <pubDate>Mon, 02 Aug 2021 14:19:54 +0900</pubDate>
       
@@ -24,7 +24,7 @@ fn main() { let x = 5; println!</description>
     </item>
     
     <item>
-      <title>hello, world! and cargo</title>
+      <title>(continued on post) hello, world! and cargo</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/hello-world-and-cargo/</link>
       <pubDate>Mon, 02 Aug 2021 12:05:34 +0900</pubDate>
       
@@ -34,7 +34,7 @@ $ mkdir ~/projects $ cd ~/projects $ mkdir hello_world $ cd hello_world  hello_w
     </item>
     
     <item>
-      <title>ch01</title>
+      <title>(continued on post) ch01</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/ch01/</link>
       <pubDate>Mon, 26 Jul 2021 13:55:43 +0900</pubDate>
       

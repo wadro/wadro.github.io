@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.86.0" />
-  <link rel="canonical" href="/memo/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/">
+  <link rel="canonical" href="/post/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/">
 
   
 
@@ -37,7 +37,7 @@
 
   
   
-  <title>(continued on post) Chapter 3  Common Programming Concepts | WADRO</title>
+  <title>Chapter 3  Common Programming Concepts | WADRO</title>
 </head>
 
   <body>
@@ -302,87 +302,124 @@
         <div id="topofpage">
           
   <main id="main">
-    
-    <h1>(continued on post) Chapter 3  Common Programming Concepts</h1>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Chapter 3  Common Programming Concepts
+    </h1>
 
-    Mon Aug 2, 2021
-    <br>
-    <small><em>Last modified: Mon Aug 2, 2021</em></small>
-    
-    <br>
-
-    <div class="toc">
-      <ul style="margin:0;">
-      <strong>Categories:</strong> <small>(directories)</small>
-        
-            <li style="margin:0;"> 🗂 <a href="https://wadro.github.io/categories/cs/">cs</a></li>
-        
-      </ul>
-
-      <br />
-
-      <ul style="margin:0;">
-      <strong>Tags: </strong> <small>(sub-directories)</small>
-        
-            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/rust/">rust</a></li>
-        
-            <li style="margin:0;"> 🔖 <a href="https://wadro.github.io/tags/%EB%9F%AC%EC%8A%A4%ED%8A%B8-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/">러스트 튜토리얼</a></li>
-        
-      </ul>
+    <div class="date">
       
-      <br />
       
-      <ul style="margin:0;">
-      <strong>Series:</strong> <small>(travel the world of knowledge!)</small>
+      <strong>Publish date: </strong>Aug 2, 2021
       
-        <li style="margin:0;"> 🖇 <a href="https://wadro.github.io/series/rust-book/">rust book</a></li>
+        
       
-      </ul>
-
     </div>
 
-    <aside>
-      <nav class="toc" aria-labelledby="toc-heading">
-        <h2 id="toc-heading">Table of contents</h2>
-        <nav id="TableOfContents">
-  <ol>
-    <li><a href="#변수-선언">변수 선언</a>
-      <ol>
-        <li>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-        <li><a href="#변수와-상수의-차이">변수와 상수의 차이</a></li>
-        <li><a href="#쉐도잉">쉐도잉</a></li>
-      </ol>
-    </li>
-    <li><a href="#데이터-타입">데이터 타입</a>
-      <ol>
-        <li><a href="#스칼라-타입">스칼라 타입</a>
-          <ol>
-            <li><a href="#integer-타입">integer 타입</a></li>
-            <li><a href="#integer-overflow">Integer Overflow</a></li>
-            <li><a href="#floating-point-타입">floating-point 타입</a></li>
-            <li><a href="#numeric-operations">Numeric Operations</a></li>
-            <li><a href="#boolean-type">Boolean type</a></li>
-            <li><a href="#character-type">character type</a></li>
-          </ol>
-        </li>
-        <li><a href="#compound-types">Compound Types</a>
-          <ol>
-            <li><a href="#tuple-type">Tuple type</a></li>
-            <li><a href="#array-타입">Array 타입</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#functions">Functions</a></li>
-  </ol>
-</nav>
-      </nav>  
-    </aside>
     
+      <div class="tags">
+        <strong>Categories: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#doc"></use>
+              </svg>
+              
+              <a href="/categories/cs/">cs</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="/tags/rust/">rust</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="/tags/%EB%9F%AC%EC%8A%A4%ED%8A%B8-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/">러스트 튜토리얼</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+
+    
+      <div class="tags">
+        <strong>Series: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#balloon"></use>
+              </svg>
+              
+              <a href="/series/rust-book/">rust book</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%eb%b3%80%ec%88%98-%ec%84%a0%ec%96%b8">
+            변수 선언
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%83%80%ec%9e%85">
+            데이터 타입
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#functions">
+            Functions
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+
     <h2 id="변수-선언">변수 선언</h2>
 <p>기본적으로 rust 의 변수는 immutable 합니다. 즉, 변하지 않는 값이 되죠.<br>
 (c 나 여러 언어에서 const 키워드를 사용하는 것과 같습니다. 기본 변수 타입이 const 인 셈이죠.)</p>
@@ -873,10 +910,48 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 러스트에서는 이러한 종류의 에러를 미연에 방지하는 방법으로 프로그램을 바로 종료시키게 됩니다.<br>
 챕터 9에서 러스트의 에러 핸들링을 좀더 알아보기로 합시다.</p>
 <h2 id="functions">Functions</h2>
-<p>&ndash; 다음에 계속</p>
+<p>러스트 코드에는 함수가 널리 퍼져있습니다(?).<br>
+그 중에서도 가장 중요한 함수를 이미 우리는 알고 있죠: 많은 언어에서 엔트리 포인트(시작점) 으로 사용되는 <code>main</code> 함수입니다.<br>
+새로운 함수를 선언하는 <code>fn</code>키워드도 한번 본적이 있습니다.</p>
+<p>러스트 코드는 함수나 변수 이름을 만들때 관습적으로 <em>snake case</em> 를 사용합니다.<br>
+<em>snake case</em> 에서는 모든 문자가 소문자이고, 언더스코어(_)로 단어들을 구별합니다.<br>
+예시를 봅시다:</p>
+<pre><code class="language-rust">fn main() {
+  println!(&quot;Hello, world!&quot;);
 
-    
+  another_function();
+}
+
+fn another_function() {
+  println!(&quot;Another function.&quot;);
+}
+</code></pre>
+<p>러스트에서 함수를 선언할때는 <code>fn</code> 키워드로 시작하고,<br>
+함수 이름 뒤에 괄호를 붙입니다.<br>
+중괄호는 컴파일러에게 함수 바디(body)의 시작과 끝을 알려줍니다.</p>
+<p>함수 이름을 쓰고 뒤에 괄호를 붙이면 우리가 정의한 어떤 함수든 호출할수 있습니다.</p>
+<p>노트:<br>
+유의할점은, 소스코드에서는 <code>main</code>함수 뒤에 <code>another_function</code>을 정의하였지만, 앞에서 정의해도 상관없습니다.<br>
+어딘가에만 정의되어 있으면 됩니다.</p>
+<p>함수를 실행해보면 다음과 같은 결과가 나옵니다:</p>
+<pre><code>$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/functions`
+Hello, world!
+Another function.
+
+</code></pre>
+<p><code>main</code> 함수 내에서 호출된 순서대로, <code>Hello, world!</code> 다음에 <code>Another function.</code> 이 차례로 호출되는것을 확인할 수 있습니다.</p>
+<h3 id="function-parameters">Function Parameters</h3>
+<p>&ndash; 여기부터 다시</p>
+
   </main>
+  
+  <div id="disqus-container">
+  
+</div>
+
 
 
           

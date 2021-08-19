@@ -8,6 +8,23 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 28 Apr 2021 14:37:16 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>진행상황 2021 Aug 19</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-19/</link>
+      <pubDate>Tue, 17 Aug 2021 17:03:46 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-19/</guid>
+      <description>8월 셋째주 진행상황 프레젠테이션
+주요 진행 내용  SSI in Business Process management on Blockchain
+➜ 논문 개요 구상 필요 개념 학습  논문 리스트 중:   2.blockchain-accessControl
+𝛽. Distributed Attribute-Based Access Control System Using a Permissioned Blockchain
+➜ Hyperledger fabric에서 access control(PEP, PDP, PAP, PIP 개념) 
+4.SSI-AccessControl
+𝛼. SSIBAC: Self-Sovereign Identity Based Access Control
+➜ SSI를 이용한 access control 
+     질문  논문쓸때 통계툴 필요한지 물어보기 sas 등  계획   8월 둘째주까지</description>
+    </item>
+    
+    <item>
       <title>[강의] 상품매매회계처리의 이해 [쉬운회계원리 12강]</title>
       <link>https://wadro.github.io/note/accounting/principles/%EA%B0%95%EC%9D%98-%EC%83%81%ED%92%88%EB%A7%A4%EB%A7%A4%ED%9A%8C%EA%B3%84%EC%B2%98%EB%A6%AC%EC%9D%98-%EC%9D%B4%ED%95%B4-%EC%89%AC%EC%9A%B4%ED%9A%8C%EA%B3%84%EC%9B%90%EB%A6%AC-12%EA%B0%95/</link>
       <pubDate>Sun, 15 Aug 2021 13:30:42 +0900</pubDate>
@@ -24,11 +41,11 @@ Summary  Here is summary.
     </item>
     
     <item>
-      <title>정기미팅 2021 Aug 11</title>
-      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A0%95%EA%B8%B0%EB%AF%B8%ED%8C%85-2021-aug-11/</link>
+      <title>진행상황 2021 Aug 11</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-11/</link>
       <pubDate>Sun, 08 Aug 2021 17:40:42 +0900</pubDate>
       
-      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A0%95%EA%B8%B0%EB%AF%B8%ED%8C%85-2021-aug-11/</guid>
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-11/</guid>
       <description>정기 미팅 발표 계획   8월 둘째주까지
  bpm, rea, 개념 정리 논문 리스트 중 bpm 논문 1,2,3 읽기 (1-ㄱ,ㄴ,ㄷ)    8월 셋째주까지
   2-ㄴ. Distributed Attribute-Based Access Control System Using a Permissioned Blockchain
@@ -39,7 +56,7 @@ Summary  Here is summary.
     </item>
     
     <item>
-      <title>Chapter 3  Common Programming Concepts</title>
+      <title>(continued on post) Chapter 3  Common Programming Concepts</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/</link>
       <pubDate>Mon, 02 Aug 2021 14:19:54 +0900</pubDate>
       
@@ -55,11 +72,37 @@ fn main() { let x = 5; println!</description>
     </item>
     
     <item>
-      <title>hello, world! and cargo</title>
+      <title>Chapter 3  Common Programming Concepts</title>
+      <link>https://wadro.github.io/post/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/</link>
+      <pubDate>Mon, 02 Aug 2021 14:19:54 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/post/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/</guid>
+      <description>변수 선언 기본적으로 rust 의 변수는 immutable 합니다. 즉, 변하지 않는 값이 되죠.
+(c 나 여러 언어에서 const 키워드를 사용하는 것과 같습니다. 기본 변수 타입이 const 인 셈이죠.)
+이걸 통해 안전성과 쉬운 병렬성을 달성할수가 있게됩니다.(왜 그런지는 배우면서 차차 알수 있겠죠. 저도 아직 모름&amp;hellip;)
+물론, 변하는 값으로 설정하는 방법도 있습니다.
+이제부터 왜 그렇게 설계했는지를 살펴봅시다.
+먼저 변수를 선언하고나면, 그 이름을 가진 변수의 값을 바꿀수 없습니다.
+한번 예시를 통해 살펴 볼게요.
+fn main() { let x = 5; println!</description>
+    </item>
+    
+    <item>
+      <title>(continued on post) hello, world! and cargo</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/hello-world-and-cargo/</link>
       <pubDate>Mon, 02 Aug 2021 12:05:34 +0900</pubDate>
       
       <guid>https://wadro.github.io/memo/cs/rustlang/rust-book/hello-world-and-cargo/</guid>
+      <description>착한 반말 컨셉 Rust 튜토리얼  먼저 WSL2 설치 가이드 링크 설치 후 기초 예제 링크  terminal
+$ mkdir ~/projects $ cd ~/projects $ mkdir hello_world $ cd hello_world  hello_world.rs fn main() { println!(&amp;quot;Hello, world!&amp;quot;); }  output $ rustc main.rs $ ./main Hello, world!  cargo 버젼 체크 $ cargo --version  새로운 프로젝트 생성 $ cargo new hello_cargo $ cd hello_cargo  cargo.toml 파일 구성 [package] name = &amp;quot;hello_cargo&amp;quot; version = &amp;quot;0.</description>
+    </item>
+    
+    <item>
+      <title>Hello, world! and Cargo</title>
+      <link>https://wadro.github.io/post/cs/rustlang/rust-book/hello-world-and-cargo/</link>
+      <pubDate>Mon, 02 Aug 2021 12:05:34 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/post/cs/rustlang/rust-book/hello-world-and-cargo/</guid>
       <description>착한 반말 컨셉 Rust 튜토리얼  먼저 WSL2 설치 가이드 링크 설치 후 기초 예제 링크  terminal
 $ mkdir ~/projects $ cd ~/projects $ mkdir hello_world $ cd hello_world  hello_world.rs fn main() { println!(&amp;quot;Hello, world!&amp;quot;); }  output $ rustc main.rs $ ./main Hello, world!  cargo 버젼 체크 $ cargo --version  새로운 프로젝트 생성 $ cargo new hello_cargo $ cd hello_cargo  cargo.toml 파일 구성 [package] name = &amp;quot;hello_cargo&amp;quot; version = &amp;quot;0.</description>
     </item>
@@ -75,11 +118,20 @@ $ mkdir ~/projects $ cd ~/projects $ mkdir hello_world $ cd hello_world  hello_w
     </item>
     
     <item>
-      <title>ch01</title>
+      <title>(continued on post) ch01</title>
       <link>https://wadro.github.io/memo/cs/rustlang/rust-book/ch01/</link>
       <pubDate>Mon, 26 Jul 2021 13:55:43 +0900</pubDate>
       
       <guid>https://wadro.github.io/memo/cs/rustlang/rust-book/ch01/</guid>
+      <description>본 글은 doc.rust-lang-org 의 튜토리얼 내용을 정리한 글입니다. rust lang 특징  Rust programming language is fundamentally about empowerment “systems-level” without taking on the customary risk of crashes or security holes, and without having to learn the fine points of a fickle toolchain. the language is designed to guide you naturally towards reliable code that is efficient in terms of speed and memory usage. introducing parallelism in Rust is a relatively low-risk operation: the compiler will catch the classical mistakes for you Rust isn’t limited to low-level systems programming - CLI apps, web servers, and many other kinds of code  rust lang 사용처  Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Rust</title>
+      <link>https://wadro.github.io/post/cs/rustlang/rust-book/introduction-to-rust/</link>
+      <pubDate>Mon, 26 Jul 2021 13:55:43 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/post/cs/rustlang/rust-book/introduction-to-rust/</guid>
       <description>본 글은 doc.rust-lang-org 의 튜토리얼 내용을 정리한 글입니다. rust lang 특징  Rust programming language is fundamentally about empowerment “systems-level” without taking on the customary risk of crashes or security holes, and without having to learn the fine points of a fickle toolchain. the language is designed to guide you naturally towards reliable code that is efficient in terms of speed and memory usage. introducing parallelism in Rust is a relatively low-risk operation: the compiler will catch the classical mistakes for you Rust isn’t limited to low-level systems programming - CLI apps, web servers, and many other kinds of code  rust lang 사용처  Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge.</description>
     </item>
     

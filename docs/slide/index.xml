@@ -6,13 +6,30 @@
     <description>Recent content in Slides on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 08 Aug 2021 17:40:42 +0900</lastBuildDate><atom:link href="https://wadro.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Aug 2021 17:03:46 +0900</lastBuildDate><atom:link href="https://wadro.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>정기미팅 2021 Aug 11</title>
-      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A0%95%EA%B8%B0%EB%AF%B8%ED%8C%85-2021-aug-11/</link>
+      <title>진행상황 2021 Aug 19</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-19/</link>
+      <pubDate>Tue, 17 Aug 2021 17:03:46 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-19/</guid>
+      <description>8월 셋째주 진행상황 프레젠테이션
+주요 진행 내용  SSI in Business Process management on Blockchain
+➜ 논문 개요 구상 필요 개념 학습  논문 리스트 중:   2.blockchain-accessControl
+𝛽. Distributed Attribute-Based Access Control System Using a Permissioned Blockchain
+➜ Hyperledger fabric에서 access control(PEP, PDP, PAP, PIP 개념) 
+4.SSI-AccessControl
+𝛼. SSIBAC: Self-Sovereign Identity Based Access Control
+➜ SSI를 이용한 access control 
+     질문  논문쓸때 통계툴 필요한지 물어보기 sas 등  계획   8월 둘째주까지</description>
+    </item>
+    
+    <item>
+      <title>진행상황 2021 Aug 11</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-11/</link>
       <pubDate>Sun, 08 Aug 2021 17:40:42 +0900</pubDate>
       
-      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A0%95%EA%B8%B0%EB%AF%B8%ED%8C%85-2021-aug-11/</guid>
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-11/</guid>
       <description>정기 미팅 발표 계획   8월 둘째주까지
  bpm, rea, 개념 정리 논문 리스트 중 bpm 논문 1,2,3 읽기 (1-ㄱ,ㄴ,ㄷ)    8월 셋째주까지
   2-ㄴ. Distributed Attribute-Based Access Control System Using a Permissioned Blockchain
