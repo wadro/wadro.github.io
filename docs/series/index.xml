@@ -6,7 +6,16 @@
     <description>Recent content in Series on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 02 Aug 2021 14:19:54 +0900</lastBuildDate><atom:link href="https://wadro.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 13:30:42 +0900</lastBuildDate><atom:link href="https://wadro.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>대학생과 직장인을 위한 쉬운 회계원리</title>
+      <link>https://wadro.github.io/series/%EB%8C%80%ED%95%99%EC%83%9D%EA%B3%BC-%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%89%AC%EC%9A%B4-%ED%9A%8C%EA%B3%84%EC%9B%90%EB%A6%AC/</link>
+      <pubDate>Sun, 15 Aug 2021 13:30:42 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/series/%EB%8C%80%ED%95%99%EC%83%9D%EA%B3%BC-%EC%A7%81%EC%9E%A5%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%89%AC%EC%9A%B4-%ED%9A%8C%EA%B3%84%EC%9B%90%EB%A6%AC/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>rust book</title>
       <link>https://wadro.github.io/series/rust-book/</link>
