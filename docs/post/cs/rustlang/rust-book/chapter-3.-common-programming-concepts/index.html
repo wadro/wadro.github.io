@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.86.0" />
   <link rel="canonical" href="/post/cs/rustlang/rust-book/chapter-3.-common-programming-concepts/">
 
   
@@ -411,6 +411,26 @@
           
           <a href="#functions">
             Functions
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#comments">
+            Comments
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#control-flow">
+            Control Flow
           </a>
         </li>
       
@@ -1000,7 +1020,223 @@ The value of y is: 6
 차례로 <code>5</code>와 <code>6</code>을 넣었기 때문에,<br>
 출력되는 문자열도 똑같은 순서로 나오는 것을 확인할수 있습니다.</p>
 <h3 id="function-bodies-contain-statements-and-expressions">Function Bodies Contain Statements and Expressions</h3>
-<p>&ndash; 여기부터 다시</p>
+<p>함수 본문은 선택적으로는 표현식으로 끝나는, 일련의 문장으로 구성됩니다.<br>
+지금까지는 종료 표현식이 없는 함수만 다루었지만, 표현식은 명령문의 일부로 보았습니다.<br>
+러스트는 표현식 기반 언어이기 때문에, 이런 내용은 꼭 이해해야할 중요한 차이점 입니다.<br>
+다른 언어에는 이러한 구분이 없기때문에, 명령문장과 표현식이 무엇이고,<br>
+그 차이가 함수 본문에 어떤 영향을 미치는지 한번 살펴보겠습니다.</p>
+<p>우리는 사실 이미 명령식과 표현식을 사용했습니다.<br>
+<em>명령식(statement)</em> 은 값을 리턴하지않으면서 어떤 행위를 수행하는 지시문입니다.<br>
+<em>표현식(Expressions)</em> 은 결과값을 도출합니다.<br>
+예제를 통해 살펴봅시다.</p>
+<p>변수를 만들고 <code>let</code>키워드로 값을 할당하는 이런 형태는 <em>Statement(명령식)</em> 입니다.<br>
+아래 예제 코드에서 <code>let y = 6;</code> 이 문장이 명령식입니다.</p>
+<pre><code class="language-rust">fn main() {
+  let y = 6;
+}
+</code></pre>
+<p><small>Listing 3-1: A main function declaration containing one statement</small></p>
+<p>함수 정의 또한 Statement 입니다.<br>
+앞서 나온 전체 예제는 그 자체로 statement 입니다.</p>
+<p>Statements 는 값을 리턴하지 않습니다.<br>
+따라서 <code>let</code> statement 를 다른 변수에 다시 할당할수 없습니다.<br>
+다음 예제를 실행하면 에러가 발생합니다.</p>
+<pre><code class="language-rust">fn main() {
+  let x = (let y = 6);
+}
+</code></pre>
+<p>실제로 프로그램을 실행하면 다음과 같은 에러가 나올겁니다.</p>
+<pre><code>$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error[E0658]: `let` expressions in this position are experimental
+ --&gt; src/main.rs:2:14
+  |
+2 |     let x = (let y = 6);
+  |              ^^^^^^^^^
+  |
+  = note: see issue #53667 &lt;https://github.com/rust-lang/rust/issues/53667&gt; for more information
+  = help: you can write `matches!(&lt;expr&gt;, &lt;pattern&gt;)` instead of `let &lt;pattern&gt; = &lt;expr&gt;`
+
+error: expected expression, found statement (`let`)
+ --&gt; src/main.rs:2:14
+  |
+2 |     let x = (let y = 6);
+  |              ^^^^^^^^^
+  |
+  = note: variable declaration using `let` is a statement
+
+warning: unnecessary parentheses around assigned value
+ --&gt; src/main.rs:2:13
+  |
+2 |     let x = (let y = 6);
+  |             ^^^^^^^^^^^ help: remove these parentheses
+  |
+  = note: `#[warn(unused_parens)]` on by default
+
+error: aborting due to 2 previous errors; 1 warning emitted
+
+For more information about this error, try `rustc --explain E0658`.
+error: could not compile `functions`
+
+To learn more, run the command again with --verbose.
+
+</code></pre>
+<p><code>let y = 6</code> statement 는 값을 반환하지 않다보니, <code>x</code>에 묶어놓을 값이 없습니다.<br>
+이런 특징이, 할당을 하면 할당된 값을 반환하는 다른 언어(C,Ruby 등)들과 다른 점입니다.<br>
+만약 <code>x = y = 6</code> 이런식으로 쓰면 <code>x</code> 와 <code>y</code>는 모두 <code>6</code>이라는 값을 가집니다.<br>
+러스트에서는 이런 경우가 없습니다.</p>
+<p>Expressions 는 어떤 값을 도출해내고, 러스트에서 작성할 코드의 나머지 대부분을 차지합니다.<br>
+간단한 수학 연산을 생각해볼까요.<br>
+<code>5+6</code>이라는 표현식에서 결과는 <code>11</code>이 나옵니다.<br>
+표현식(expressions)은 선언식(statement) 의 일부가 될수 있습니다:<br>
+위 예제 3-1 의 <code>let y=6</code>에서 <code>6</code>은 <code>6</code>이라는 값으로 도출되는 표현식입니다.<br>
+함수를 호출하는 것도 표현식입니다.<br>
+매크로를 호출하는 것도 표현식입니다.<br>
+새로운 스코프를 만들때 사용하는 블록,{},도 표현식입니다.<br>
+예를 들면 이렇습니다.</p>
+<pre><code class="language-rust">fn main() {
+  let x = 5;
+
+  let y = {
+    let x = 3;
+    x + 1
+  };
+  println!(&quot;The value of y is : {}&quot;, y);
+}
+</code></pre>
+<p>아래 표현식을 보세요:</p>
+<pre><code class="language-rust">{
+    let x = 3;
+    x + 1
+}
+</code></pre>
+<p>이 블록은 <code>4</code>라는 결과로 나타납니다.<br>
+이 값은 <code>y</code>에 묶이게 되고(bound to) <code>let</code>문장의 일부분입니다.<br>
+여기서 주의할점은 <code>x+1</code> 에는 세미콜론; 이 마지막에 없습니다.<br>
+지금까지 본적없는 형태이죠.<br>
+expressions(표현식)은 마지막 세미콜론을 포함하지 않습니다.<br>
+마지막에 세미콜론을 찍으면, 그 문장은 statement(선언식)으로 바뀌게 되고, 값을 반환하지 않게 됩니다.<br>
+이것을 명심하시고, 다음부터 배울 함수 값반환과 표현식으로 넘어가보도록 합시다.</p>
+<h3 id="functions-with-return-values">Functions with Return Values</h3>
+<p>함수는 자신을 부른 코드에 값을 반환할수 있습니다.<br>
+반환하는 값의 이름을 붙이진않지만, 타입은 지정할수 있습니다.<br>
+화살표(-&gt;) 뒤에 붙입니다.<br>
+러스트에서, 반환값은 함수 본문의 블록에서 가장 마지막 표현식의 값과 같습니다.<br>
+값을 지정해서 <code>return</code> 키워드로 먼저 끝내버릴수도 있지만, 대부분의 함수는 암시적으로 마지막 표현식을 반환합니다.<br>
+아래는 값을 반환하는 함수의 예입니다.</p>
+<pre><code class="language-rust">fn five() -&gt; i32 {
+  5
+}
+
+fn main() {
+  let x = five();
+
+  println!(&quot;The value of x is : {}&quot;, x);
+}
+</code></pre>
+<p>여기에 있는 <code>five</code>함수안에는 함수 호출도 없고, 매크로도, 심지어 let statement도 없습니다 — 그냥 숫자 <code>5</code>가 들어있을 뿐이죠.<br>
+러스트에서는 완벽하게 유효한 함수입니다.<br>
+함수의 반환 타입도 명시되어 있다는 것에 주목하세요. (<code>-&gt; 32</code>)<br>
+위 코드를 실행하면 아래와 같이 나올겁니다.</p>
+<pre><code>$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
+     Running `target/debug/functions`
+The value of x is: 5
+
+</code></pre>
+<p><code>five</code>함수의 <code>5</code>는 함수의 반환 값이고, 리턴 타입이 <code>i32</code>인 이유입니다.<br>
+좀더 자세히 살펴봅시다.<br>
+두가지 중요한 부분이 있습니다.<br>
+첫번째로, <code>let x = five();</code> 이 줄에서 변수를 초기화하기 위해서 함수의 반환값을 이용하였습니다.<br>
+<code>five</code>함수가 <code>5</code>를 반환했기때문에, 아래와 같은 줄이 됩니다.</p>
+<pre><code class="language-rust">let x = 5;
+</code></pre>
+<p>두번째로, <code>five</code>함수는 파라미터가 없고, 반환 타입만 정의하였습니다.<br>
+함수 본문에는 외로이 <code>5</code>가 있을뿐이고, 세미콜론;도 없습니다.<br>
+선언식이 아닌 표현식이기 때문이며, 반환하고 싶은 값이기 때문입니다.</p>
+<p>다른 예제를 살펴보죠.</p>
+<pre><code class="language-rust">fn main() {
+    let x = plus_one(5);
+
+    println!(&quot;The value of x is: {}&quot;, x);
+}
+
+fn plus_one(x: i32) -&gt; i32 {
+    x + 1
+}
+</code></pre>
+<p>위 코드를 실행하면 <code>The value of x is: 6</code> 이 나올겁니다.<br>
+하지만 <code>x+1</code>이 있는 이 줄에 세미콜론을 추가한다면, statement로 바뀌면서 에러가 나게 됩니다.</p>
+<pre><code class="language-rust">
+fn main() {
+    let x = plus_one(5);
+
+    println!(&quot;The value of x is: {}&quot;, x);
+}
+
+fn plus_one(x: i32) -&gt; i32 {
+    x + 1;
+}
+
+</code></pre>
+<p>이 코드를 컴파일 하면 아래처럼 에러가 나올 겁니다.</p>
+<pre><code>$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:7:24
+  |
+7 | fn plus_one(x: i32) -&gt; i32 {
+  |    --------            ^^^ expected `i32`, found `()`
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+8 |     x + 1;
+  |          - help: consider removing this semicolon
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `functions`
+
+To learn more, run the command again with --verbose.
+
+</code></pre>
+<p>주요 에러 메세지는 &ldquo;타입 미스매치(타입이 잘못 매칭되었음)&rdquo; 입니다.<br>
+<code>plus_one</code> 함수의 정의를 보면, <code>i32</code>타입을 반환한다고 되어있습니다.<br>
+하지만 statement선언식은 값으로 도출되지않고 비어있는 튜플()로 표현될 뿐입니다.<br>
+그러므로, 아무것도 반환되지 않으며, 함수 정의에 위배되므로, 에러가 발생하게 됩니다.<br>
+이 결과에서 러스트는 문제를 수정하는데 도움이 될수 있는 메세지를 제공합니다:<br>
+세미콜론을 제거하면 문제를 해결할수 있을거라고&hellip;</p>
+<h2 id="comments">Comments</h2>
+<p>모든 프로그래머들은 자신의 코드를 이해하기 쉽게 만들기 위해 노력하지만, 때때로 추가적인 설명이 필요합니다.<br>
+이런 경우에 노트를 남기거나, <em>코멘트</em> 를 남깁니다:<br>
+컴파일러는 소스코드의 코멘트를 무시하지만 코드를 읽는 사람들에게는 매우 유용할수 있습니다.<br>
+간단한 코멘트를 볼까요.</p>
+<pre><code class="language-rust">// hello, world
+</code></pre>
+<p>러스트에서는 관용적으로 두개의 슬래쉬// 로 코멘트를 시작하고 그 줄의 끝까지를 주석으로 간주합니다.<br>
+여러줄에 주석을 적으려면 이렇게 합니다:</p>
+<pre><code class="language-rust">// So we’re doing something complicated here, long enough that we need
+// multiple lines of comments to do it! Whew! Hopefully, this comment will
+// explain what’s going on.
+</code></pre>
+<p>각 줄에 두개의 술래쉬//를 적으면 됩니다.</p>
+<p>주석은 코드를 포함한 줄에도 사용 가능합니다.</p>
+<pre><code class="language-rust">fn main() {
+    let lucky_number = 7; // I’m feeling lucky today
+}
+</code></pre>
+<p>하지만 아래와 같이<br>
+설명하려는 코드 윗줄에 주석을 적는 것이 보통입니다.</p>
+<pre><code class="language-rust">fn main() {
+    // I’m feeling lucky today
+    let lucky_number = 7;
+}
+</code></pre>
+<p>러스트에는 <em>documentation comments</em> 라는 다른 종류의 주석도 있는데,<br>
+이 내용은 챕터 14의 &ldquo;Publishing a Crate to Crates.io&rdquo; 섹션에서 더 다뤄보도록 하겠습니다.</p>
+<h2 id="control-flow">Control Flow</h2>
+<p>&ndash; 다음에 계속&hellip;</p>
 
   </main>
   
