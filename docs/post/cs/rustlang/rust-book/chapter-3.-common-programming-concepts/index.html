@@ -434,6 +434,16 @@
           </a>
         </li>
       
+        <li>
+          
+          
+          
+          
+          <a href="#summary">
+            Summary
+          </a>
+        </li>
+      
     </ol>
   </nav>
 
@@ -1236,7 +1246,128 @@ To learn more, run the command again with --verbose.
 <p>러스트에는 <em>documentation comments</em> 라는 다른 종류의 주석도 있는데,<br>
 이 내용은 챕터 14의 &ldquo;Publishing a Crate to Crates.io&rdquo; 섹션에서 더 다뤄보도록 하겠습니다.</p>
 <h2 id="control-flow">Control Flow</h2>
-<p>&ndash; 다음에 계속&hellip;</p>
+<p>어떤 조건하에서 실행 할지 말지 결정하는것과, 어떤ㄷ 조건하에서 어떤 코드를 반복 실행하는 것은,<br>
+대부분의 프로그래밍 언어에서 기본적인 빌딩 블록 입니다(로직,논리를 쌓아나가는 기본 단위).<br>
+러스트에서 흐름을 제어할수 있게 도와주는 가장 일반적인 구조는 <code>if</code>문과 루프 입니다.</p>
+<h3 id="if-expressions">if Expressions</h3>
+<p><code>if</code>문은 조건에 따라서 코드를 분기할수 있도록 도와줍니다.<br>
+조건을 적은 다음, &ldquo;이 조건에는 이 코드블록을 실행하고, 맞지 않으면 이 코드 블록을 실행해줘&rdquo; 라고 적으면 됩니다.</p>
+<p><em>branches</em> 라는 새로운 프로젝트를 만든 다음(<code>cargo new branches</code>), <code>if</code>문을 체험해봅시다.</p>
+<pre><code class="language-rust">fn main() {
+    let number = 3;
+
+    if number &lt; 5 {
+        println!(&quot;condition was true&quot;);
+    } else {
+        println!(&quot;condition was false&quot;);
+    }
+}
+</code></pre>
+<pre><code class="language-output">condition was true
+</code></pre>
+<p>모든 <code>if</code>문은 <code>if</code>키워드로 시작합니다.<br>
+그리고 그 뒤에 조건을 붙입니다.<br>
+위 경우에서는, <code>number</code>변수가 <code>5</code>보다 작은지 작지않은지 체크합니다.<br>
+조건이 충족되었을때 실행하고 싶은 코드블록은 조건을 적은 바로 다음에 중괄호{} 안에 적습니다.<br>
+<code>if</code> 컨디션에 따라 실행되는, 관련된 코드 블록을 때로는 <em>arms(팔)</em> 이라고 불리기도 하는데,<br>
+챕터 2의 “Comparing the Guess to the Secret Number” section 에서 다루었던 <code>match</code> 표현식에서 나온 <em>arm</em> 과 같은 개념입니다.</p>
+<p>추가적으로, <code>else</code>키워드도 사용할수 있는데,<br>
+프로그램의 조건이 충족되지않았을 경우, 대안을 주기 위해 선택할수 있습니다.<br>
+만약 <code>else</code> 키워드를 적지않았다면, 조건이 충족되지않았을때<br>
+그냥 <code>if</code>블록을 건너뛰고 다음 코드를 실행하게 됩니다.</p>
+<p>만약 <code>number</code>의 값이 조건에 맞지 않는 값이라면 어떨까요?</p>
+<pre><code class="language-rust">let number = 7;
+</code></pre>
+<p>이번에는 결과가 이렇게 나오겠죠.</p>
+<pre><code class="language-output">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/branches`
+condition was false
+</code></pre>
+<p>그리고 조건문은 반드시 <code>bool</code>타입이어야 한다는 것을 명심하세요.<br>
+만약 조건이 <code>bool</code>이 아니라면 에러가 발생합니다.<br>
+다음과 같은 코드가 그 예입니다.</p>
+<pre><code class="language-rust">fn main() {
+    let number = 3;
+
+    if number {
+        println!(&quot;number was three&quot;);
+    }
+}
+
+</code></pre>
+<p><code>if</code>조건이 <code>3</code>이 되었고, 에러가 발생합니다.</p>
+<pre><code class="language-output">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:4:8
+  |
+4 |     if number {
+  |        ^^^^^^ expected `bool`, found integer
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `branches`
+
+To learn more, run the command again with --verbose.
+
+</code></pre>
+<p>러스트는 <code>bool</code> 타입을 기대했지만 <code>integer</code> 타입이 들어왔기 때문에 에러가 발생했습니다.<br>
+루비와 자바스크립트와는 달리, 러스트는 자동으로 non-boolean 타입을 boolean 으로 바꾸지 않습니다.<br>
+항상 명시적으로 코드를 작성해야하며, <code>if</code>문에는 불리언(true or false)타입을 조건으로 넣어야합니다.<br>
+예를 들어, 숫자가 <code>0</code>이 아닐때만 <code>if</code>코드 블록을 실행하려면 다음과 같이 <code>if</code>문을 바꿔볼수 있을겁니다.</p>
+<pre><code class="language-rust">fn main() {
+    let number = 3;
+
+    if number != 0 {
+        println!(&quot;number was something other than zero&quot;);
+    }
+}
+
+</code></pre>
+<p>위 코드를 실행하면 결과가 이렇게 나오겠죠: <code>number was something other than zero</code> .</p>
+<h4 id="handling-multiple-conditions-with-else-if">Handling Multiple Conditions with else if</h4>
+<p><code>if</code>와 <code>else</code> 를 결합하여 <code>else if</code> 문을 사용하면 여러 조건을 사용할수 있습니다.</p>
+<pre><code class="language-rust">fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!(&quot;number is divisible by 4&quot;);
+    } else if number % 3 == 0 {
+        println!(&quot;number is divisible by 3&quot;);
+    } else if number % 2 == 0 {
+        println!(&quot;number is divisible by 2&quot;);
+    } else {
+        println!(&quot;number is not divisible by 4, 3, or 2&quot;);
+    }
+}
+</code></pre>
+<p>이 프로그램은 4가지 가능한 경우가 존재합니다.<br>
+결과는 다음과 같이 나올겁니다:</p>
+<pre><code class="language-output">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/branches`
+number is divisible by 3
+
+</code></pre>
+<p>프로그램이 실행되면, 각각의 <code>if</code>조건을 차례대로 보면서<br>
+가장 처음으로 조건을 충족하는 코드블록을 실행하게 됩니다.<br>
+주의할점은 6은 2로 나눠지지만, <code>number is divisible by 2</code>라는 결과는 물론,<br>
+<code>else</code>블록의 <code>number is not divisible by 4,3, or 2</code> 역시도 확인할수 없습니다.<br>
+러스트는 가장 처음으로 조건을 만족한 블록만 실행하기 때문입니다.<br>
+조건을 만족한 블록을 일단 찾으면, 나머지는 체크하지 않습니다.</p>
+<p><code>else if</code>표현식을 너무 많이 쓰면 코드가 복잡해질수 있기 때문에,<br>
+하나 이상의 조건을 써야하는 경우에는 코드를 리팩토링(refactor-최적화,수정)할 필요를 느낄수 있습니다.<br>
+이러한 경우를 위해, 챕터 6에서 <code>match</code> 라는 러스트의 강력한 분기 구조를 다룹니다.</p>
+<h4 id="using-if-in-a-let-statement">Using if in a let Statement</h4>
+<h3 id="repetition-with-loops">Repetition with Loops</h3>
+<h4 id="repeating-code-with-loop">Repeating Code with loop</h4>
+<h4 id="returning-values-from-loops">Returning Values from Loops</h4>
+<h4 id="conditional-loops-with-while">Conditional Loops with while</h4>
+<h2 id="summary">Summary</h2>
 
   </main>
   
