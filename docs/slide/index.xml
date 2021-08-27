@@ -14,14 +14,12 @@
       
       <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-27/</guid>
       <description>8월 넷째주(마지막주) 진행상황 프레젠테이션
-주요 진행 내용    질문   BPM 논문에서는 더 발전할 가능성이 있었다.
+주요 진행 내용              질문   BPM 논문에서는 더 발전할 가능성이 있었다.
 이승화 님 논문에서는 어떻게 더 발전하는 방향이 있는가?
 이미 SIP에 DID 추가하는 걸로 된거 아닌가.
 하지만 SOLID 를 비롯한 다른 어플리케이션이나 프로토콜이 있다.
 SIP 등 기존 ID 체계? WebID? 기존 체계에서 Did로 변화를 줄수있는 부분은 계속 바뀌어 나갈것.
-그런 부분의 연장선에서 지금 쓰는 논문도 의미가 있을것.
-SOAP, ActivityPub, fediverse protocol&amp;hellip;
-  계획    </description>
+그런 부분의 연장선에서 지금 쓰는 논문도 의미가 있을것.</description>
     </item>
     
     <item>
