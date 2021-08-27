@@ -8,6 +8,23 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 28 Apr 2021 14:37:16 +0900</lastBuildDate><atom:link href="https://wadro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>진행상황 2021 Aug 27</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-27/</link>
+      <pubDate>Tue, 24 Aug 2021 17:10:51 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-27/</guid>
+      <description>8월 넷째주(마지막주) 진행상황 프레젠테이션
+주요 진행 내용    질문   BPM 논문에서는 더 발전할 가능성이 있었다.
+이승화 님 논문에서는 어떻게 더 발전하는 방향이 있는가?
+이미 SIP에 DID 추가하는 걸로 된거 아닌가.
+하지만 SOLID 를 비롯한 다른 어플리케이션이나 프로토콜이 있다.
+SIP 등 기존 ID 체계? WebID? 기존 체계에서 Did로 변화를 줄수있는 부분은 계속 바뀌어 나갈것.
+그런 부분의 연장선에서 지금 쓰는 논문도 의미가 있을것.
+SOAP, ActivityPub, fediverse protocol&amp;hellip;
+  계획    </description>
+    </item>
+    
+    <item>
       <title>[강의] 현금 및 현금성자산 [쉬운회계원리 13강]</title>
       <link>https://wadro.github.io/note/accounting/principles/%EA%B0%95%EC%9D%98-%ED%98%84%EA%B8%88-%EB%B0%8F-%ED%98%84%EA%B8%88%EC%84%B1%EC%9E%90%EC%82%B0-%EC%89%AC%EC%9A%B4%ED%9A%8C%EA%B3%84%EC%9B%90%EB%A6%AC-13%EA%B0%95/</link>
       <pubDate>Sun, 22 Aug 2021 13:20:59 +0900</pubDate>
