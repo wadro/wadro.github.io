@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>경제용어 on WADRO</title>
+    <link>https://wadro.github.io/tags/%EA%B2%BD%EC%A0%9C%EC%9A%A9%EC%96%B4/</link>
+    <description>Recent content in 경제용어 on WADRO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 30 Aug 2021 13:40:29 +0900</lastBuildDate><atom:link href="https://wadro.github.io/tags/%EA%B2%BD%EC%A0%9C%EC%9A%A9%EC%96%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>경제개념</title>
+      <link>https://wadro.github.io/post/eco-nomy/%EA%B2%BD%EC%A0%9C%EA%B0%9C%EB%85%90/</link>
+      <pubDate>Mon, 30 Aug 2021 13:40:29 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/post/eco-nomy/%EA%B2%BD%EC%A0%9C%EA%B0%9C%EB%85%90/</guid>
+      <description>용어 정리  가산금리 (spread) = 기준금리에 신용도 등 조건이 붙여진 금리
+➜ 관련개념: 16. 기준금리 경기동향지수 = 경기동향지수는 경기종합지수와는 달리 경기변동의 진폭이나 속도는 측정하지 않고 변화방향만을 파악하는 것으로서 경기의 국면 및 전환점을 식별하기 위한 지표로서 경기확산지수(diffusion index)라고도 함. 경상수지 = (간단하게)수출-수입 / 경제적으로 항상 있는 일로 발생한 수지타산   Note&amp;gt; ref3
+▶ 순수출 : 재화와 서비스의 수출과 수입의 차
+▶ 경상수지 : 상품수지 및 서비스 수지, 소득 수지, 경상이전 수지를 합한 것 위의 정의에서 알 수 있듯이, 경상수지 항목에서 상품수지와 서비스수지를 합한 것이 바로 순수출입니다(상품수지는 본래 재화수지라 부르는 것이 더 정확한 표현이나 현재 한국은행 국제수지표에서는 상품수지란 용어를 사용하고 있습니다).</description>
+    </item>
+    
+  </channel>
+</rss>
