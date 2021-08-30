@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wadro.github.io/memo/</loc>
+    <loc>https://wadro.github.io/post/</loc>
     <lastmod>2021-08-30T13:40:29+09:00</lastmod>
   </url><url>
-    <loc>https://wadro.github.io/memo/eco-nomy/%EA%B2%BD%EC%A0%9C%EA%B0%9C%EB%85%90/</loc>
+    <loc>https://wadro.github.io/post/eco-nomy/%EA%B2%BD%EC%A0%9C%EA%B0%9C%EB%85%90/</loc>
     <lastmod>2021-08-30T13:40:29+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/note/accounting/principles/%EA%B0%95%EC%9D%98-%EB%A7%A4%EC%B6%9C%EC%B1%84%EA%B6%8C-%ED%9A%8C%EA%B3%84%EC%B2%98%EB%A6%AC%EC%9D%98-%EC%9D%B4%ED%95%B4-%EC%89%AC%EC%9A%B4%ED%9A%8C%EA%B3%84%EC%9B%90%EB%A6%AC-14%EA%B0%95/</loc>
@@ -45,9 +45,6 @@
     <lastmod>2021-08-02T14:19:54+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/categories/cs/</loc>
-    <lastmod>2021-08-02T14:19:54+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/post/</loc>
     <lastmod>2021-08-02T14:19:54+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/tags/rust/</loc>
@@ -96,6 +93,9 @@
     <lastmod>2021-07-25T14:03:14+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</loc>
+    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/</loc>
     <lastmod>2021-07-25T14:03:14+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</loc>
