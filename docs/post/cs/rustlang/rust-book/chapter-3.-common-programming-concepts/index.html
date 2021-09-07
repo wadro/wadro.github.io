@@ -1045,7 +1045,8 @@ The value of y is: 6
   let y = 6;
 }
 </code></pre>
-<p><small>Listing 3-1: A main function declaration containing one statement</small></p>
+<p>↑
+<small>Listing 3-1: A main function declaration containing one statement</small></p>
 <p>함수 정의 또한 Statement 입니다.<br>
 앞서 나온 전체 예제는 그 자체로 statement 입니다.</p>
 <p>Statements 는 값을 리턴하지 않습니다.<br>
@@ -1363,6 +1364,69 @@ number is divisible by 3
 하나 이상의 조건을 써야하는 경우에는 코드를 리팩토링(refactor-최적화,수정)할 필요를 느낄수 있습니다.<br>
 이러한 경우를 위해, 챕터 6에서 <code>match</code> 라는 러스트의 강력한 분기 구조를 다룹니다.</p>
 <h4 id="using-if-in-a-let-statement">Using if in a let Statement</h4>
+<p><code>if</code>가 표현식이기 때문에, <code>let</code>문구 오른쪽에 사용할수도 있습니다. (복습: 표현식이란 일종의 함수 같은 것, 리턴값(결과값)이 있다.)</p>
+<pre><code class="language-rust">fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!(&quot;The value of number is: {}&quot;, number);
+}
+</code></pre>
+<!-- <figcaption>Listing 3-2: Assigning the result of an <code>if</code> expression to a variable</figcaption> -->
+<p>↑
+<small>Listing 3-2: Assigning the result of an <code>if</code> expression to a variable</small></p>
+<ul>
+<li> </li>
+</ul>
+<p><code>number</code> 이라는 변수에 <code>if</code>문의 결과값이 들어가게 됩니다.<br>
+아래와 같은 출력이 나오게 됩니다.</p>
+<pre><code>$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
+     Running `target/debug/branches`
+The value of number is: 5
+</code></pre>
+<p>코드 블록은 그 안에 있는 마지막 표현식으로 평가되며, 숫자 자체도 표현식이라는걸 기억하세요!<br>
+위 경우에서, 전체 <code>if</code>표현식의 값은 어떤 블록이 실행되느냐에 따라 결정됩니다.<br>
+이 말은 결국, <code>if</code>의 팔(arm-각 조건마다 지정된 블록)마다 나올수 있는 값들의 타입이 모두 같아야한다는 말과 같습니다;<br>
+위 코드에서 <code>if</code>블록과 <code>else</code>블록의 결과는 모두 <code>i32</code>정수 타입이었습니다.<br>
+타입이 다르면, 에러가 발생하게 됩니다.</p>
+<pre><code class="language-rust">fn main() {
+    let condition = true;
+
+    let number = if condition { 5 } else { &quot;six&quot; };
+
+    println!(&quot;The value of number is: {}&quot;, number);
+}
+</code></pre>
+<p>위 코드의 경우, 에러가 나기 때문에 컴파일 할수 없습니다.<br>
+<code>if</code>블록와 <code>else</code>블록의 타입이 서로 비교 불가능하기때문에,<br>
+러스트는 정확히 어디를 봐야 문제를 찾을수 있는지를 알려줍니다:</p>
+<pre><code>$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+error[E0308]: `if` and `else` have incompatible types
+ --&gt; src/main.rs:4:44
+  |
+4 |     let number = if condition { 5 } else { &quot;six&quot; };
+  |                                 -          ^^^^^ expected integer, found `&amp;str`
+  |                                 |
+  |                                 expected because of this
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `branches`
+
+To learn more, run the command again with --verbose.
+</code></pre>
+<p><img src="/images/rustlang/rust-error-if-else-type-mismatch.png" alt="rust-type-mismatch-if-else"></p>
+<!-- ../../../../../ -->
+<p><code>if</code>블록의 표현식 결과가 정수로 나오고, <code>else</code>블록의 결과는 문자열로 나옵니다.<br>
+이렇게 되면 변수가 하나의 타입으로 통일되지 않았기 때문에 코드가 작동하지 않습니다.<br>
+러스트는 컴파일할때 <code>number</code>변수의 타입이 무엇인지 확실히 알아야하기때문에,<br>
+컴파일 하는 시점에 <code>number</code>변수가 사용되는 모든 곳에서 해당 변수의 타입이 유효한지 확인할수 있습니다.<br>
+<code>number</code>변수의 타입이 런타임(프로그램 실행)시에만 결정된다면 러스트는 위처럼 확인할수 없습니다;<br>
+컴파일러는 정해지지않은 타입들을 가진 여러 개의 변수를 추적해야할때 보다 복잡해지고, 코드에 대해 더 적은 보장을 하게됩니다(프로그램의 안전한 실행이 확실하지않음).</p>
 <h3 id="repetition-with-loops">Repetition with Loops</h3>
 <h4 id="repeating-code-with-loop">Repeating Code with loop</h4>
 <h4 id="returning-values-from-loops">Returning Values from Loops</h4>
