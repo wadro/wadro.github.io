@@ -6,7 +6,16 @@
     <description>Recent content in Slides on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 24 Aug 2021 17:10:51 +0900</lastBuildDate><atom:link href="https://wadro.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 01:35:31 +0900</lastBuildDate><atom:link href="https://wadro.github.io/slide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>진행상황 2021 Sep 13</title>
+      <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-sep-13/</link>
+      <pubDate>Mon, 13 Sep 2021 01:35:31 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-sep-13/</guid>
+      <description>현재 캐터필러 순서:  레지스트리 등록 폴리시(액세스컨트롤 용) 등록 비즈니스모델(bpm) 등록 폴리시+비즈니스모델 바인딩 인스턴스 생성 각 단계마다 폴리시에 적힌 role 대로 비즈니스 프로세스 진행  DID 캐터필러 순서:  레지스트리 등록 Attribute+bpm 등록 (이때, attribute 수정 가능하도록 set함수 정의, attribute을 수정가능한 meta-attribute set 함수 정의, 각 블록의 연결부 설정-다른 컨트랙트의 어떤 함수와 연결할지 설정하는 함수, 그 설정을 바꿀수 있는 meta-attribute 설정 함수) in and out 컨트랙트 설정하고 다른 비즈니스와 연결 검증된 사용자는 비즈니스 프로세스 진행   (Ex) customer 는 배열의 데이터로 취급.</description>
+    </item>
+    
     <item>
       <title>진행상황 2021 Aug 27</title>
       <link>https://wadro.github.io/slide/graduate/dcc/%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9-2021-aug-27/</link>
