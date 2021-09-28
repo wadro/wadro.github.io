@@ -6,7 +6,22 @@
     <description>Recent content in Memoes on WADRO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 25 Jul 2021 14:03:14 +0900</lastBuildDate><atom:link href="https://wadro.github.io/memo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 14:49:49 +0900</lastBuildDate><atom:link href="https://wadro.github.io/memo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain and Finance Thoughts</title>
+      <link>https://wadro.github.io/memo/eco-nomy/blockchain-and-finance-thoughts/</link>
+      <pubDate>Tue, 28 Sep 2021 14:49:49 +0900</pubDate>
+      
+      <guid>https://wadro.github.io/memo/eco-nomy/blockchain-and-finance-thoughts/</guid>
+      <description>How will blockchain change financial services? Drastically saying, you don&amp;rsquo;t need any private bank, just currency.
+You do your own bank on local device.
+There is no gold, so no gold-paper.
+More elegant way, more independent, more certainty.
+Data will be stored in your device, not 3rd ones.
+We can make our own service with many plug-ins.
+Financial services like saving money, so banks have earned more money until now.</description>
+    </item>
+    
     <item>
       <title>lab golang study tutorials 03</title>
       <link>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</link>

@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wadro.github.io/memo/eco-nomy/blockchain-and-finance-thoughts/</loc>
+    <lastmod>2021-09-28T14:49:48+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/memo/</loc>
+    <lastmod>2021-09-28T14:49:48+09:00</lastmod>
+  </url><url>
     <loc>https://wadro.github.io/slide/</loc>
     <lastmod>2021-09-28T09:46:41+09:00</lastmod>
   </url><url>
@@ -108,9 +114,6 @@
     <lastmod>2021-07-25T14:03:14+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-03/</loc>
-    <lastmod>2021-07-25T14:03:14+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/memo/</loc>
     <lastmod>2021-07-25T14:03:14+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/memo/cs/go/lab-golang-study-tutorials-02/</loc>
