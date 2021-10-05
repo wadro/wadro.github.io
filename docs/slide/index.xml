@@ -14,7 +14,7 @@
       
       <guid>https://wadro.github.io/slide/graduate/dcc/report-2021-oct-04/</guid>
       <description>slide
-진행순서  DID 발급 (veramo) VC발급 VP생성 검증 비즈니스 프로세스 진행   mermaid.initialize({startOnLoad:true}); sequenceDiagram User (Holder DID)-DID Agent: Request DID DID Agent--User (Holder DID): Create DID User (Holder DID)-Issuer DID: Request VC (through agent) Issuer DID--User (Holder DID): Create VC User (Holder DID)-Verifier DID: Generate VP, Send Token(JWT—Json Web Token) activate Verifier DID Verifier DID--Verifier DID: Decrypt Token, Decode, Json parse, Check requirements Note over Verifier DID: AccessControlSmartContract-Process Continued deactivate Verifier DID Verifier DID--User (Holder DID): response results  AccessControlSmartContract-Process Continued</description>
+진행순서  DID 발급 (veramo) VC발급 VP생성 검증 비즈니스 프로세스 진행   mermaid.initialize({startOnLoad:true}); sequenceDiagram User (Holder DID)-DID Agent: Request DID DID Agent--User (Holder DID): Create DID User (Holder DID)-Issuer DID: Request VC (through agent) Issuer DID--User (Holder DID): Create VC User (Holder DID)-Verifier DID: Generate VP, Send Token(JWT—Json Web Token) activate Verifier DID Verifier DID--Verifier DID: Decrypt Token, Decode, Json parse, Check requirements Note over Verifier DID: AccessControlSmartContract-Process Continued deactivate Verifier DID Verifier DID--User (Holder DID): response results </description>
     </item>
     
     <item>
