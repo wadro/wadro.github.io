@@ -50,6 +50,10 @@ em code {
   padding: 0 0.2rem;
 }
 
+p em {
+  opacity: 0.8;
+}
+
 li .ticks {
   margin-top: 0.75rem !important;
 }
@@ -81,6 +85,18 @@ table code {
 th, td {
   /* border: 0px solid hsl(226, 23%, 31%); */
   border: 0.5px solid #5b5b64;
+}
+
+blockquote {
+  background-color: floralwhite;  
+  color: forestgreen;  
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.toc {
+  background: antiquewhite;  
+  color: firebrick;
 }
 
 #toparrow{
