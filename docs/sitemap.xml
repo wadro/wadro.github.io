@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wadro.github.io/categories/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/post/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/categories/%EA%B2%BD%EC%A0%9C/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/tags/%EC%82%BC%ED%94%84%EB%A1%9Ctv/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
+    <loc>https://wadro.github.io/post/eco-nomy/%ED%95%9C%EA%B5%AD-%EC%A3%BC%EC%8B%9D-%EC%8B%9C%EC%9E%A5-%EB%B9%84%ED%8C%90/</loc>
+    <lastmod>2022-01-27T17:54:59+09:00</lastmod>
+  </url><url>
     <loc>https://wadro.github.io/slide/graduate/business/paper-review/</loc>
     <lastmod>2021-11-04T19:35:36+09:00</lastmod>
   </url><url>
@@ -34,18 +52,6 @@
   </url><url>
     <loc>https://wadro.github.io/note/blockchain-talk/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%EB%89%B4%EC%8A%A4-2021-sep-06/</loc>
     <lastmod>2021-09-07T10:01:59+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/categories/</loc>
-    <lastmod>2021-08-30T13:40:29+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/post/</loc>
-    <lastmod>2021-08-30T13:40:29+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/tags/</loc>
-    <lastmod>2021-08-30T13:40:29+09:00</lastmod>
-  </url><url>
-    <loc>https://wadro.github.io/categories/%EA%B2%BD%EC%A0%9C/</loc>
-    <lastmod>2021-08-30T13:40:29+09:00</lastmod>
   </url><url>
     <loc>https://wadro.github.io/post/eco-nomy/%EA%B2%BD%EC%A0%9C%EA%B0%9C%EB%85%90/</loc>
     <lastmod>2021-08-30T13:40:29+09:00</lastmod>
