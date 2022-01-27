@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
-body {
-  background-color: #FFF;
+body, h1, h2, h3, h4, h5, h6{
+  /* background-color: #FFF; */
   font-family: 'Hahmlet', serif;
 
   /*  
@@ -86,7 +86,22 @@ th, td {
   /* border: 0px solid hsl(226, 23%, 31%); */
   border: 0.5px solid #5b5b64;
 }
-
+p{
+  font-size: medium;
+}
+h3 {
+  background-color: tan;
+}
+h4 {
+  font-size: large;
+  background-color: antiquewhite;
+}
+blockquote h3, blockquote h4 {
+  background-color: transparent;
+}
+pre {
+  background-color: whitesmoke;
+}
 blockquote {
   background-color: floralwhite;  
   color: forestgreen;  
