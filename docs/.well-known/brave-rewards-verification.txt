@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: wadro.github.io
+Token: 9e590f64da468727ac99df73ab16f0b0951d6ffb60c17c9ac2148a9e14eb1776
